@@ -22,18 +22,20 @@ clsplitseq \
 for s in `ls 01_RawSequences/Blank??_R1.fastq.xz 01_RawSequences/Sample??_R1.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
 do clsplitseq \
 --runname=ClaidentTutorial \
---indedxname=$s \
+--indexname=$s \
 --forwardprimerfile=forwardprimer.fasta \
 --reverseprimerfile=reverseprimer.fasta \
 --truncateN=enable \
 --compress=xz \
 --numthreads=$THREADS \
 --seqnamestyle=other \
+--append \
 01_RawSequences/$s\_R1.fastq.xz \
 01_RawSequences/$s\_R2.fastq.xz \
 02b_DemultiplexedSequences
 done
 # Compare Type A and B
+rm -f TypeA.txt TypeB.txt
 for f in 02a_DemultiplexedSequences/*.fastq.xz
 do xz -dc $f | grep -c -P '^\+\r?\n?$' >> TypeA.txt
 done

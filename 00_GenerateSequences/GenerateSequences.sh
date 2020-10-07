@@ -28,26 +28,18 @@ wget -c https://www.niehs.nih.gov/research/resources/assets/docs/artbinmountrain
 # Extract ART simulator
 tar -xzf artbinmountrainier2016.06.05linux64.tgz
 # Generate simulated sequences
-for f in `ls Sample??.fasta | grep -o -P '^[^\.]+'`
-do ./art_bin_MountRainier/art_illumina --amplicon --seqSys MSv3 --in $f.fasta --len 144 --paired --noALN --fcov 1000 --out $f\_
-done
-for f in `ls Blank??.fasta | grep -o -P '^[^\.]+'`
-do ./art_bin_MountRainier/art_illumina --amplicon --seqSys MSv3 --in $f.fasta --len 144 --paired --noALN --fcov 10 --out $f\_
-done
+ls Sample??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c './art_bin_MountRainier/art_illumina --amplicon --seqSys MSv1 --in {}.fasta --len 144 --paired --noALN --fcov 1000 --out {}_'
+ls Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c './art_bin_MountRainier/art_illumina --amplicon --seqSys MSv1 --in {}.fasta --len 144 --paired --noALN --fcov 50 --out {}_'
 # Make demultiplexed FASTQ
 mkdir -p ../01_RawSequences
-for f in `ls Sample??.fasta | grep -o -P '^[^\.]+'`
-do perl addNNNNNN.pl $f\_1.fq | xz -c9 > ../01_RawSequences/$f\_R1.fastq.xz
-perl addNNNNNN.pl $f\_2.fq | xz -c9 > ../01_RawSequences/$f\_R2.fastq.xz
-done
-for f in `ls Blank??.fasta | grep -o -P '^[^\.]+'`
-do perl addNNNNNN.pl $f\_1.fq | xz -c9 > ../01_RawSequences/$f\_R1.fastq.xz
-perl addNNNNNN.pl $f\_2.fq | xz -c9 > ../01_RawSequences/$f\_R2.fastq.xz
-done
-# Join FASTQ
-xz -dc ../01_RawSequences/Sample??_R1.fastq.xz ../01_RawSequences/Blank??_R1.fastq.xz | xz -c9 > ../01_RawSequences/Undemultiplexed_R1.fastq.xz &
-xz -dc ../01_RawSequences/Sample??_R2.fastq.xz ../01_RawSequences/Blank??_R2.fastq.xz | xz -c9 > ../01_RawSequences/Undemultiplexed_R2.fastq.xz &
+ls Sample??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq | xz -c9e > ../01_RawSequences/{}_R1.fastq.xz; perl addNNNNNN.pl {}_2.fq | xz -c9e > ../01_RawSequences/{}_R2.fastq.xz'
+ls Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq | xz -c9e > ../01_RawSequences/{}_R1.fastq.xz; perl addNNNNNN.pl {}_2.fq | xz -c9e > ../01_RawSequences/{}_R2.fastq.xz'
 # Make 2 index sequence files
-perl makeindexfastq.pl ../index1.fasta Sample??_1.fq Blank??_1.fq | xz -c9 > ../01_RawSequences/Undemultiplexed_I1.fastq.xz &
-perl makeindexfastq.pl ../index2.fasta Sample??_2.fq Blank??_2.fq | xz -c9 > ../01_RawSequences/Undemultiplexed_I2.fastq.xz &
+perl makeindexfastq.pl ../index1.fasta Sample??_1.fq Blank??_1.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_I1.fastq.xz &
+perl makeindexfastq.pl ../index2.fasta Sample??_2.fq Blank??_2.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_I2.fastq.xz &
 wait
+# Make Undemultiplexed files
+xz -dc ../01_RawSequences/Sample??_R1.fastq.xz ../01_RawSequences/Blank??_R1.fastq.xz | xz -c9e > ../01_RawSequences/Undemultiplexed_R1.fastq.xz
+xz -dc ../01_RawSequences/Sample??_R2.fastq.xz ../01_RawSequences/Blank??_R2.fastq.xz | xz -c9e > ../01_RawSequences/Undemultiplexed_R2.fastq.xz
+# Make SHA256 checksum files
+ls ../01_RawSequences/*.fastq.xz | xargs -L 1 -P 32 -I {} sh -c 'sha256sum {} > {}.sha256'
