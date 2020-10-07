@@ -32,12 +32,18 @@ my $outputfilehandle;
 # initialize random number generator
 eval "use Math::Random::MT::Auto";
 if ($@) {
-	eval "use Math::Random::MT::Perl";
+	eval "use Math::Random::MT";
 	if ($@) {
-		&errorMessage(__LINE__, "Perl module \"Math::Random::MT::Auto\" and \"Math::Random::MT:Perl\" is not available.");
+		eval "use Math::Random::MT::Perl";
+		if ($@) {
+			die(__LINE__ . ": Perl module \"Math::Random::MT::Auto\", \"Math::Random::MT\" and \"Math::Random::MT:Perl\" are not available.\n");
+		}
+		else {
+			$gen = Math::Random::MT::Perl->new($seed);
+		}
 	}
 	else {
-		$gen = Math::Random::MT::Perl->new($seed);
+		$gen = Math::Random::MT->new($seed);
 	}
 }
 else {
