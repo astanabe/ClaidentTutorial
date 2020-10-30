@@ -20,7 +20,7 @@ perl adddummytaxid2fasta.pl < 12Sreferences.fasta > 12Sreferences.ecoPCR
 # Make ecoPCR database
 ./ecoPCRFormat.py -f -t ./taxonomy -n 12Sreferences 12Sreferences.ecoPCR
 # Run ecoPCR and convert to amplicon FASTA file
-./ecoPCR -d 12Sreferences -e 5 -l 150 -L 250 GTCGGTAAAACTCGTGCCAGC CATAGTGGGGTATCTAATCCCAGTTTG | perl convertecopcr2fasta.pl | perl -npe 's/^>.+; />/' > 12Sbarcodes.fasta
+./ecoPCR -d 12Sreferences -e 5 -l 150 -L 250 GTCGGTAAAACTCGTGCCAGC CATAGTGGGGTATCTAATCCCAGTTTG | perl convertecopcr2fasta.pl -fp=GTCGGTAAAACTCGTGCCAGC -rp=CATAGTGGGGTATCTAATCCCAGTTTG | perl -npe 's/^>.+; />/' > 12Sbarcodes.fasta
 # Make fish community references for each sample
 perl makecommref.pl 20 4 50 10 12Sbarcodes.fasta
 # Download ART simulator
@@ -31,15 +31,35 @@ tar -xzf artbinmountrainier2016.06.05linux64.tgz
 ls Sample??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c './art_bin_MountRainier/art_illumina --amplicon --seqSys MSv1 --in {}.fasta --len 144 --paired --noALN --fcov 1000 --out {}_'
 ls Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c './art_bin_MountRainier/art_illumina --amplicon --seqSys MSv1 --in {}.fasta --len 144 --paired --noALN --fcov 50 --out {}_'
 # Make demultiplexed FASTQ
+ls Sample??.fasta Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq > {}_R1.fastq; perl addNNNNNN.pl {}_2.fq > {}_R2.fastq'
+# Make output folder
 mkdir -p ../01_RawSequences
-ls Sample??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq | xz -c9e > ../01_RawSequences/{}_R1.fastq.xz; perl addNNNNNN.pl {}_2.fq | xz -c9e > ../01_RawSequences/{}_R2.fastq.xz'
-ls Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq | xz -c9e > ../01_RawSequences/{}_R1.fastq.xz; perl addNNNNNN.pl {}_2.fq | xz -c9e > ../01_RawSequences/{}_R2.fastq.xz'
 # Make 2 index sequence files
 perl makeindexfastq.pl ../index1.fasta Sample??_1.fq Blank??_1.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_I1.fastq.xz &
 perl makeindexfastq.pl ../index2.fasta Sample??_2.fq Blank??_2.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_I2.fastq.xz &
-wait
 # Make Undemultiplexed files
-xz -dc ../01_RawSequences/Sample??_R1.fastq.xz ../01_RawSequences/Blank??_R1.fastq.xz | xz -c9e > ../01_RawSequences/Undemultiplexed_R1.fastq.xz
-xz -dc ../01_RawSequences/Sample??_R2.fastq.xz ../01_RawSequences/Blank??_R2.fastq.xz | xz -c9e > ../01_RawSequences/Undemultiplexed_R2.fastq.xz
-# Make SHA256 checksum files
-ls ../01_RawSequences/*.fastq.xz | xargs -L 1 -P 32 -I {} sh -c 'sha256sum {} > {}.sha256'
+sh -c 'cat Sample??_R1.fastq Blank??_R1.fastq | xz -c9e > ../01_RawSequences/Undemultiplexed_R1.fastq.xz' &
+sh -c 'cat Sample??_R2.fastq Blank??_R2.fastq | xz -c9e > ../01_RawSequences/Undemultiplexed_R2.fastq.xz' &
+wait
+# Make demultiplexed files
+clsplitseq \
+--runname=TEMP \
+--primername=TEMP \
+--index1file=../index1.fasta \
+--index2file=../index2.fasta \
+--minqualtag=0 \
+--compress=disable \
+--numthreads=32 \
+--seqnamestyle=nochange \
+../01_RawSequences/Undemultiplexed_R1.fastq.xz \
+../01_RawSequences/Undemultiplexed_I1.fastq.xz \
+../01_RawSequences/Undemultiplexed_I2.fastq.xz \
+../01_RawSequences/Undemultiplexed_R2.fastq.xz \
+TEMP
+# Move demultiplexed files
+cd TEMP
+ls *.fastq | perl -nle '$fn=$_;m/TEMP__(.+)__TEMP\.(forward|reverse)\.fastq/;$sn=$1;$fr=$2;if($sn=~/^[ACGT]+\+[ACGT]+$/){unlink($fn)}else{if($fr eq "forward"){rename($fn,"$sn\_R1.fastq")}else{rename($fn,"$sn\_R2.fastq")}}'
+ls *fastq | xargs -L 1 -P 32 xz -9e
+mv *.fastq.xz ../../01_RawSequences/
+cd ..
+rm -rf TEMP
