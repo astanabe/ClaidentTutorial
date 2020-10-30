@@ -1,10 +1,13 @@
 use strict;
 my $indexfile = $ARGV[0];
 my %index;
+my $pindexhopping = 0.01;
 my @inputfiles;
 my %inputfiles;
 my $inputfilehandle;
 my $outputfilehandle;
+my $seed = time^$$;
+my $gen;
 
 for (my $i = 1; $i < scalar(@ARGV); $i ++) {
 	my @temp = glob($ARGV[$i]);
@@ -41,11 +44,39 @@ for (my $i = 1; $i < scalar(@ARGV); $i ++) {
 	close($inputfilehandle);
 }
 
+# initialize random number generator
+eval "use Math::Random::MT::Auto";
+if ($@) {
+	eval "use Math::Random::MT";
+	if ($@) {
+		eval "use Math::Random::MT::Perl";
+		if ($@) {
+			die(__LINE__ . ": Perl module \"Math::Random::MT::Auto\", \"Math::Random::MT\" and \"Math::Random::MT:Perl\" are not available.\n");
+		}
+		else {
+			$gen = Math::Random::MT::Perl->new($seed);
+		}
+	}
+	else {
+		$gen = Math::Random::MT->new($seed);
+	}
+}
+else {
+	$gen = Math::Random::MT::Auto->new();
+	$gen->srand($seed);
+}
+
 foreach my $inputfile (@inputfiles) {
 	my $samplename = $inputfile;
 	$samplename =~ s/\_\d\..+$//;
 	unless ($index{$samplename}) {
 		die(__LINE__ . " error.\n");
+	}
+	my @othersamples;
+	foreach my $tempsample (keys(%index)) {
+		if ($tempsample ne $samplename) {
+			push(@othersamples, $tempsample);
+		}
 	}
 	open($inputfilehandle, "< $inputfile") or die(__LINE__ . " error.\n");
 	my $lineno = 1;
@@ -53,10 +84,20 @@ foreach my $inputfile (@inputfiles) {
 	while (<$inputfilehandle>) {
 		s/\r?\n?$//;
 		if ($lineno % 4 == 1) {
-			print(STDOUT '@' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
+			if (/^\@([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_]+)\-\d+/) {
+				print(STDOUT '@' . "$1:$2:$3:$4" . '_' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
+			}
+			else {
+				die(__LINE__ . " error.\n$_\n");
+			}
 		}
 		elsif ($lineno % 4 == 2) {
-			print(STDOUT $index{$samplename} . "\n");
+			if ($gen->rand(1) < $pindexhopping) {
+				print(STDOUT $index{$othersamples[int($gen->rand(scalar(@othersamples)))]} . "\n");
+			}
+			else {
+				print(STDOUT $index{$samplename} . "\n");
+			}
 		}
 		elsif ($lineno % 4 == 3) {
 			print(STDOUT '+' . "\n");
