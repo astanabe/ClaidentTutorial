@@ -59,6 +59,7 @@ clcalcfastqstatv \
 03_ConcatenatedSequences/fastq_eestats2.txt
 # Filfer out low quality sequences
 clfilterseqv \
+--maxqual=41 \
 --minlen=100 \
 --maxlen=250 \
 --maxnee=2.0 \
