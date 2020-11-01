@@ -36,12 +36,15 @@ do clsplitseq \
 done
 # Compare Type A and B
 rm -f TypeA.txt TypeB.txt
-for f in 02a_DemultiplexedSequences/*.fastq.xz
-do xz -dc $f | grep -c -P '^\+\r?\n?$' >> TypeA.txt
+cd 02a_DemultiplexedSequences
+for f in *.fastq.xz
+do echo $f >> ../TypeA.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../TypeA.txt
 done
-for f in 02b_DemultiplexedSequences/*.fastq.xz
-do xz -dc $f | grep -c -P '^\+\r?\n?$' >> TypeB.txt
+cd ../02b_DemultiplexedSequences
+for f in *.fastq.xz
+do echo $f >> ../TypeB.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../TypeB.txt
 done
+cd ..
 diff -u TypeA.txt TypeB.txt
 # Concatenate pairs
 clconcatpairv \
@@ -50,14 +53,6 @@ clconcatpairv \
 02a_DemultiplexedSequences \
 03_ConcatenatedSequences
 # Calculate FASTQ statistics
-clcalcfastqstatv \
---mode=0 \
-03_ConcatenatedSequences \
-03_ConcatenatedSequences/fastq_stats.txt
-clcalcfastqstatv \
---mode=1 \
-03_ConcatenatedSequences \
-03_ConcatenatedSequences/fastq_eestats.txt
 clcalcfastqstatv \
 --mode=2 \
 03_ConcatenatedSequences \
