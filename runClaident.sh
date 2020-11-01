@@ -75,7 +75,8 @@ cldenoiseseqd \
 04_FilteredSequences \
 05_DenoisedSequences
 # Remove chimeras using UCHIME3
-clremovechimerav \
+clremovechimev \
+--mode=both \
 --uchimedenovo=3 \
 --referencedb=cdu12s \
 --numthreads=$THREADS \
@@ -85,6 +86,7 @@ clremovechimerav \
 clremovecontam \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
+--ignore='Blank\d\d' \
 --mode=eliminate \
 06_NonchimericSequences \
 07_NonhoppedSequences
