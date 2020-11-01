@@ -74,7 +74,7 @@ clfilterseqv \
 04_FilteredSequences
 # Denoise using DADA2
 cldenoiseseqd \
---pool=pseudo \
+--pool=enable \
 --numthreads=$THREADS \
 04_FilteredSequences \
 05_DenoisedSequences

@@ -31,5 +31,3 @@ plot(temp)
 
 # NMDS
 
-# Phylogenetic community ecological analyses
-
