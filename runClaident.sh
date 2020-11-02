@@ -86,13 +86,13 @@ clremovechimev \
 clremovecontam \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
---ignore='Blank\d\d' \
+--ignorelist=blanklist.txt \
 --mode=eliminate \
 06_NonchimericSequences \
 07_NonhoppedSequences
 # Subtract contamination
 clremovecontam \
---blank='Blank\d\d' \
+--blanklist=blanklist.txt \
 --mode=subtractmax \
 07_NonhoppedSequences \
 08_DecontaminatedSequences
