@@ -86,12 +86,7 @@ else {
 	}
 	my @allspecies = keys(%allspecies);
 	for (my $i = 0; $i < $nblank; $i ++) {
-		my @temp = @allspecies;
-		my @tempcommunity;
-		for (my $j = 0; $j < $nspecies; $j ++) {
-			push(@tempcommunity, splice(@temp, int($gen->rand(scalar(@temp))), 1));
-		}
-		push(@{$community[($nsample + $i)]}, @tempcommunity);
+		push(@{$community[($nsample + $i)]}, @allspecies);
 	}
 }
 

@@ -108,14 +108,14 @@ mkdir -p 10_FinalResults
 # Assign taxonomy based on QCauto method
 clmakecachedb \
 --bdb=animals_mt_species \
---numthreads=8 \
-08_ClusteredSequences/clustered.fasta \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
 10_FinalResults/cachedb
 clidentseq \
 --method=QC \
 --bdb=10_FinalResults/cachedb \
---numthreads=8 \
-08_ClusteredSequences/clustered.fasta \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
 10_FinalResults/neighborhoods_qc.txt
 classigntax \
 --taxdb=animals_mt_species \
@@ -125,8 +125,8 @@ classigntax \
 clidentseq \
 --method=1,95% \
 --bdb=10_FinalResults/cachedb \
---numthreads=8 \
-08_ClusteredSequences/clustered.fasta \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
 10_FinalResults/neighborhoods_1nn.txt
 classigntax \
 --taxdb=animals_mt_species \
@@ -147,7 +147,7 @@ clfillassign \
 # Make OTU-based community data maxrix
 clsumclass \
 --output=matrix \
-08_ClusteredSequences/clustered.otu.gz \
+09_ClusteredSequences/clustered.otu.gz \
 10_FinalResults/sample_otu_matrix.txt
 # Filter out non-Actinopterygii OTUs
 clfiltersum \
