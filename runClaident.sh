@@ -13,13 +13,13 @@ clsplitseq \
 --compress=xz \
 --numthreads=$THREADS \
 --seqnamestyle=other \
-01_RawSequences/Undemultiplexed_R1.fastq.xz \
-01_RawSequences/Undemultiplexed_I1.fastq.xz \
-01_RawSequences/Undemultiplexed_I2.fastq.xz \
-01_RawSequences/Undemultiplexed_R2.fastq.xz \
+01_RawSequences/Undemultiplexed_R1_001.fastq.xz \
+01_RawSequences/Undemultiplexed_I1_001.fastq.xz \
+01_RawSequences/Undemultiplexed_I2_001.fastq.xz \
+01_RawSequences/Undemultiplexed_R2_001.fastq.xz \
 02a_DemultiplexedSequences
 # Demultiplex Type B (If FASTQ files have been already demultiplexed)
-for s in `ls 01_RawSequences/Blank??_R1.fastq.xz 01_RawSequences/Sample??_R1.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
+for s in `ls 01_RawSequences/Blank??_R1_001.fastq.xz 01_RawSequences/Sample??_R1_001.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
 do clsplitseq \
 --runname=ClaidentTutorial \
 --indexname=$s \
@@ -30,8 +30,8 @@ do clsplitseq \
 --numthreads=$THREADS \
 --seqnamestyle=other \
 --append \
-01_RawSequences/$s\_R1.fastq.xz \
-01_RawSequences/$s\_R2.fastq.xz \
+01_RawSequences/$s\_R1_001.fastq.xz \
+01_RawSequences/$s\_R2_001.fastq.xz \
 02b_DemultiplexedSequences
 done
 # Compare Type A and B
@@ -86,14 +86,13 @@ clremovechimev \
 clremovecontam \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
---ignorelist=blanklist.txt \
 --mode=eliminate \
 06_NonchimericSequences \
 07_NonhoppedSequences
-# Subtract contamination
+# Eliminate contamination
 clremovecontam \
 --blanklist=blanklist.txt \
---mode=subtractmax \
+--mode=eliminate \
 07_NonhoppedSequences \
 08_DecontaminatedSequences
 # Cluster remaining sequences
@@ -107,24 +106,24 @@ clclassseqv \
 mkdir -p 10_FinalResults
 # Assign taxonomy based on QCauto method
 clmakecachedb \
---bdb=animals_mt_species \
+--blastdb=animals_mt_species \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
 10_FinalResults/cachedb
 clidentseq \
 --method=QC \
---bdb=10_FinalResults/cachedb \
+--blastdb=10_FinalResults/cachedb \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
 10_FinalResults/neighborhoods_qc.txt
 classigntax \
 --taxdb=animals_mt_species \
 10_FinalResults/neighborhoods_qc.txt \
-10_FinalResults/taxonomy_qc.txt
+10_FinalResults/taxonomy_qc.tsv
 # Assign taxonomy based on 1-NN method
 clidentseq \
 --method=1,95% \
---bdb=10_FinalResults/cachedb \
+--blastdb=10_FinalResults/cachedb \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
 10_FinalResults/neighborhoods_1nn.txt
@@ -132,52 +131,47 @@ classigntax \
 --taxdb=animals_mt_species \
  --minnsupporter=1 \
 10_FinalResults/neighborhoods_1nn.txt \
-10_FinalResults/taxonomy_1nn.txt
+10_FinalResults/taxonomy_1nn.tsv
 # Merge 2 taxonomic assignment results
 clmergeassign \
 --preferlower \
 --priority=descend \
-10_FinalResults/taxonomy_qc.txt \
-10_FinalResults/taxonomy_1nn.txt \
-10_FinalResults/taxonomy_merged.txt
+10_FinalResults/taxonomy_qc.tsv \
+10_FinalResults/taxonomy_1nn.tsv \
+10_FinalResults/taxonomy_merged.tsv
 # Fill blank cells of taxonomic assignment
 clfillassign \
-10_FinalResults/taxonomy_merged.txt \
-10_FinalResults/taxonomy_merged_filled.txt
-# Make OTU-based community data maxrix
-clsumclass \
---output=matrix \
-09_ClusteredSequences/clustered.otu.gz \
-10_FinalResults/sample_otu_matrix.txt
-# Filter out non-Actinopterygii OTUs
+10_FinalResults/taxonomy_merged.tsv \
+10_FinalResults/taxonomy_merged_filled.tsv
+# Filter out non-Actinopterygii/Sarcopterygii OTUs
 clfiltersum \
---taxfile=10_FinalResults/taxonomy_merged_filled.txt \
---taxfilter=superclass:Actinopterygii \
-10_FinalResults/sample_otu_matrix.txt \
-10_FinalResults/sample_otu_matrix_bonyfishes.txt
+--taxfile=10_FinalResults/taxonomy_merged_filled.tsv \
+--includetaxa=superclass,Actinopterygii,superclass,Sarcopterygii \
+09_ClusteredSequences/clustered.tsv \
+10_FinalResults/sample_otu_matrix_fishes.tsv
 # Make species-based community data matrix
 clsumtaxa \
 --output=matrix \
---taxfile=10_FinalResults/taxonomy_merged_filled.txt \
+--taxfile=10_FinalResults/taxonomy_merged_filled.tsv \
 --taxrank=species \
 --numbering=disable \
-10_FinalResults/sample_otu_matrix_bonyfishes.txt \
-10_FinalResults/sample_species_matrix_bonyfishes.txt
-# Make top-10 species community data matrix for barplot
+10_FinalResults/sample_otu_matrix_fishes.tsv \
+10_FinalResults/sample_species_matrix_fishes.tsv
+# Make top-50 species community data matrix for barplot
 clsumtaxa \
 --output=column \
---taxfile=10_FinalResults/taxonomy_merged_filled.txt \
+--taxfile=10_FinalResults/taxonomy_merged_filled.tsv \
 --taxrank=species \
---topN=10 \
+--topN=50 \
 --numbering=enable \
-10_FinalResults/sample_otu_matrix_bonyfishes.txt \
-10_FinalResults/sample_10species_matrix_bonyfishes.txt
-# Make top-10 families community data matrix for barplot
+10_FinalResults/sample_otu_matrix_fishes.tsv \
+10_FinalResults/sample_top50species_matrix_fishes.tsv
+# Make top-50 families community data matrix for barplot
 clsumtaxa \
 --output=column \
---taxfile=10_FinalResults/taxonomy_merged_filled.txt \
+--taxfile=10_FinalResults/taxonomy_merged_filled.tsv \
 --taxrank=family \
---topN=10 \
+--topN=50 \
 --numbering=enable \
-10_FinalResults/sample_otu_matrix_bonyfishes.txt \
-10_FinalResults/sample_10family_matrix_bonyfishes.txt
+10_FinalResults/sample_otu_matrix_fishes.tsv \
+10_FinalResults/sample_top50family_matrix_fishes.tsv

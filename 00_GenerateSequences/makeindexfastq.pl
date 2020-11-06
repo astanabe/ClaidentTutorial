@@ -72,12 +72,7 @@ foreach my $inputfile (@inputfiles) {
 	unless ($index{$samplename}) {
 		die(__LINE__ . " error.\n");
 	}
-	my @othersamples;
-	foreach my $tempsample (keys(%index)) {
-		if ($tempsample ne $samplename) {
-			push(@othersamples, $tempsample);
-		}
-	}
+	my @allsamples = keys(%index);
 	open($inputfilehandle, "< $inputfile") or die(__LINE__ . " error.\n");
 	my $lineno = 1;
 	my $seqno = 1;
@@ -93,7 +88,8 @@ foreach my $inputfile (@inputfiles) {
 		}
 		elsif ($lineno % 4 == 2) {
 			if ($gen->rand(1) < $pindexhopping) {
-				print(STDOUT $index{$othersamples[int($gen->rand(scalar(@othersamples)))]} . "\n");
+				my $tempindex = $index{$allsamples[int($gen->rand(scalar(@allsamples)))]};
+				print(STDOUT $tempindex . "\n");
 			}
 			else {
 				print(STDOUT $index{$samplename} . "\n");
