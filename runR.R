@@ -2,7 +2,6 @@ library(tidyverse)
 library(ggsci)
 library(foreach)
 library(doParallel)
-library(parallel)
 library(vegan)
 library(mpmcorrelogram)
 library(geosphere)
@@ -67,7 +66,7 @@ for(i in 1:nrow(Community)) {
 (1 - max(getmincov)) * 100
 ## set target slope
 #cvr <- max(getmincov)
-cvr <- 0.05
+cvr <- 0.01
 ## define function
 cvrfun <- function(x) {min(which(x <= cvr))}
 ## get number of seqs of target coverage
@@ -95,16 +94,16 @@ BinaryRaupCrick <- raupcrick(BinaryRarefiedCommunity, null="r1", nsimul=999)
 
 # PERMANOVA
 sink("11_RAnalysisResults/BrayCurtisPERMANOVA.txt", split=T)
-adonis(BrayCurtis ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=32)
+adonis(BrayCurtis ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
 sink("11_RAnalysisResults/JaccardPERMANOVA.txt", split=T)
-adonis(Jaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=32)
+adonis(Jaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
 sink("11_RAnalysisResults/BinaryJaccardPERMANOVA.txt", split=T)
-adonis(BinaryJaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=32)
+adonis(BinaryJaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
 sink("11_RAnalysisResults/BinaryRaupCrickPERMANOVA.txt", split=T)
-adonis(BinaryRaupCrick ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=32)
+adonis(BinaryRaupCrick ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
 
 # NMDS
