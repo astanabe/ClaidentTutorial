@@ -1,0 +1,23 @@
+
+Call:
+adonis(formula = BrayCurtis ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) +      as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) +      1, permutations = 9999, parallel = detectCores()) 
+
+Permutation: free
+Number of permutations: 9999
+
+Terms added sequentially (first to last)
+
+                                 Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)
+as.factor(Metadata$Type)          3    3.2130 1.07099 10.9101 0.56530 0.0001
+as.numeric(Metadata$Temperature)  1    0.1970 0.19696  2.0064 0.03465 0.0640
+as.factor(Metadata$Month)         8    1.5866 0.19833  2.0203 0.27915 0.0055
+Residuals                         7    0.6872 0.09817         0.12090       
+Total                            19    5.6837                 1.00000       
+                                    
+as.factor(Metadata$Type)         ***
+as.numeric(Metadata$Temperature) .  
+as.factor(Metadata$Month)        ** 
+Residuals                           
+Total                               
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

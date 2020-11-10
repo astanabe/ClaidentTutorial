@@ -1,0 +1,23 @@
+
+Call:
+adonis(formula = Jaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) +      as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) +      1, permutations = 9999, parallel = detectCores()) 
+
+Permutation: free
+Number of permutations: 9999
+
+Terms added sequentially (first to last)
+
+                                 Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)
+as.factor(Metadata$Type)          3    3.0283 1.00944  5.3319 0.43282 0.0001
+as.numeric(Metadata$Temperature)  1    0.2858 0.28577  1.5094 0.04084 0.0927
+as.factor(Metadata$Month)         8    2.3574 0.29468  1.5565 0.33693 0.0068
+Residuals                         7    1.3253 0.18932         0.18941       
+Total                            19    6.9968                 1.00000       
+                                    
+as.factor(Metadata$Type)         ***
+as.numeric(Metadata$Temperature) .  
+as.factor(Metadata$Month)        ** 
+Residuals                           
+Total                               
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
