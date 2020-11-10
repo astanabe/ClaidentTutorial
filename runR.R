@@ -95,7 +95,7 @@ Jaccard <- vegdist(RarefiedCommunity, method="jaccard")
 BinaryJaccard <- vegdist(BinaryRarefiedCommunity, method="jaccard")
 
 # Make Raup-Crick distance matrix using binary data
-BinaryRaupCrick <- raupcrick(BinaryRarefiedCommunity, null="r1", nsimul=999)
+BinaryRaupCrick <- as.dist(raupcrick(BinaryRarefiedCommunity, null="r1", nsimul=999))
 
 # PERMANOVA
 sink("11_RAnalysisResults/BrayCurtisPERMANOVA.txt", split=T)
@@ -169,7 +169,7 @@ dev.off()
 
 # Spatial Mantel correlogram analysis
 ## make geographical distance matrix
-Geodist <- distm(cbind(Metadata$Longitude, Metadata$Latitude), fun=distGeo)
+Geodist <- as.dist(distm(cbind(Metadata$Longitude, Metadata$Latitude), fun=distGeo))
 ## run analysis
 BrayCurtisGeoMCA <- mpmcorrelogram(BrayCurtis, Geodist, method="spearman", permutations=999)
 JaccardGeoMCA <- mpmcorrelogram(Jaccard, Geodist, method="spearman", permutations=999)
@@ -183,34 +183,54 @@ tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisGeoMCA$breaks) - 1)) {
     xval[i] <- (BrayCurtisGeoMCA$breaks[i] + BrayCurtisGeoMCA$breaks[i + 1]) / 2
 }
-plot(xval, BrayCurtisGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BrayCurtisGeoMCA")
-abline(v=BrayCurtisGeoMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Geodist, BrayCurtis, pch=16, cex=1, type="p", xlim=c(0, tail(BrayCurtisGeoMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Bray-Curtis distance", side=4, line=2.8)
+par(new=T)
+plot(xval, BrayCurtisGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisGeoMCA$breaks, n=1)), ylim=c(-1,1), xlab="geographic distance", ylab="Mantel correlation", main="BrayCurtisGeoMCA")
+abline(v=BrayCurtisGeoMCA$breaks, lty=2)
 tipos <- JaccardGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(JaccardGeoMCA$breaks) - 1)) {
     xval[i] <- (JaccardGeoMCA$breaks[i] + JaccardGeoMCA$breaks[i + 1]) / 2
 }
-plot(xval, JaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="JaccardGeoMCA")
-abline(v=JaccardGeoMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Geodist, Jaccard, pch=16, cex=1, type="p", xlim=c(0, tail(JaccardGeoMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Jaccard distance", side=4, line=2.8)
+par(new=T)
+plot(xval, JaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardGeoMCA$breaks, n=1)), ylim=c(-1,1), xlab="geographic distance", ylab="Mantel correlation", main="JaccardGeoMCA")
+abline(v=JaccardGeoMCA$breaks, lty=2)
 tipos <- BinaryJaccardGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BinaryJaccardGeoMCA$breaks) - 1)) {
     xval[i] <- (BinaryJaccardGeoMCA$breaks[i] + BinaryJaccardGeoMCA$breaks[i + 1]) / 2
 }
-plot(xval, BinaryJaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BinaryJaccardGeoMCA")
-abline(v=BinaryJaccardGeoMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Geodist, BinaryJaccard, pch=16, cex=1, type="p", xlim=c(0, tail(BinaryJaccardGeoMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Jaccard distance of binary-transformed data", side=4, line=2.8)
+par(new=T)
+plot(xval, BinaryJaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardGeoMCA$breaks, n=1)), ylim=c(-1,1), xlab="geographic distance", ylab="Mantel correlation", main="BinaryJaccardGeoMCA")
+abline(v=BinaryJaccardGeoMCA$breaks, lty=2)
 tipos <- BinaryRaupCrickGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BinaryRaupCrickGeoMCA$breaks) - 1)) {
     xval[i] <- (BinaryRaupCrickGeoMCA$breaks[i] + BinaryRaupCrickGeoMCA$breaks[i + 1]) / 2
 }
-plot(xval, BinaryRaupCrickGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BinaryRaupCrickGeoMCA")
-abline(v=BinaryRaupCrickGeoMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Geodist, BinaryRaupCrick, pch=16, cex=1, type="p", xlim=c(0, tail(BinaryRaupCrickGeoMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Raup-Crick distance", side=4, line=2.8)
+par(new=T)
+plot(xval, BinaryRaupCrickGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickGeoMCA$breaks, n=1)), ylim=c(-1,1), xlab="geographic distance", ylab="Mantel correlation", main="BinaryRaupCrickGeoMCA")
+abline(v=BinaryRaupCrickGeoMCA$breaks, lty=2)
 dev.off()
 
 # Temporal Mantel correlogram analysis
 ## make date distance matrix
-Datedist <- dist(as.Date(Metadata$Date), diag=T, upper=T)
+Datedist <- dist(as.Date(Metadata$Date))
 ## run analysis
 BrayCurtisDateMCA <- mpmcorrelogram(BrayCurtis, Datedist, method="spearman", permutations=999)
 JaccardDateMCA <- mpmcorrelogram(Jaccard, Datedist, method="spearman", permutations=999)
@@ -224,27 +244,47 @@ tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisDateMCA$breaks) - 1)) {
     xval[i] <- (BrayCurtisDateMCA$breaks[i] + BrayCurtisDateMCA$breaks[i + 1]) / 2
 }
-plot(xval, BrayCurtisDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BrayCurtisDateMCA")
-abline(v=BrayCurtisDateMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Datedist, BrayCurtis, pch=16, cex=1, type="p", xlim=c(0, tail(BrayCurtisDateMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Bray-Curtis distance", side=4, line=2.8)
+par(new=T)
+plot(xval, BrayCurtisDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisDateMCA$breaks, n=1)), ylim=c(-1,1), xlab="date interval", ylab="Mantel correlation", main="BrayCurtisDateMCA")
+abline(v=BrayCurtisDateMCA$breaks, lty=2)
 tipos <- JaccardDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(JaccardDateMCA$breaks) - 1)) {
     xval[i] <- (JaccardDateMCA$breaks[i] + JaccardDateMCA$breaks[i + 1]) / 2
 }
-plot(xval, JaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="JaccardDateMCA")
-abline(v=JaccardDateMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Datedist, Jaccard, pch=16, cex=1, type="p", xlim=c(0, tail(JaccardDateMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Jaccard distance", side=4, line=2.8)
+par(new=T)
+plot(xval, JaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardDateMCA$breaks, n=1)), ylim=c(-1,1), xlab="date interval", ylab="Mantel correlation", main="JaccardDateMCA")
+abline(v=JaccardDateMCA$breaks, lty=2)
 tipos <- BinaryJaccardDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BinaryJaccardDateMCA$breaks) - 1)) {
     xval[i] <- (BinaryJaccardDateMCA$breaks[i] + BinaryJaccardDateMCA$breaks[i + 1]) / 2
 }
-plot(xval, BinaryJaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BinaryJaccardDateMCA")
-abline(v=BinaryJaccardDateMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Datedist, BinaryJaccard, pch=16, cex=1, type="p", xlim=c(0, tail(BinaryJaccardDateMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Jaccard distance of binary-transformed data", side=4, line=2.8)
+par(new=T)
+plot(xval, BinaryJaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardDateMCA$breaks, n=1)), ylim=c(-1,1), xlab="date interval", ylab="Mantel correlation", main="BinaryJaccardDateMCA")
+abline(v=BinaryJaccardDateMCA$breaks, lty=2)
 tipos <- BinaryRaupCrickDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BinaryRaupCrickDateMCA$breaks) - 1)) {
     xval[i] <- (BinaryRaupCrickDateMCA$breaks[i] + BinaryRaupCrickDateMCA$breaks[i + 1]) / 2
 }
-plot(xval, BinaryRaupCrickDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BinaryRaupCrickDateMCA")
-abline(v=BinaryRaupCrickDateMCA$breaks)
+par(mar=c(5, 4, 4, 4))
+plot(Datedist, BinaryRaupCrick, pch=16, cex=1, type="p", xlim=c(0, tail(BinaryRaupCrickDateMCA$breaks, n=1)), ylim=c(0,1), col=alpha("black", 0.3), ann=F, axes=F)
+axis(4)
+mtext("Raup-Crick distance", side=4, line=2.8)
+par(new=T)
+plot(xval, BinaryRaupCrickDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickDateMCA$breaks, n=1)), ylim=c(-1,1), xlab="date interval", ylab="Mantel correlation", main="BinaryRaupCrickDateMCA")
+abline(v=BinaryRaupCrickDateMCA$breaks, lty=2)
 dev.off()
