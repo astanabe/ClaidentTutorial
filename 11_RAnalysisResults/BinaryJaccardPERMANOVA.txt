@@ -8,11 +8,11 @@ Number of permutations: 9999
 Terms added sequentially (first to last)
 
                                  Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)
-as.factor(Metadata$Type)          3    3.5856 1.19521 15.2632 0.59336 0.0001
-as.numeric(Metadata$Temperature)  1    0.2005 0.20047  2.5601 0.03317 0.0239
-as.factor(Metadata$Month)         8    1.7087 0.21359  2.7276 0.28276 0.0004
-Residuals                         7    0.5481 0.07831         0.09071       
-Total                            19    6.0429                 1.00000       
+as.factor(Metadata$Type)          3    3.6483 1.21610 15.5464 0.60685 0.0001
+as.numeric(Metadata$Temperature)  1    0.1924 0.19236  2.4591 0.03200 0.0308
+as.factor(Metadata$Month)         8    1.6236 0.20295  2.5945 0.27007 0.0006
+Residuals                         7    0.5476 0.07822         0.09108       
+Total                            19    6.0118                 1.00000       
                                     
 as.factor(Metadata$Type)         ***
 as.numeric(Metadata$Temperature) *  
