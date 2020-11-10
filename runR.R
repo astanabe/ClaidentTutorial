@@ -16,7 +16,7 @@ top50species <- read.table("10_ClaidentResults/sample_top50species_matrix_fishes
 temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
-temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv()(50)), name="species")
+temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv(alpha=0.8)(50)), name="species")
 temp <- temp + theme_test()
 temp <- temp + theme(axis.text=element_text(angle=90))
 plot(temp)
@@ -28,7 +28,7 @@ top50family <- read.table("10_ClaidentResults/sample_top50family_matrix_fishes.t
 temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
-temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv()(50)), name="family")
+temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv(alpha=0.8)(50)), name="family")
 temp <- temp + theme_test()
 temp <- temp + theme(axis.text=element_text(angle=90))
 plot(temp)
@@ -78,12 +78,12 @@ cvrfun <- function(x) {min(which(x <= cvr))}
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
 # make rarefied community data
 RarefiedCommunity <- rrarefy(Community, cvrrare)
-write.table(RarefiedCommunity, "11_RAnalysisResults/RarefiedCommunity.txt", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
+write.table(RarefiedCommunity, "11_RAnalysisResults/RarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
 
 # Make binary community data
 BinaryRarefiedCommunity <- data.frame()
 BinaryRarefiedCommunity <- replace(RarefiedCommunity, RarefiedCommunity > 0, 1)
-write.table(BinaryRarefiedCommunity, "11_RAnalysisResults/BinaryRarefiedCommunity.txt", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
+write.table(BinaryRarefiedCommunity, "11_RAnalysisResults/BinaryRarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
 
 # Make Bray-Curtis distance matrix
 BrayCurtis <- vegdist(RarefiedCommunity, method="bray")

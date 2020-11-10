@@ -14,7 +14,8 @@ In addition, [this package](https://github.com/astanabe/ClaidentInstaller/archiv
 Install R, and then, execute the following command in R
 
 ```
-install.packages(c("vegan", "colorspace", "RColorBrewer", "tidyverse", "khroma", "picante", "bipartite", "geosphere", "foreach", "doParallel", "parallel", "mpmcorrelogram"), repos = "http://cloud.r-project.org/", dependencies=T, clean=T)
+library(parallel)
+install.packages(c("vegan", "colorspace", "RColorBrewer", "tidyverse", "ggsci", "khroma", "picante", "bipartite", "geosphere", "foreach", "doParallel", "mpmcorrelogram"), repos = "http://cloud.r-project.org/", dependencies=T, clean=T, Ncpus=detectCores())
 ```
 
 ## Prerequisites to learn about Claident and R
