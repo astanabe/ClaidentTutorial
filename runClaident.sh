@@ -2,7 +2,19 @@ export THREADS=32
 
 # Move previous analysis results
 mkdir -p previous
-mv 02a_DemultiplexedSequences 02b_DemultiplexedSequences 03_ConcatenatedSequences 04_FilteredSequences 05_DenoisedSequences 06_NonchimericSequences 07_NonhoppedSequences 08_DecontaminatedSequences 09_ClusteredSequences 10_ClaidentResults 11_RAnalysisResults previous/
+mv \
+02a_DemultiplexedSequences \
+02b_DemultiplexedSequences \
+03_ConcatenatedSequences \
+04_FilteredSequences \
+05_DenoisedSequences \
+06_NonchimericSequences \
+07_NonhoppedSequences \
+08_DecontaminatedSequences \
+09_ClusteredSequences \
+10_ClaidentResults \
+11_RAnalysisResults \
+previous/
 
 # Demultiplex Type A (If you have undemultiplexed FASTQ files)
 clsplitseq \
