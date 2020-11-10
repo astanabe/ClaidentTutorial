@@ -5,41 +5,44 @@ library(doParallel)
 library(vegan)
 library(mpmcorrelogram)
 library(geosphere)
+library(scales)
 
 # Make output directory
 dir.create("11_RAnalysisResults")
 
 # Make species-level Barplot
-top10species <- read.table("08_FinalResults/sample_10species_matrix_bonyfishes.txt", header=T)
-top10species$species <- factor(top10species$species, levels = c())
-by(top10species, top10species$species, sum)
-temp <- ggplot(top10species, aes(x=samplename, y=nreads, fill=species))
-temp <- temp + geom_bar(stat = "identity", position = "fill")
-temp <- temp + scale_y_continuous(labels = percent)
-temp <- temp + scale_fill_manual(values=c(pal_igv()(10), "#C0C0C0FF"))
+pdf("11_RAnalysisResults/top50species.pdf", width=14, height=10)
+top50species <- read.table("10_ClaidentResults/sample_top50species_matrix_fishes.tsv", header=T)
+temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
+temp <- temp + geom_bar(stat="identity", position="fill")
+temp <- temp + scale_y_continuous(labels=percent)
+temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv()(50)), name="species")
 temp <- temp + theme_test()
-temp <- temp + theme(axis.text = element_text(angle = 90))
+temp <- temp + theme(axis.text=element_text(angle=90))
 plot(temp)
+dev.off()
 
 # Make family-level Barplot
-top10family <- read.table("08_FinalResults/sample_10family_matrix_bonyfishes.txt", header=T)
-temp <- ggplot(top10family, aes(x=samplename, y=nreads, fill=family))
-temp <- temp + geom_bar(stat = "identity", position = "fill")
-temp <- temp + scale_y_continuous(labels = percent)
-temp <- temp + scale_fill_manual(values=c(pal_igv()(10), "#C0C0C0FF"))
+pdf("11_RAnalysisResults/top50family.pdf", width=14, height=10)
+top50family <- read.table("10_ClaidentResults/sample_top50family_matrix_fishes.tsv", header=T)
+temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
+temp <- temp + geom_bar(stat="identity", position="fill")
+temp <- temp + scale_y_continuous(labels=percent)
+temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv()(50)), name="family")
 temp <- temp + theme_test()
-temp <- temp + theme(axis.text = element_text(angle = 90))
+temp <- temp + theme(axis.text=element_text(angle=90))
 plot(temp)
+dev.off()
 
 # Read community data matrix
-Community <- read.table("10_FinalResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
+Community <- read.table("10_ClaidentResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
 
 # Read metadata
 Metadata <- read.table("Metadata.tsv", header=T, row.names=1)
 
 # Draw species accumulation curve
 SpecAccum <- specaccum(Community)
-pdf("11_RAnalysisResults/specaccum.pdf")
+pdf("11_RAnalysisResults/specaccum.pdf", width=7, height=7)
 plot(SpecAccum, xlab="number of samples", ylab="number of species", main="species accumulation curve")
 dev.off()
 
@@ -65,8 +68,10 @@ for(i in 1:nrow(Community)) {
 ## echo minimum coverage
 (1 - max(getmincov)) * 100
 ## set target slope
+## to demonstrate coverage-based rarefaction, cvr is set to 0.05 (95% coverage)
+cvr <- 0.05
+## in the actual analysis, the following value is recommended
 #cvr <- max(getmincov)
-cvr <- 0.01
 ## define function
 cvrfun <- function(x) {min(which(x <= cvr))}
 ## get number of seqs of target coverage
@@ -171,19 +176,36 @@ JaccardGeoMCA <- mpmcorrelogram(Jaccard, Geodist, method="spearman", permutation
 BinaryJaccardGeoMCA <- mpmcorrelogram(BinaryJaccard, Geodist, method="spearman", permutations=999)
 BinaryRaupCrickGeoMCA <- mpmcorrelogram(BinaryRaupCrick, Geodist, method="spearman", permutations=999)
 ## draw analysis results
+xval <- c()
 pdf("11_RAnalysisResults/GeoMCA.pdf")
 tipos <- BrayCurtisGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BrayCurtisGeoMCA$breaks[-1]), BrayCurtisGeoMCA$rM, pch=tipos, cex=1, type="b", xlab="geographic distance", ylab="Mantel correlation", main="BrayCurtisGeoMCA")
+for(i in 1:(length(BrayCurtisGeoMCA$breaks) - 1)) {
+    xval[i] <- (BrayCurtisGeoMCA$breaks[i] + BrayCurtisGeoMCA$breaks[i + 1]) / 2
+}
+plot(xval, BrayCurtisGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BrayCurtisGeoMCA")
+abline(v=BrayCurtisGeoMCA$breaks)
 tipos <- JaccardGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((JaccardGeoMCA$breaks[-1]), JaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlab="geographic distance", ylab="Mantel correlation", main="JaccardGeoMCA")
+for(i in 1:(length(JaccardGeoMCA$breaks) - 1)) {
+    xval[i] <- (JaccardGeoMCA$breaks[i] + JaccardGeoMCA$breaks[i + 1]) / 2
+}
+plot(xval, JaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="JaccardGeoMCA")
+abline(v=JaccardGeoMCA$breaks)
 tipos <- BinaryJaccardGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BinaryJaccardGeoMCA$breaks[-1]), BinaryJaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlab="geographic distance", ylab="Mantel correlation", main="BinaryJaccardGeoMCA")
+for(i in 1:(length(BinaryJaccardGeoMCA$breaks) - 1)) {
+    xval[i] <- (BinaryJaccardGeoMCA$breaks[i] + BinaryJaccardGeoMCA$breaks[i + 1]) / 2
+}
+plot(xval, BinaryJaccardGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BinaryJaccardGeoMCA")
+abline(v=BinaryJaccardGeoMCA$breaks)
 tipos <- BinaryRaupCrickGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BinaryRaupCrickGeoMCA$breaks[-1]), BinaryRaupCrickGeoMCA$rM, pch=tipos, cex=1, type="b", xlab="geographic distance", ylab="Mantel correlation", main="BinaryRaupCrickGeoMCA")
+for(i in 1:(length(BinaryRaupCrickGeoMCA$breaks) - 1)) {
+    xval[i] <- (BinaryRaupCrickGeoMCA$breaks[i] + BinaryRaupCrickGeoMCA$breaks[i + 1]) / 2
+}
+plot(xval, BinaryRaupCrickGeoMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickGeoMCA$breaks, n=1)), xlab="geographic distance", ylab="Mantel correlation", main="BinaryRaupCrickGeoMCA")
+abline(v=BinaryRaupCrickGeoMCA$breaks)
 dev.off()
 
 # Temporal Mantel correlogram analysis
@@ -195,17 +217,34 @@ JaccardDateMCA <- mpmcorrelogram(Jaccard, Datedist, method="spearman", permutati
 BinaryJaccardDateMCA <- mpmcorrelogram(BinaryJaccard, Datedist, method="spearman", permutations=999)
 BinaryRaupCrickDateMCA <- mpmcorrelogram(BinaryRaupCrick, Datedist, method="spearman", permutations=999)
 ## draw analysis results
+xval <- c()
 pdf("11_RAnalysisResults/DateMCA.pdf")
 tipos <- BrayCurtisDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BrayCurtisDateMCA$breaks[-1]), BrayCurtisDateMCA$rM, pch=tipos, cex=1, type="b", xlab="date interval", ylab="Mantel correlation", main="BrayCurtisDateMCA")
+for(i in 1:(length(BrayCurtisDateMCA$breaks) - 1)) {
+    xval[i] <- (BrayCurtisDateMCA$breaks[i] + BrayCurtisDateMCA$breaks[i + 1]) / 2
+}
+plot(xval, BrayCurtisDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BrayCurtisDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BrayCurtisDateMCA")
+abline(v=BrayCurtisDateMCA$breaks)
 tipos <- JaccardDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((JaccardDateMCA$breaks[-1]), JaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlab="date interval", ylab="Mantel correlation", main="JaccardDateMCA")
+for(i in 1:(length(JaccardDateMCA$breaks) - 1)) {
+    xval[i] <- (JaccardDateMCA$breaks[i] + JaccardDateMCA$breaks[i + 1]) / 2
+}
+plot(xval, JaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(JaccardDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="JaccardDateMCA")
+abline(v=JaccardDateMCA$breaks)
 tipos <- BinaryJaccardDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BinaryJaccardDateMCA$breaks[-1]), BinaryJaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlab="date interval", ylab="Mantel correlation", main="BinaryJaccardDateMCA")
+for(i in 1:(length(BinaryJaccardDateMCA$breaks) - 1)) {
+    xval[i] <- (BinaryJaccardDateMCA$breaks[i] + BinaryJaccardDateMCA$breaks[i + 1]) / 2
+}
+plot(xval, BinaryJaccardDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryJaccardDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BinaryJaccardDateMCA")
+abline(v=BinaryJaccardDateMCA$breaks)
 tipos <- BinaryRaupCrickDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
-plot((BinaryRaupCrickDateMCA$breaks[-1]), BinaryRaupCrickDateMCA$rM, pch=tipos, cex=1, type="b", xlab="date interval", ylab="Mantel correlation", main="BinaryRaupCrickDateMCA")
+for(i in 1:(length(BinaryRaupCrickDateMCA$breaks) - 1)) {
+    xval[i] <- (BinaryRaupCrickDateMCA$breaks[i] + BinaryRaupCrickDateMCA$breaks[i + 1]) / 2
+}
+plot(xval, BinaryRaupCrickDateMCA$rM, pch=tipos, cex=1, type="b", xlim=c(0, tail(BinaryRaupCrickDateMCA$breaks, n=1)), xlab="date interval", ylab="Mantel correlation", main="BinaryRaupCrickDateMCA")
+abline(v=BinaryRaupCrickDateMCA$breaks)
 dev.off()
