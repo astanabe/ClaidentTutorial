@@ -139,45 +139,115 @@ clclassseqv \
 # Make final output folder
 mkdir -p 10_ClaidentResults
 
-# Assign taxonomy based on QCauto method
+# Assign taxonomy based on QCauto method using animals_mt_species
 clmakecachedb \
 --blastdb=animals_mt_species \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
-10_ClaidentResults/cachedb
+10_ClaidentResults/cachedb_species
 
 clidentseq \
 --method=QC \
---blastdb=10_ClaidentResults/cachedb \
+--blastdb=10_ClaidentResults/cachedb_species \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
-10_ClaidentResults/neighborhoods_qc.txt
+10_ClaidentResults/neighborhoods_qc_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
-10_ClaidentResults/neighborhoods_qc.txt \
-10_ClaidentResults/taxonomy_qc.tsv
+10_ClaidentResults/neighborhoods_qc_species.txt \
+10_ClaidentResults/taxonomy_qc_species.tsv
 
-# Assign taxonomy based on 1-NN method
+# Assign taxonomy based on 1-NN method using animals_mt_species
 clidentseq \
 --method=1,95% \
---blastdb=10_ClaidentResults/cachedb \
+--blastdb=10_ClaidentResults/cachedb_species \
 --numthreads=$THREADS \
 09_ClusteredSequences/clustered.fasta \
-10_ClaidentResults/neighborhoods_1nn.txt
+10_ClaidentResults/neighborhoods_1nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
  --minnsupporter=1 \
-10_ClaidentResults/neighborhoods_1nn.txt \
-10_ClaidentResults/taxonomy_1nn.tsv
+10_ClaidentResults/neighborhoods_1nn_species.txt \
+10_ClaidentResults/taxonomy_1nn_species.tsv
 
-# Merge 2 taxonomic assignment results
+# Assign taxonomy based on QCauto method using animals_mt_species_wsp
+clmakecachedb \
+--blastdb=animals_mt_species_wsp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/cachedb_species_wsp
+
+clidentseq \
+--method=QC \
+--blastdb=10_ClaidentResults/cachedb_species_wsp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/neighborhoods_qc_species_wsp.txt
+
+classigntax \
+--taxdb=animals_mt_species_wsp \
+10_ClaidentResults/neighborhoods_qc_species_wsp.txt \
+10_ClaidentResults/taxonomy_qc_species_wsp.tsv
+
+# Assign taxonomy based on 1-NN method using animals_mt_species_wsp
+clidentseq \
+--method=1,95% \
+--blastdb=10_ClaidentResults/cachedb_species_wsp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/neighborhoods_1nn_species_wsp.txt
+
+classigntax \
+--taxdb=animals_mt_species_wsp \
+ --minnsupporter=1 \
+10_ClaidentResults/neighborhoods_1nn_species_wsp.txt \
+10_ClaidentResults/taxonomy_1nn_species_wsp.tsv
+
+# Assign taxonomy based on QCauto method using animals_mt_species_wosp
+clmakecachedb \
+--blastdb=animals_mt_species_wosp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/cachedb_species_wosp
+
+clidentseq \
+--method=QC \
+--blastdb=10_ClaidentResults/cachedb_species_wosp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/neighborhoods_qc_species_wosp.txt
+
+classigntax \
+--taxdb=animals_mt_species_wosp \
+10_ClaidentResults/neighborhoods_qc_species_wosp.txt \
+10_ClaidentResults/taxonomy_qc_species_wosp.tsv
+
+# Assign taxonomy based on 1-NN method using animals_mt_species_wosp
+clidentseq \
+--method=1,95% \
+--blastdb=10_ClaidentResults/cachedb_species_wosp \
+--numthreads=$THREADS \
+09_ClusteredSequences/clustered.fasta \
+10_ClaidentResults/neighborhoods_1nn_species_wosp.txt
+
+classigntax \
+--taxdb=animals_mt_species_wosp \
+ --minnsupporter=1 \
+10_ClaidentResults/neighborhoods_1nn_species_wosp.txt \
+10_ClaidentResults/taxonomy_1nn_species_wosp.tsv
+
+# Merge 6 taxonomic assignment results
 clmergeassign \
 --preferlower \
 --priority=descend \
-10_ClaidentResults/taxonomy_qc.tsv \
-10_ClaidentResults/taxonomy_1nn.tsv \
+10_ClaidentResults/taxonomy_qc_species_wsp.tsv \
+10_ClaidentResults/taxonomy_qc_species.tsv \
+10_ClaidentResults/taxonomy_qc_species_wosp.tsv \
+10_ClaidentResults/taxonomy_1nn_species_wsp.tsv \
+10_ClaidentResults/taxonomy_1nn_species.tsv \
+10_ClaidentResults/taxonomy_1nn_species_wosp.tsv \
 10_ClaidentResults/taxonomy_merged.tsv
 
 # Fill blank cells of taxonomic assignment
