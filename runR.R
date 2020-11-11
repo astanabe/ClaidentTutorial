@@ -10,27 +10,51 @@ library(scales)
 # Make output directory
 dir.create("11_RAnalysisResults")
 
-# Make species-level Barplot
-pdf("11_RAnalysisResults/top50species.pdf", width=14, height=10)
-top50species <- read.table("10_ClaidentResults/sample_top50species_matrix_fishes.tsv", header=T)
+# Make species-level barplot
+pdf("11_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
+top50species <- read.table("10_ClaidentResults/sample_top50species_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
 temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv(alpha=0.8)(50)), name="species")
 temp <- temp + theme_test()
-temp <- temp + theme(axis.text=element_text(angle=90))
+temp <- temp + theme(axis.text.x=element_text(angle=90, hjust=1))
 plot(temp)
 dev.off()
 
-# Make family-level Barplot
-pdf("11_RAnalysisResults/top50family.pdf", width=14, height=10)
-top50family <- read.table("10_ClaidentResults/sample_top50family_matrix_fishes.tsv", header=T)
+# Make family-level barplot
+pdf("11_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
+top50family <- read.table("10_ClaidentResults/sample_top50family_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
 temp <- temp + scale_fill_manual(values=c("#C0C0C0FF", pal_igv(alpha=0.8)(50)), name="family")
 temp <- temp + theme_test()
-temp <- temp + theme(axis.text=element_text(angle=90))
+temp <- temp + theme(axis.text.x=element_text(angle=90, hjust=1))
+plot(temp)
+dev.off()
+
+# Make species-level heatmap
+pdf("11_RAnalysisResults/heatmapspecies.pdf", width=22, height=10)
+commspecies <- read.table("10_ClaidentResults/sample_species_nreads_fishes.tsv", header=T)
+commspecies$nreads[(commspecies$nreads == 0)] <- NA
+temp <- ggplot(commspecies, aes(x=species, y=samplename, fill=nreads))
+temp <- temp + geom_tile()
+temp <- temp + scale_fill_gsea(na.value="white")
+temp <- temp + theme_test()
+temp <- temp + theme(axis.text.x=element_text(angle=90, hjust=1))
+plot(temp)
+dev.off()
+
+# Make family-level heatmap
+pdf("11_RAnalysisResults/heatmapfamily.pdf", width=16, height=10)
+commfamily <- read.table("10_ClaidentResults/sample_family_nreads_fishes.tsv", header=T)
+commfamily$nreads[(commfamily$nreads == 0)] <- NA
+temp <- ggplot(commfamily, aes(x=family, y=samplename, fill=nreads))
+temp <- temp + geom_tile()
+temp <- temp + scale_fill_gsea(na.value="white")
+temp <- temp + theme_test()
+temp <- temp + theme(axis.text.x=element_text(angle=90, hjust=1))
 plot(temp)
 dev.off()
 
@@ -47,7 +71,7 @@ plot(SpecAccum, xlab="number of samples", ylab="number of species", main="specie
 dev.off()
 
 # Draw rarefaction curves
-pdf("11_RAnalysisResults/rarecurve.pdf")
+pdf("11_RAnalysisResults/rarecurve.pdf", width=7, height=7)
 rarecurve(Community, step=10, xlab="number of seqs", ylab="number of species", main="rarefaction curves")
 dev.off()
 
@@ -152,7 +176,7 @@ JaccardNMDSenv <- envfit(JaccardNMDS, Metadata[,c("Type", "Temperature", "Latitu
 BinaryJaccardNMDSenv <- envfit(BinaryJaccardNMDS, Metadata[,c("Type", "Temperature", "Latitude", "Date")], permu=999)
 BinaryRaupCrickNMDSenv <- envfit(BinaryRaupCrickNMDS, Metadata[,c("Type", "Temperature", "Latitude", "Date")], permu=999)
 ## draw NMDS
-pdf("11_RAnalysisResults/NMDS.pdf")
+pdf("11_RAnalysisResults/NMDS.pdf", width=7, height=7)
 ordiplot(BrayCurtisNMDS, type="n")
 orditorp(BrayCurtisNMDS, display="sites", air=0.1, cex=1)
 plot(BrayCurtisNMDSenv, p.max=0.05)
@@ -177,7 +201,7 @@ BinaryJaccardGeoMCA <- mpmcorrelogram(BinaryJaccard, Geodist, method="spearman",
 BinaryRaupCrickGeoMCA <- mpmcorrelogram(BinaryRaupCrick, Geodist, method="spearman", permutations=999)
 ## draw analysis results
 xval <- c()
-pdf("11_RAnalysisResults/GeoMCA.pdf")
+pdf("11_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
 tipos <- BrayCurtisGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisGeoMCA$breaks) - 1)) {
@@ -238,7 +262,7 @@ BinaryJaccardDateMCA <- mpmcorrelogram(BinaryJaccard, Datedist, method="spearman
 BinaryRaupCrickDateMCA <- mpmcorrelogram(BinaryRaupCrick, Datedist, method="spearman", permutations=999)
 ## draw analysis results
 xval <- c()
-pdf("11_RAnalysisResults/DateMCA.pdf")
+pdf("11_RAnalysisResults/DateMCA.pdf", width=7, height=7)
 tipos <- BrayCurtisDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisDateMCA$breaks) - 1)) {
