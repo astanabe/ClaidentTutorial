@@ -207,7 +207,7 @@ clsumtaxa \
 --topN=50 \
 --numbering=enable \
 10_ClaidentResults/sample_otu_matrix_fishes.tsv \
-10_ClaidentResults/sample_top50species_matrix_fishes.tsv
+10_ClaidentResults/sample_top50species_nreads_fishes.tsv
 
 # Make top-50 families community data matrix for barplot
 clsumtaxa \
@@ -217,4 +217,22 @@ clsumtaxa \
 --topN=50 \
 --numbering=enable \
 10_ClaidentResults/sample_otu_matrix_fishes.tsv \
-10_ClaidentResults/sample_top50family_matrix_fishes.tsv
+10_ClaidentResults/sample_top50family_nreads_fishes.tsv
+
+# Make species-based community data matrix for heatmap
+clsumtaxa \
+--tableformat=column \
+--taxfile=10_ClaidentResults/taxonomy_merged_filled.tsv \
+--targetrank=species \
+--numbering=enable \
+10_ClaidentResults/sample_otu_matrix_fishes.tsv \
+10_ClaidentResults/sample_species_nreads_fishes.tsv
+
+# Make family-based community data matrix for heatmap
+clsumtaxa \
+--tableformat=column \
+--taxfile=10_ClaidentResults/taxonomy_merged_filled.tsv \
+--targetrank=family \
+--numbering=enable \
+10_ClaidentResults/sample_otu_matrix_fishes.tsv \
+10_ClaidentResults/sample_family_nreads_fishes.tsv
