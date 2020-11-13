@@ -1,3 +1,4 @@
+# Set number of processor cores used for computation
 export THREADS=32
 
 # Move previous analysis results

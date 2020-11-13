@@ -61,9 +61,6 @@ dev.off()
 # Read community data matrix
 Community <- read.table("10_ClaidentResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
 
-# Read metadata
-Metadata <- read.table("Metadata.tsv", header=T, row.names=1)
-
 # Draw species accumulation curve
 SpecAccum <- specaccum(Community)
 pdf("11_RAnalysisResults/specaccum.pdf", width=7, height=7)
@@ -120,6 +117,9 @@ BinaryJaccard <- vegdist(BinaryRarefiedCommunity, method="jaccard")
 
 # Make Raup-Crick distance matrix using binary data
 BinaryRaupCrick <- as.dist(raupcrick(BinaryRarefiedCommunity, null="r1", nsimul=999))
+
+# Read metadata
+Metadata <- read.table("Metadata.tsv", header=T, row.names=1)
 
 # PERMANOVA
 sink("11_RAnalysisResults/BrayCurtisPERMANOVA.txt", split=T)
