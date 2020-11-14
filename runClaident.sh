@@ -18,7 +18,7 @@ mv \
 previous/
 
 # Demultiplex Type A (If you have undemultiplexed FASTQ files)
-# --seqnamestyle=illumina should be used for real Illumina outputs
+# --seqnamestyle=illumina should be used for real Illumina outputs.
 clsplitseq \
 --runname=ClaidentTutorial \
 --forwardprimerfile=forwardprimer.fasta \
@@ -37,7 +37,7 @@ clsplitseq \
 02a_DemultiplexedSequences
 
 # Demultiplex Type B (If FASTQ files have been already demultiplexed)
-# --seqnamestyle=illumina should be used for real Illumina outputs
+# --seqnamestyle=illumina should be used for real Illumina outputs.
 for s in `ls 01_RawSequences/Blank??_R1_001.fastq.xz 01_RawSequences/Sample??_R1_001.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
 do clsplitseq \
 --runname=ClaidentTutorial \
@@ -130,6 +130,7 @@ clremovecontam \
 08_DecontaminatedSequences
 
 # Cluster remaining sequences
+# Note that this step is meaningless because additional clustering has no effect.
 clclassseqv \
 --minident=0.99 \
 --strand=plus \
@@ -240,6 +241,8 @@ classigntax \
 10_ClaidentResults/taxonomy_1nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
+# Note that merge of QCauto results and 1-NN results is meaningless because 1-NN results are always consistent to QCauto results.
+# However, merge of results using different reference database is often useful.
 clmergeassign \
 --preferlower \
 --priority=descend \

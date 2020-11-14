@@ -89,9 +89,9 @@ for(i in 1:nrow(Community)) {
 ## echo minimum coverage
 (1 - max(getmincov)) * 100
 ## set target slope
-## to demonstrate coverage-based rarefaction, cvr is set to 0.05 (95% coverage)
+## To demonstrate coverage-based rarefaction, cvr is set to 0.05 (95% coverage), but this is inappropreate in this case.
 cvr <- 0.05
-## in the actual analysis, the following value is recommended
+## In the actual analysis, the following value is recommended.
 #cvr <- max(getmincov)
 ## define function
 cvrfun <- function(x) {min(which(x <= cvr))}
