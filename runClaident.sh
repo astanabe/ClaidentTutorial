@@ -246,12 +246,12 @@ classigntax \
 clmergeassign \
 --preferlower \
 --priority=descend \
-10_ClaidentResults/taxonomy_qc_species_wsp.tsv \
-10_ClaidentResults/taxonomy_qc_species.tsv \
 10_ClaidentResults/taxonomy_qc_species_wosp.tsv \
-10_ClaidentResults/taxonomy_1nn_species_wsp.tsv \
-10_ClaidentResults/taxonomy_1nn_species.tsv \
+10_ClaidentResults/taxonomy_qc_species.tsv \
+10_ClaidentResults/taxonomy_qc_species_wsp.tsv \
 10_ClaidentResults/taxonomy_1nn_species_wosp.tsv \
+10_ClaidentResults/taxonomy_1nn_species.tsv \
+10_ClaidentResults/taxonomy_1nn_species_wsp.tsv \
 10_ClaidentResults/taxonomy_merged.tsv
 
 # Fill blank cells of taxonomic assignment
