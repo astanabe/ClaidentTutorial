@@ -8,10 +8,10 @@ library(geosphere)
 library(scales)
 
 # Make output directory
-dir.create("11_RAnalysisResults")
+dir.create("OverlappedPairedEnd_11_RAnalysisResults")
 
 # Make species-level barplot
-pdf("11_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
 top50species <- read.table("10_ClaidentResults/sample_top50species_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
 temp <- temp + geom_bar(stat="identity", position="fill")
@@ -23,7 +23,7 @@ plot(temp)
 dev.off()
 
 # Make family-level barplot
-pdf("11_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
 top50family <- read.table("10_ClaidentResults/sample_top50family_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
 temp <- temp + geom_bar(stat="identity", position="fill")
@@ -35,7 +35,7 @@ plot(temp)
 dev.off()
 
 # Make species-level heatmap
-pdf("11_RAnalysisResults/heatmapspecies.pdf", width=22, height=10)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapspecies.pdf", width=22, height=10)
 commspecies <- read.table("10_ClaidentResults/sample_species_nreads_fishes.tsv", header=T)
 commspecies$nreads[(commspecies$nreads == 0)] <- NA
 temp <- ggplot(commspecies, aes(x=species, y=samplename, fill=nreads))
@@ -47,7 +47,7 @@ plot(temp)
 dev.off()
 
 # Make family-level heatmap
-pdf("11_RAnalysisResults/heatmapfamily.pdf", width=16, height=10)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapfamily.pdf", width=16, height=10)
 commfamily <- read.table("10_ClaidentResults/sample_family_nreads_fishes.tsv", header=T)
 commfamily$nreads[(commfamily$nreads == 0)] <- NA
 temp <- ggplot(commfamily, aes(x=family, y=samplename, fill=nreads))
@@ -63,12 +63,12 @@ Community <- read.table("10_ClaidentResults/sample_species_matrix_fishes.tsv", h
 
 # Draw species accumulation curve
 SpecAccum <- specaccum(Community)
-pdf("11_RAnalysisResults/specaccum.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/specaccum.pdf", width=7, height=7)
 plot(SpecAccum, xlab="number of samples", ylab="number of species", main="species accumulation curve")
 dev.off()
 
 # Draw rarefaction curves
-pdf("11_RAnalysisResults/rarecurve.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/rarecurve.pdf", width=7, height=7)
 rarecurve(Community, step=10, xlab="number of seqs", ylab="number of species", main="rarefaction curves")
 dev.off()
 
@@ -99,12 +99,12 @@ cvrfun <- function(x) {min(which(x <= cvr))}
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
 # make rarefied community data
 RarefiedCommunity <- rrarefy(Community, cvrrare)
-write.table(RarefiedCommunity, "11_RAnalysisResults/RarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
+write.table(RarefiedCommunity, "OverlappedPairedEnd_11_RAnalysisResults/RarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
 
 # Make binary community data
 BinaryRarefiedCommunity <- data.frame()
 BinaryRarefiedCommunity <- replace(RarefiedCommunity, RarefiedCommunity > 0, 1)
-write.table(BinaryRarefiedCommunity, "11_RAnalysisResults/BinaryRarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
+write.table(BinaryRarefiedCommunity, "OverlappedPairedEnd_11_RAnalysisResults/BinaryRarefiedCommunity.tsv", sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
 
 # Make Bray-Curtis distance matrix
 BrayCurtis <- vegdist(RarefiedCommunity, method="bray")
@@ -122,16 +122,16 @@ BinaryRaupCrick <- as.dist(raupcrick(BinaryRarefiedCommunity, null="r1", nsimul=
 Metadata <- read.table("Metadata.tsv", header=T, row.names=1)
 
 # PERMANOVA
-sink("11_RAnalysisResults/BrayCurtisPERMANOVA.txt", split=T)
+sink("OverlappedPairedEnd_11_RAnalysisResults/BrayCurtisPERMANOVA.txt", split=T)
 adonis(BrayCurtis ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
-sink("11_RAnalysisResults/JaccardPERMANOVA.txt", split=T)
+sink("OverlappedPairedEnd_11_RAnalysisResults/JaccardPERMANOVA.txt", split=T)
 adonis(Jaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
-sink("11_RAnalysisResults/BinaryJaccardPERMANOVA.txt", split=T)
+sink("OverlappedPairedEnd_11_RAnalysisResults/BinaryJaccardPERMANOVA.txt", split=T)
 adonis(BinaryJaccard ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
-sink("11_RAnalysisResults/BinaryRaupCrickPERMANOVA.txt", split=T)
+sink("OverlappedPairedEnd_11_RAnalysisResults/BinaryRaupCrickPERMANOVA.txt", split=T)
 adonis(BinaryRaupCrick ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores())
 sink()
 
@@ -176,7 +176,7 @@ JaccardNMDSenv <- envfit(JaccardNMDS, Metadata[,c("Type", "Temperature", "Latitu
 BinaryJaccardNMDSenv <- envfit(BinaryJaccardNMDS, Metadata[,c("Type", "Temperature", "Latitude", "Date")], permu=999)
 BinaryRaupCrickNMDSenv <- envfit(BinaryRaupCrickNMDS, Metadata[,c("Type", "Temperature", "Latitude", "Date")], permu=999)
 ## draw NMDS
-pdf("11_RAnalysisResults/NMDS.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/NMDS.pdf", width=7, height=7)
 ordiplot(BrayCurtisNMDS, type="n")
 orditorp(BrayCurtisNMDS, display="sites", air=0.1, cex=1)
 plot(BrayCurtisNMDSenv, p.max=0.05)
@@ -201,7 +201,7 @@ BinaryJaccardGeoMCA <- mpmcorrelogram(BinaryJaccard, Geodist, method="spearman",
 BinaryRaupCrickGeoMCA <- mpmcorrelogram(BinaryRaupCrick, Geodist, method="spearman", permutations=999)
 ## draw analysis results
 xval <- c()
-pdf("11_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
 tipos <- BrayCurtisGeoMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisGeoMCA$breaks) - 1)) {
@@ -262,7 +262,7 @@ BinaryJaccardDateMCA <- mpmcorrelogram(BinaryJaccard, Datedist, method="spearman
 BinaryRaupCrickDateMCA <- mpmcorrelogram(BinaryRaupCrick, Datedist, method="spearman", permutations=999)
 ## draw analysis results
 xval <- c()
-pdf("11_RAnalysisResults/DateMCA.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_11_RAnalysisResults/DateMCA.pdf", width=7, height=7)
 tipos <- BrayCurtisDateMCA$pval.Bonferroni < 0.05
 tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
 for(i in 1:(length(BrayCurtisDateMCA$breaks) - 1)) {
