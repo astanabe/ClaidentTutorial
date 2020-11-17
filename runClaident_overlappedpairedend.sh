@@ -3,23 +3,63 @@ export THREADS=32
 
 # Move previous analysis results
 mkdir -p previous
-mv \
-PairedEnd_02a_DemultiplexedSequences \
-PairedEnd_02b_DemultiplexedSequences \
-previous/
+
+if test -e OverlappedPairedEnd_03_ConcatenatedSequences; then
 mv \
 OverlappedPairedEnd_03_ConcatenatedSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_04_FilteredSequences; then
+mv \
 OverlappedPairedEnd_04_FilteredSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_05_DenoisedSequences; then
+mv \
 OverlappedPairedEnd_05_DenoisedSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_06_NonchimericSequences; then
+mv \
 OverlappedPairedEnd_06_NonchimericSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_07_NonhoppedSequences; then
+mv \
 OverlappedPairedEnd_07_NonhoppedSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_08_DecontaminatedSequences; then
+mv \
 OverlappedPairedEnd_08_DecontaminatedSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_09_ClusteredSequences; then
+mv \
 OverlappedPairedEnd_09_ClusteredSequences \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_10_ClaidentResults; then
+mv \
 OverlappedPairedEnd_10_ClaidentResults \
 previous/
+fi
+
+if test -e OverlappedPairedEnd_11_RAnalysisResults; then
+mv OverlappedPairedEnd_11_RAnalysisResults \
+previous/
+fi
 
 # Demultiplex Type A (If you have undemultiplexed FASTQ files)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
+if ! test -e PairedEnd_02a_DemultiplexedSequences; then
 clsplitseq \
 --runname=ClaidentTutorial \
 --forwardprimerfile=forwardprimer.fasta \
@@ -36,9 +76,11 @@ clsplitseq \
 01_RawSequences/Undemultiplexed_I2_001.fastq.xz \
 01_RawSequences/Undemultiplexed_R2_001.fastq.xz \
 PairedEnd_02a_DemultiplexedSequences
+fi
 
 # Demultiplex Type B (If FASTQ files have been already demultiplexed)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
+if ! test -e PairedEnd_02b_DemultiplexedSequences; then
 for s in `ls 01_RawSequences/Blank??_R1_001.fastq.xz 01_RawSequences/Sample??_R1_001.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
 do clsplitseq \
 --runname=ClaidentTutorial \
@@ -54,6 +96,7 @@ do clsplitseq \
 01_RawSequences/$s\_R2_001.fastq.xz \
 PairedEnd_02b_DemultiplexedSequences
 done
+fi
 
 # Compare Type A and B
 rm -f PairedEnd_TypeA.txt PairedEnd_TypeB.txt
@@ -88,7 +131,7 @@ clcalcfastqstatv \
 OverlappedPairedEnd_03_ConcatenatedSequences \
 OverlappedPairedEnd_03_ConcatenatedSequences/fastq_eestats2.txt
 
-# Filfer out low quality sequences
+# Apply filtering out low quality sequences
 clfilterseqv \
 --maxqual=41 \
 --minlen=100 \

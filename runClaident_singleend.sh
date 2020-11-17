@@ -3,17 +3,66 @@ export THREADS=32
 
 # Move previous analysis results
 mkdir -p previous
+
+if test -e SingleEnd_02a_DemultiplexedSequences; then
 mv \
 SingleEnd_02a_DemultiplexedSequences \
+previous/
+fi
+
+if test -e SingleEnd_02b_DemultiplexedSequences; then
+mv \
 SingleEnd_02b_DemultiplexedSequences \
+previous/
+fi
+
+if test -e SingleEnd_03_FilteredSequences; then
+mv \
 SingleEnd_03_FilteredSequences \
+previous/
+fi
+
+if test -e SingleEnd_04_DenoisedSequences; then
+mv \
 SingleEnd_04_DenoisedSequences \
+previous/
+fi
+
+if test -e SingleEnd_05_NonchimericSequences; then
+mv \
 SingleEnd_05_NonchimericSequences \
+previous/
+fi
+
+if test -e SingleEnd_06_NonhoppedSequences; then
+mv \
 SingleEnd_06_NonhoppedSequences \
+previous/
+fi
+
+if test -e SingleEnd_07_DecontaminatedSequences; then
+mv \
 SingleEnd_07_DecontaminatedSequences \
+previous/
+fi
+
+if test -e SingleEnd_08_ClusteredSequences; then
+mv \
 SingleEnd_08_ClusteredSequences \
+previous/
+fi
+
+if test -e SingleEnd_09_ClaidentResults; then
+mv \
 SingleEnd_09_ClaidentResults \
 previous/
+fi
+
+if test -e SingleEnd_10_RAnalysisResults; then
+mv \
+SingleEnd_10_RAnalysisResults \
+previous/
+fi
 
 # Demultiplex Type A (If you have undemultiplexed FASTQ files)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
@@ -73,7 +122,8 @@ clcalcfastqstatv \
 SingleEnd_02a_DemultiplexedSequences \
 SingleEnd_02a_DemultiplexedSequences/fastq_eestats2.txt
 
-# Filfer out low quality sequences
+# Apply sequence trimming and filtering out low quality sequences
+# Trimmed length determined based on fastq_eestats2.txt
 clfilterseqv \
 --maxqual=41 \
 --minlen=120 \
