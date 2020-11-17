@@ -134,8 +134,9 @@ NonoverlappedPairedEnd_05_FilteredSequences \
 NonoverlappedPairedEnd_06_DenoisedSequences
 
 # Remove chimeras using UCHIME3
+# Do not apply reference-based chimera removal (Do not use "both" or "ref" for --mode).
 clremovechimev \
---mode=both \
+--mode=denovo \
 --uchimedenovo=3 \
 --referencedb=cdu12s \
 --numthreads=$THREADS \
@@ -162,13 +163,14 @@ NonoverlappedPairedEnd_09_DecontaminatedSequences
 clclassseqv \
 --minident=0.99 \
 --strand=plus \
+--paddinglen=16 \
 --numthreads=$THREADS \
 NonoverlappedPairedEnd_09_DecontaminatedSequences \
 NonoverlappedPairedEnd_10_ClusteredSequences
 
 # Divide forward and reverse sequences
 cldivseq \
---query=ACGTACGTACGTACGT
+--query=ACGTACGTACGTACGT \
 --border=both \
 NonoverlappedPairedEnd_10_ClusteredSequences/clustered.fasta \
 NonoverlappedPairedEnd_10_ClusteredSequences/reverse_revcomp.fasta \
