@@ -1,4 +1,4 @@
-ranseed <- 1606275239
+ranseed <- 1602306368
 numthreads <- 32
 outputfolder <- "SingleEnd_04_DenoisedSequences"
 pooling <- T

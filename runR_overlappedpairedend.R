@@ -12,7 +12,7 @@ dir.create("OverlappedPairedEnd_11_RAnalysisResults")
 
 # Make species-level barplot
 pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
-top50species <- read.table("10_ClaidentResults/sample_top50species_nreads_fishes.tsv", header=T)
+top50species <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_top50species_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
@@ -24,7 +24,7 @@ dev.off()
 
 # Make family-level barplot
 pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
-top50family <- read.table("10_ClaidentResults/sample_top50family_nreads_fishes.tsv", header=T)
+top50family <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_top50family_nreads_fishes.tsv", header=T)
 temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
@@ -36,7 +36,7 @@ dev.off()
 
 # Make species-level heatmap
 pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapspecies.pdf", width=22, height=10)
-commspecies <- read.table("10_ClaidentResults/sample_species_nreads_fishes.tsv", header=T)
+commspecies <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_species_nreads_fishes.tsv", header=T)
 commspecies$nreads[(commspecies$nreads == 0)] <- NA
 temp <- ggplot(commspecies, aes(x=species, y=samplename, fill=nreads))
 temp <- temp + geom_tile()
@@ -48,7 +48,7 @@ dev.off()
 
 # Make family-level heatmap
 pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapfamily.pdf", width=16, height=10)
-commfamily <- read.table("10_ClaidentResults/sample_family_nreads_fishes.tsv", header=T)
+commfamily <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_family_nreads_fishes.tsv", header=T)
 commfamily$nreads[(commfamily$nreads == 0)] <- NA
 temp <- ggplot(commfamily, aes(x=family, y=samplename, fill=nreads))
 temp <- temp + geom_tile()
@@ -59,7 +59,7 @@ plot(temp)
 dev.off()
 
 # Read community data matrix
-Community <- read.table("10_ClaidentResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
+Community <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
 
 # Draw species accumulation curve
 SpecAccum <- specaccum(Community)

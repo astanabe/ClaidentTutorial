@@ -3,24 +3,70 @@ export THREADS=32
 
 # Move previous analysis results
 mkdir -p previous
-mv \
-PairedEnd_02a_DemultiplexedSequences \
-PairedEnd_02b_DemultiplexedSequences \
-previous/
+
+if test -e NonoverlappedPairedEnd_03_TrimmedSequences; then
 mv \
 NonoverlappedPairedEnd_03_TrimmedSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_04_ConcatenatedSequences; then
+mv \
 NonoverlappedPairedEnd_04_ConcatenatedSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_05_FilteredSequences; then
+mv \
 NonoverlappedPairedEnd_05_FilteredSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_06_DenoisedSequences; then
+mv \
 NonoverlappedPairedEnd_06_DenoisedSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_07_NonchimericSequences; then
+mv \
 NonoverlappedPairedEnd_07_NonchimericSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_08_NonhoppedSequences; then
+mv \
 NonoverlappedPairedEnd_08_NonhoppedSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_09_DecontaminatedSequences; then
+mv \
 NonoverlappedPairedEnd_09_DecontaminatedSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_10_ClusteredSequences; then
+mv \
 NonoverlappedPairedEnd_10_ClusteredSequences \
+previous/
+fi
+
+if test -e NonoverlappedPairedEnd_11_ClaidentResults; then
+mv \
 NonoverlappedPairedEnd_11_ClaidentResults \
 previous/
+fi
+
+if test -e NonoverlappedPairedEnd_12_RAnalysisResults; then
+mv \
+NonoverlappedPairedEnd_12_RAnalysisResults \
+previous/
+fi
 
 # Demultiplex Type A (If you have undemultiplexed FASTQ files)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
+if ! test -e PairedEnd_02a_DemultiplexedSequences; then
 clsplitseq \
 --runname=ClaidentTutorial \
 --forwardprimerfile=forwardprimer.fasta \
@@ -37,9 +83,11 @@ clsplitseq \
 01_RawSequences/Undemultiplexed_I2_001.fastq.xz \
 01_RawSequences/Undemultiplexed_R2_001.fastq.xz \
 PairedEnd_02a_DemultiplexedSequences
+fi
 
 # Demultiplex Type B (If FASTQ files have been already demultiplexed)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
+if ! test -e PairedEnd_02b_DemultiplexedSequences; then
 for s in `ls 01_RawSequences/Blank??_R1_001.fastq.xz 01_RawSequences/Sample??_R1_001.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
 do clsplitseq \
 --runname=ClaidentTutorial \
@@ -55,6 +103,7 @@ do clsplitseq \
 01_RawSequences/$s\_R2_001.fastq.xz \
 PairedEnd_02b_DemultiplexedSequences
 done
+fi
 
 # Compare Type A and B
 rm -f PairedEnd_TypeA.txt PairedEnd_TypeB.txt
@@ -87,6 +136,7 @@ clcalcfastqstatv \
 PairedEnd_02a_DemultiplexedSequences/reverse_fastq_eestats2.txt
 
 # Apply sequence trimming
+# Trimmed length determined based on forward_fastq_eestats2.txt and reverse_fastq_eestats2.txt
 clfilterseqv \
 --minlen=120 \
 --maxlen=120 \
