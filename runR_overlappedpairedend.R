@@ -94,7 +94,7 @@ cvr <- 0.05
 ## In the actual analysis, the following value is recommended.
 #cvr <- max(getmincov)
 ## define function
-cvrfun <- function(x) {min(which(x <= cvr))}
+cvrfun <- function(x) {min(which(x <= cvr)) + 1}
 ## get number of seqs of target coverage
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
 # make rarefied community data
