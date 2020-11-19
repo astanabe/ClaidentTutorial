@@ -188,7 +188,6 @@ NonoverlappedPairedEnd_06_DenoisedSequences
 clremovechimev \
 --mode=denovo \
 --uchimedenovo=3 \
---referencedb=cdu12s \
 --numthreads=$THREADS \
 NonoverlappedPairedEnd_06_DenoisedSequences \
 NonoverlappedPairedEnd_07_NonchimericSequences
