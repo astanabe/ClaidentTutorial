@@ -168,6 +168,8 @@ OverlappedPairedEnd_06_NonchimericSequences \
 OverlappedPairedEnd_07_NonhoppedSequences
 
 # Eliminate contamination
+# Note that this process is incompatible with normalization of concentration/sequencing depth.
+# Do not apply this process in such cases.
 clremovecontam \
 --blanklist=blanklist.txt \
 --mode=eliminate \
@@ -175,7 +177,7 @@ OverlappedPairedEnd_07_NonhoppedSequences \
 OverlappedPairedEnd_08_DecontaminatedSequences
 
 # Cluster remaining sequences
-# Note that this step is meaningless because additional clustering has no effect.
+# Note that this step is meaningless on this data because additional clustering has no effect.
 clclassseqv \
 --minident=0.99 \
 --strand=plus \
