@@ -29,9 +29,11 @@ See the following shell scripts, inputs and outputs.
 - [runClaident_singleend.sh](runClaident_singleend.sh)
 - [runClaident_overlappedpairedend.sh](runClaident_overlappedpairedend.sh)
 - [runClaident_nonoverlappedpairedend.sh](runClaident_nonoverlappedpairedend.sh)
+- [runClaident_overlappedpairedend_wSTD.sh](runClaident_overlappedpairedend_wSTD.sh)
 
 ## Learning how to analyze Claident outputs in R
 
 See the following R codes, inputs and outputs.
 
 - [runR_overlappedpairedend.R](runR_overlappedpairedend.R)
+- [runR_overlappedpairedend_wSTD.R](runR_overlappedpairedend_wSTD.R)
