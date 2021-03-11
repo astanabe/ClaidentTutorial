@@ -218,7 +218,7 @@ OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
- --minnsupporter=1 \
+--minnsupporter=1 \
 OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species.txt \
 OverlappedPairedEnd_10_ClaidentResults/taxonomy_1nn_species.tsv
 
@@ -251,7 +251,7 @@ OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species_wsp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species_wsp.txt \
 OverlappedPairedEnd_10_ClaidentResults/taxonomy_1nn_species_wsp.tsv
 
@@ -284,7 +284,7 @@ OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species_wosp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species_wosp.txt \
 OverlappedPairedEnd_10_ClaidentResults/taxonomy_1nn_species_wosp.tsv
 

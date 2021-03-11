@@ -260,7 +260,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_1nn_species.tsv
 
@@ -293,7 +293,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species_wsp.t
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species_wsp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_1nn_species_wsp.tsv
 
@@ -326,7 +326,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species_wosp.
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_1nn_species_wosp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_1nn_species_wosp.tsv
 
@@ -359,7 +359,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_1nn_species.tsv
 
@@ -392,7 +392,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species_wsp.t
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species_wsp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_1nn_species_wsp.tsv
 
@@ -425,7 +425,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species_wosp.
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
- --minnsupporter=1 \
+--minnsupporter=1 \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species_wosp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_1nn_species_wosp.tsv
 
