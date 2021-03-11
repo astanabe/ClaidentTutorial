@@ -24,7 +24,7 @@ perl adddummytaxid2fasta.pl < 12Sreferences.fasta > 12Sreferences.ecoPCR
 # Run ecoPCR and convert to amplicon FASTA file
 ./ecoPCR -d 12Sreferences -e 5 -l 150 -L 250 GTCGGTAAAACTCGTGCCAGC CATAGTGGGGTATCTAATCCCAGTTTG | perl convertecopcr2fasta.pl -fp=GTCGGTAAAACTCGTGCCAGC -rp=CATAGTGGGGTATCTAATCCCAGTTTG | perl -npe 's/^>.+; />/' > 12Sbarcodes.fasta
 # Select representative sequences
-vsearch --fasta_width 0 --notrunclabels --threads 32 --cluster_fast 12Sbarcodes.fasta --qmask none --id 0.95 --strand plus --centroids 12Sbarcodes_representatives.fasta
+vsearch --fasta_width 0 --notrunclabels --threads 32 --cluster_fast 12Sbarcodes.fasta --qmask none --id 0.9 --strand plus --centroids 12Sbarcodes_representatives.fasta
 # Make fish community references for each sample
 perl makecommref.pl 20 4 50 10 12Sbarcodes_representatives.fasta
 # Download ART simulator

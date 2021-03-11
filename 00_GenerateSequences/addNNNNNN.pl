@@ -56,10 +56,10 @@ foreach my $inputfile (@inputfiles) {
 	while (<$inputfilehandle>) {
 		s/\r?\n?$//;
 		if ($lineno % 4 == 1) {
-			if (/^\@([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_\.\-]+)__([A-Za-z0-9_]+)\-\d+/) {
+			if (/^\@(\S+)__(\S+)__(\S+)__(\S+)\-\d+\//) {
 				print(STDOUT '@' . "$1:$2:$3:$4" . '_' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
 			}
-			elsif (/^\@\S+\-\d+/) {
+			elsif (/^\@\S+\-\d+\//) {
 				print(STDOUT '@' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
 			}
 			else {
