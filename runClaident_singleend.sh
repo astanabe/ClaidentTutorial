@@ -152,6 +152,7 @@ SingleEnd_04_DenoisedSequences \
 SingleEnd_05_NonchimericSequences
 
 # Eliminate index-hopping
+# This step cannot apply to TypeB demultiplexed sequences and/or single index sequences
 clremovecontam \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
@@ -199,7 +200,7 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species
 clidentseq \
 --method=1,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species \
@@ -232,7 +233,7 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species_wsp.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wsp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wsp
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wsp
 clidentseq \
 --method=1,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species_wsp \
@@ -265,7 +266,7 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species_wosp.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wosp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wosp
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wosp
 clidentseq \
 --method=1,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species_wosp \
@@ -280,7 +281,7 @@ SingleEnd_09_ClaidentResults/neighborhoods_1nn_species_wosp.txt \
 SingleEnd_09_ClaidentResults/taxonomy_1nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
-# Note that merge of QCauto results and 1-NN results is meaningless because 1-NN results are always consistent to QCauto results.
+# Note that merge of QCauto results and (95%-)1-NN results is meaningless in many cases because (95%-)1-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences.
 # However, merge of results using different reference database is often useful.
 clmergeassign \
 --preferlower \
