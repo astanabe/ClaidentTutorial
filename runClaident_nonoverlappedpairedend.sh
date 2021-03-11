@@ -193,6 +193,7 @@ NonoverlappedPairedEnd_06_DenoisedSequences \
 NonoverlappedPairedEnd_07_NonchimericSequences
 
 # Eliminate index-hopping
+# This step cannot apply to TypeB demultiplexed sequences
 clremovecontam \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
@@ -249,7 +250,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_qc_species.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_qc_species.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species and forward region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species and forward region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/forwardcachedb_species \
@@ -282,7 +283,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_qc_species_wsp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_qc_species_wsp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wsp and forward region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wsp and forward region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/forwardcachedb_species_wsp \
@@ -315,7 +316,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardneighborhoods_qc_species_wosp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/forwardtaxonomy_qc_species_wosp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wosp and forward region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wosp and forward region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/forwardcachedb_species_wosp \
@@ -348,7 +349,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_qc_species.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_qc_species.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species and reverse region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species and reverse region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/reversecachedb_species \
@@ -381,7 +382,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_qc_species_wsp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_qc_species_wsp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wsp and reverse region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wsp and reverse region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/reversecachedb_species_wsp \
@@ -414,7 +415,7 @@ classigntax \
 NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_qc_species_wosp.txt \
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_qc_species_wosp.tsv
 
-# Assign taxonomy based on 1-NN method using animals_mt_species_wosp and reverse region
+# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wosp and reverse region
 clidentseq \
 --method=1,95% \
 --blastdb=NonoverlappedPairedEnd_11_ClaidentResults/reversecachedb_species_wosp \
@@ -429,7 +430,7 @@ NonoverlappedPairedEnd_11_ClaidentResults/reverseneighborhoods_1nn_species_wosp.
 NonoverlappedPairedEnd_11_ClaidentResults/reversetaxonomy_1nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
-# Note that merge of QCauto results and 1-NN results is meaningless because 1-NN results are always consistent to QCauto results.
+# Note that merge of QCauto results and (95%-)1-NN results is meaningless in many cases because (95%-)1-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences.
 # However, merge of results using different reference database is often useful.
 clmergeassign \
 --preferlower \
