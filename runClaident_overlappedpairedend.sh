@@ -289,7 +289,7 @@ OverlappedPairedEnd_10_ClaidentResults/neighborhoods_1nn_species_wosp.txt \
 OverlappedPairedEnd_10_ClaidentResults/taxonomy_1nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
-# Note that merge of QCauto results and (95%-)1-NN results is meaningless in many cases because (95%-)1-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences.
+# Note that merge of QCauto results and (95%-)1-NN results has no effects in many cases because (95%-)1-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences to the query.
 # However, merge of results using different reference database is often useful.
 clmergeassign \
 --preferlower \
@@ -360,3 +360,6 @@ clsumtaxa \
 --numbering=enable \
 OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv \
 OverlappedPairedEnd_10_ClaidentResults/sample_family_nreads_fishes.tsv
+
+# Remove cachedb
+rm -r OverlappedPairedEnd_10_ClaidentResults/cachedb_species*
