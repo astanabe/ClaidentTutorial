@@ -59,8 +59,8 @@ foreach my $inputfile (@inputfiles) {
 			if (/^\@(\S+)__(\S+)__(\S+)__(\S+)\-\d+\//) {
 				print(STDOUT '@' . "$1:$2:$3:$4" . '_' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
 			}
-			elsif (/^\@\S+\-\d+\//) {
-				print(STDOUT '@' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
+			elsif (/^\@(\S+)\-\d+\//) {
+				print(STDOUT '@' . $1 . '_' . $samplename . '_' . sprintf("%05d", $seqno) . "\n");
 			}
 			else {
 				die(__LINE__ . " error.\n$_\n");

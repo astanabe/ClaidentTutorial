@@ -75,7 +75,7 @@ rm -rf TEMP
 ./art_bin_MountRainier/art_illumina --amplicon --seqSys MSv1 --in MiFish_STD_04-2_80copies.fasta --len 144 --paired --noALN --fcov 800 --out MiFish_STD_04-2_80copies_
 ls Sample??.fasta Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'cat MiFish_STD_*copies_1.fq >> {}_1.fq; cat MiFish_STD_*copies_2.fq >> {}_2.fq'
 # Make demultiplexed FASTQ
-ls Sample??.fasta Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl MiFish_STD_*copies_1.fq >> {}_R1_001.fastq; perl addNNNNNN.pl MiFish_STD_*copies_2.fq >> {}_R2_001.fastq'
+ls Sample??.fasta Blank??.fasta | grep -o -P '^[^\.]+' | xargs -L 1 -P 32 -I {} sh -c 'perl addNNNNNN.pl {}_1.fq > {}_R1_001.fastq; perl addNNNNNN.pl {}_2.fq > {}_R2_001.fastq'
 # Make 2 index sequence files
 perl makeindexfastq.pl ../index1.fasta Sample??_1.fq Blank??_1.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_wSTD_I1_001.fastq.xz &
 perl makeindexfastq.pl ../index2.fasta Sample??_2.fq Blank??_2.fq | xz -c9e > ../01_RawSequences/Undemultiplexed_wSTD_I2_001.fastq.xz &
