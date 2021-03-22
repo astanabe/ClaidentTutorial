@@ -60,17 +60,17 @@ plot(temp)
 dev.off()
 
 # Read community data matrix
-Community <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_species_matrix_fishes.tsv", header=T, row.names=1)
+Community <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv", header=T, row.names=1)
 
-# Draw species accumulation curve
+# Draw OTU accumulation curve
 SpecAccum <- specaccum(Community)
 pdf("OverlappedPairedEnd_11_RAnalysisResults/specaccum.pdf", width=7, height=7)
-plot(SpecAccum, xlab="number of samples", ylab="number of species", main="species accumulation curve")
+plot(SpecAccum, xlab="number of samples", ylab="number of OTUs", main="OTU accumulation curve")
 dev.off()
 
 # Draw rarefaction curves
 pdf("OverlappedPairedEnd_11_RAnalysisResults/rarecurve.pdf", width=7, height=7)
-rarecurve(Community, step=10, xlab="number of seqs", ylab="number of species", main="rarefaction curves")
+rarecurve(Community, step=10, xlab="number of seqs", ylab="number of OTUs", main="rarefaction curves")
 dev.off()
 
 # Coverage-based rarefaction
@@ -106,14 +106,6 @@ for(i in 1:4) {
   write.table(RarefiedCommunity[[i]], paste0("OverlappedPairedEnd_11_RAnalysisResults/RarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
 }
 
-# Make binary community data
-BinaryRarefiedCommunity <- list()
-for(i in 1:4) {
-  BinaryRarefiedCommunity[[i]] <- data.frame()
-  BinaryRarefiedCommunity[[i]] <- replace(RarefiedCommunity[[i]], RarefiedCommunity[[i]] > 0, 1)
-  write.table(BinaryRarefiedCommunity[[i]], paste0("OverlappedPairedEnd_11_RAnalysisResults/BinaryRarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
-}
-
 # Make Beta-diversity (dissimilarity) matrix
 BrayCurtis <- list()
 Jaccard <- list()
@@ -122,8 +114,8 @@ BinaryRaupCrick <- list()
 for(i in 1:4) {
   BrayCurtis[[i]] <- vegdist(RarefiedCommunity[[i]], method="bray")
   Jaccard[[i]] <- vegdist(RarefiedCommunity[[i]], method="jaccard")
-  BinaryJaccard[[i]] <- vegdist(BinaryRarefiedCommunity[[i]], method="jaccard")
-  BinaryRaupCrick[[i]] <- as.dist(raupcrick(BinaryRarefiedCommunity[[i]], null="r1", nsimul=999))
+  BinaryJaccard[[i]] <- vegdist(RarefiedCommunity[[i]], method="jaccard", binary=T)
+  BinaryRaupCrick[[i]] <- as.dist(raupcrick(RarefiedCommunity[[i]], null="r1", nsimul=999))
 }
 
 # Read metadata
@@ -155,10 +147,10 @@ BinaryEuclideanClusterSpecies <- list()
 for(i in 1:4) {
   BrayCurtisClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="bray")}, nboot=1000, parallel=T)
   JaccardClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard")}, nboot=1000, parallel=T)
-  BinaryJaccardClusterSites[[i]] <- pvclust(as.data.frame(t(BinaryRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard")}, nboot=1000, parallel=T)
-  BinaryRaupCrickClusterSites[[i]] <- pvclust(as.data.frame(t(BinaryRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){as.dist(vegan::raupcrick(as.data.frame(t(x)),null="r1",nsimul=999))}, nboot=1000, parallel=T)
+  BinaryJaccardClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard",binary=T)}, nboot=1000, parallel=T)
+  BinaryRaupCrickClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){as.dist(vegan::raupcrick(as.data.frame(t(x)),null="r1",nsimul=999))}, nboot=1000, parallel=T)
   EuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(RarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean")}, nboot=1000, parallel=T)
-  BinaryEuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(BinaryRarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean")}, nboot=1000, parallel=T)
+  BinaryEuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(RarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean",binary=T)}, nboot=1000, parallel=T)
 }
 ## draw dendrograms
 pdf("OverlappedPairedEnd_11_RAnalysisResults/ClusterAnalysis_sites.pdf", width=7, height=7)

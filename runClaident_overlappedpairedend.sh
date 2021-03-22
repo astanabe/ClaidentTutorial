@@ -314,15 +314,6 @@ clfiltersum \
 OverlappedPairedEnd_09_ClusteredSequences/clustered.tsv \
 OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv
 
-# Make species-based community data matrix
-clsumtaxa \
---tableformat=matrix \
---taxfile=OverlappedPairedEnd_10_ClaidentResults/taxonomy_merged_filled.tsv \
---targetrank=species \
---numbering=disable \
-OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_10_ClaidentResults/sample_species_matrix_fishes.tsv
-
 # Make top-50 species community data matrix for barplot
 clsumtaxa \
 --tableformat=column \

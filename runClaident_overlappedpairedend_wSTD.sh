@@ -332,21 +332,18 @@ clfillassign \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged.tsv \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv
 
+# Extract standard OTUs
+clfiltersum \
+--otuseq=standard.fasta \
+OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_standard.tsv
+
 # Filter out non-Actinopterygii/Sarcopterygii OTUs
 clfiltersum \
 --taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
 --includetaxa=superclass,Actinopterygii,superclass,Sarcopterygii \
 OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.tsv \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv
-
-# Make species-based community data matrix
-clsumtaxa \
---tableformat=matrix \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
---targetrank=species \
---numbering=disable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_species_matrix_fishes.tsv
 
 # Make top-50 species community data matrix for barplot
 clsumtaxa \

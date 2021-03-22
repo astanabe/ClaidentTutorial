@@ -306,15 +306,6 @@ clfiltersum \
 SingleEnd_08_ClusteredSequences/clustered.tsv \
 SingleEnd_09_ClaidentResults/sample_otu_matrix_fishes.tsv
 
-# Make species-based community data matrix
-clsumtaxa \
---tableformat=matrix \
---taxfile=SingleEnd_09_ClaidentResults/taxonomy_merged_filled.tsv \
---targetrank=species \
---numbering=disable \
-SingleEnd_09_ClaidentResults/sample_otu_matrix_fishes.tsv \
-SingleEnd_09_ClaidentResults/sample_species_matrix_fishes.tsv
-
 # Make top-50 species community data matrix for barplot
 clsumtaxa \
 --tableformat=column \
