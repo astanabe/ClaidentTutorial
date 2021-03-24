@@ -9,11 +9,11 @@ library(scales)
 library(pvclust)
 
 # Make output directory
-dir.create("OverlappedPairedEnd_11_RAnalysisResults")
+dir.create("OverlappedPairedEnd_wSTD_12_RAnalysisResults")
 
 # Make species-level barplot
-pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
-top50species <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_top50species_nreads_fishes.tsv", header=T)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/barplottop50species.pdf", width=14, height=10)
+top50species <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50species_nreads_fishes_converted.tsv", header=T)
 temp <- ggplot(top50species, aes(x=samplename, y=nreads, fill=fct_rev(species)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
@@ -24,8 +24,8 @@ plot(temp)
 dev.off()
 
 # Make family-level barplot
-pdf("OverlappedPairedEnd_11_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
-top50family <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_top50family_nreads_fishes.tsv", header=T)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/barplottop50family.pdf", width=13, height=10)
+top50family <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50family_nreads_fishes_converted.tsv", header=T)
 temp <- ggplot(top50family, aes(x=samplename, y=nreads, fill=fct_rev(family)))
 temp <- temp + geom_bar(stat="identity", position="fill")
 temp <- temp + scale_y_continuous(labels=percent)
@@ -36,8 +36,8 @@ plot(temp)
 dev.off()
 
 # Make species-level heatmap
-pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapspecies.pdf", width=45, height=10)
-commspecies <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_species_nreads_fishes.tsv", header=T)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/heatmapspecies.pdf", width=45, height=10)
+commspecies <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_species_nreads_fishes_converted.tsv", header=T)
 commspecies$nreads[(commspecies$nreads == 0)] <- NA
 temp <- ggplot(commspecies, aes(x=species, y=samplename, fill=nreads))
 temp <- temp + geom_tile()
@@ -48,8 +48,8 @@ plot(temp)
 dev.off()
 
 # Make family-level heatmap
-pdf("OverlappedPairedEnd_11_RAnalysisResults/heatmapfamily.pdf", width=30, height=10)
-commfamily <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_family_nreads_fishes.tsv", header=T)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/heatmapfamily.pdf", width=30, height=10)
+commfamily <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_family_nreads_fishes_converted.tsv", header=T)
 commfamily$nreads[(commfamily$nreads == 0)] <- NA
 temp <- ggplot(commfamily, aes(x=family, y=samplename, fill=nreads))
 temp <- temp + geom_tile()
@@ -60,18 +60,21 @@ plot(temp)
 dev.off()
 
 # Read community data matrix
-Community <- read.table("OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv", header=T, row.names=1)
+Community <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv", header=T, row.names=1)
 
 # Draw OTU accumulation curve
 SpecAccum <- specaccum(Community)
-pdf("OverlappedPairedEnd_11_RAnalysisResults/specaccum.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/specaccum.pdf", width=7, height=7)
 plot(SpecAccum, xlab="number of samples", ylab="number of OTUs", main="OTU accumulation curve")
 dev.off()
 
 # Draw rarefaction curves
-pdf("OverlappedPairedEnd_11_RAnalysisResults/rarecurve.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/rarecurve.pdf", width=7, height=7)
 rarecurve(Community, step=10, xlab="number of seqs", ylab="number of OTUs", main="rarefaction curves")
 dev.off()
+
+# Read internal standard data matrix
+Standard <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_standard.tsv", header=T, row.names=1)
 
 # Coverage-based rarefaction
 ## make rareslopelist using all cpu cores
@@ -79,7 +82,7 @@ rareslopelist <- list()
 cl <- makeCluster(detectCores())
 registerDoParallel(cl)
 rareslopelist <- foreach(i = 1:nrow(Community), .packages="vegan") %dopar% {
-	rareslope(Community[i,], seq(1, (sum(Community[i,]) - 1), by=1))
+	rareslope(cbind(Standard[i,], Community[i,]), seq(1, (sum(cbind(Standard[i,], Community[i,])) - 1), by=1))
 }
 stopCluster(cl)
 ## find minimum coverage sample
@@ -98,12 +101,37 @@ cvr <- 0.05
 cvrfun <- function(x) {min(which(x <= cvr)) + 1}
 ## get number of seqs of target coverage
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
-write.table(cvrrare, "OverlappedPairedEnd_11_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
+write.table(cvrrare, "OverlappedPairedEnd_wSTD_12_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 # make rarefied community data
+temp <- as.data.frame(row.names(Community), row.names=row.names(Community))
+colnames(temp) <- "samplename"
 RarefiedCommunity <- list()
 for(i in 1:4) {
-  RarefiedCommunity[[i]] <- rrarefy(Community, cvrrare)
-  write.table(RarefiedCommunity[[i]], paste0("OverlappedPairedEnd_11_RAnalysisResults/RarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=T, col.names=T, na="NA")
+  RarefiedCommunity[[i]] <- rrarefy(cbind(Standard, Community), cvrrare)
+  write.table(cbind(temp, RarefiedCommunity[[i]]), paste0("OverlappedPairedEnd_wSTD_12_RAnalysisResults/RarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=F, col.names=T, na="NA")
+}
+
+# Convert number of reads based on number of internal standard reads
+ConvertedRarefiedCommunity <- list()
+## Copy number per 1uL of internal standard
+StandardCopy <- c(10, 20, 40, 80)
+for(i in 1:4) {
+  ## Function definition
+  ConvertReads <- function(x){
+    slope <- lm(as.numeric(RarefiedCommunity[[i]][x,1:4]) ~ StandardCopy + 0)$coefficients
+    conv <- RarefiedCommunity[[i]][x,-1:-4] / slope
+    return(conv)
+  }
+  ConvertedRarefiedCommunity[[i]] <- data.frame()
+  for(j in 1:nrow(Community)){
+    ConvertedRarefiedCommunity[[i]] <- rbind(ConvertedRarefiedCommunity[[i]], ConvertReads(j))
+  }
+  ConvertedRarefiedCommunity[[i]][is.na(ConvertedRarefiedCommunity[[i]])] <- NA
+  rownames(ConvertedRarefiedCommunity[[i]]) <- row.names(Community)
+  colnames(ConvertedRarefiedCommunity[[i]]) <- colnames(Community)
+  ## Converted to DNA copy number per 1L (Filtered water amount = 1L, DNA extract = 200uL)
+  ConvertedRarefiedCommunity[[i]] <- ConvertedRarefiedCommunity[[i]] * 200 * (1 / 1)
+  write.table(cbind(temp, ConvertedRarefiedCommunity[[i]]), paste0("OverlappedPairedEnd_wSTD_12_RAnalysisResults/ConvertedRarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=F, col.names=T, na="NA")
 }
 
 # Make Beta-diversity (dissimilarity) matrix
@@ -112,17 +140,17 @@ Jaccard <- list()
 BinaryJaccard <- list()
 BinaryRaupCrick <- list()
 for(i in 1:4) {
-  BrayCurtis[[i]] <- vegdist(RarefiedCommunity[[i]], method="bray")
-  Jaccard[[i]] <- vegdist(RarefiedCommunity[[i]], method="jaccard")
-  BinaryJaccard[[i]] <- vegdist(RarefiedCommunity[[i]], method="jaccard", binary=T)
-  BinaryRaupCrick[[i]] <- as.dist(raupcrick(RarefiedCommunity[[i]], null="r1", nsimul=999))
+  BrayCurtis[[i]] <- vegdist(ConvertedRarefiedCommunity[[i]], method="bray")
+  Jaccard[[i]] <- vegdist(ConvertedRarefiedCommunity[[i]], method="jaccard")
+  BinaryJaccard[[i]] <- vegdist(ConvertedRarefiedCommunity[[i]], method="jaccard", binary=T)
+  BinaryRaupCrick[[i]] <- as.dist(raupcrick(ConvertedRarefiedCommunity[[i]], null="r1", nsimul=999))
 }
 
 # Read metadata
 Metadata <- read.table("Metadata.tsv", header=T, row.names=1)
 
 # PERMANOVA
-sink("OverlappedPairedEnd_11_RAnalysisResults/PERMANOVA.txt", split=T)
+sink("OverlappedPairedEnd_wSTD_12_RAnalysisResults/PERMANOVA.txt", split=T)
 for(i in 1:4) {
   print(adonis(BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores()))
 }
@@ -145,15 +173,15 @@ BinaryRaupCrickClusterSites <- list()
 EuclideanClusterSpecies <- list()
 BinaryEuclideanClusterSpecies <- list()
 for(i in 1:4) {
-  BrayCurtisClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="bray")}, nboot=1000, parallel=T)
-  JaccardClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard")}, nboot=1000, parallel=T)
-  BinaryJaccardClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard",binary=T)}, nboot=1000, parallel=T)
-  BinaryRaupCrickClusterSites[[i]] <- pvclust(as.data.frame(t(RarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){as.dist(vegan::raupcrick(as.data.frame(t(x)),null="r1",nsimul=999))}, nboot=1000, parallel=T)
-  EuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(RarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean")}, nboot=1000, parallel=T)
-  BinaryEuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(RarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean",binary=T)}, nboot=1000, parallel=T)
+  BrayCurtisClusterSites[[i]] <- pvclust(as.data.frame(t(ConvertedRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="bray")}, nboot=100, parallel=T)
+  JaccardClusterSites[[i]] <- pvclust(as.data.frame(t(ConvertedRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard")}, nboot=100, parallel=T)
+  BinaryJaccardClusterSites[[i]] <- pvclust(as.data.frame(t(ConvertedRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="jaccard",binary=T)}, nboot=100, parallel=T)
+  BinaryRaupCrickClusterSites[[i]] <- pvclust(as.data.frame(t(ConvertedRarefiedCommunity[[i]])), method.hclust="average", method.dist=function(x){as.dist(vegan::raupcrick(as.data.frame(t(x)),null="r1",nsimul=999))}, nboot=100, parallel=T)
+  EuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(ConvertedRarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean")}, nboot=100, parallel=T)
+  BinaryEuclideanClusterSpecies[[i]] <- pvclust(as.data.frame(ConvertedRarefiedCommunity[[i]]), method.hclust="average", method.dist=function(x){vegan::vegdist(as.data.frame(t(x)),method="euclidean",binary=T)}, nboot=100, parallel=T)
 }
 ## draw dendrograms
-pdf("OverlappedPairedEnd_11_RAnalysisResults/ClusterAnalysis_sites.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/ClusterAnalysis_sites.pdf", width=7, height=7)
 for(i in 1:4) {
   plot(BrayCurtisClusterSites[[i]], xlab="site", ylab="Bray-Curtis distance", main="Cluster analysis among sites")
 }
@@ -167,7 +195,7 @@ for(i in 1:4) {
   plot(BinaryRaupCrickClusterSites[[i]], xlab="site", ylab="Raup-Crick distance", main="Cluster analysis among sites")
 }
 dev.off()
-pdf("OverlappedPairedEnd_11_RAnalysisResults/ClusterAnalysis_species.pdf", width=49, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/ClusterAnalysis_species.pdf", width=49, height=7)
 for(i in 1:4) {
   plot(EuclideanClusterSpecies[[i]], xlab="site", ylab="Euclidean distance", main="Cluster analysis among species")
 }
@@ -222,7 +250,7 @@ for(i in 1:4) {
   BinaryRaupCrickNMDSenv[[i]] <- envfit(BinaryRaupCrickNMDS[[i]], Metadata[,c("Type", "Temperature", "Latitude", "Date")], permu=999)
 }
 ## draw NMDS
-pdf("OverlappedPairedEnd_11_RAnalysisResults/NMDS.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/NMDS.pdf", width=7, height=7)
 for(i in 1:4) {
   ordiplot(BrayCurtisNMDS[[i]], type="n")
   orditorp(BrayCurtisNMDS[[i]], display="sites", air=0.1, cex=1)
@@ -260,7 +288,7 @@ for(i in 1:4) {
   BinaryRaupCrickGeoMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Geodist, method="spearman", permutations=999)
 }
 ## draw analysis results
-pdf("OverlappedPairedEnd_11_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
 for(i in 1:4) {
   tipos <- BrayCurtisGeoMCA[[i]]$pval.Bonferroni < 0.05
   tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))
@@ -338,7 +366,7 @@ for(i in 1:4) {
   BinaryRaupCrickDateMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Datedist, method="spearman", permutations=999)
 }
 ## draw analysis results
-pdf("OverlappedPairedEnd_11_RAnalysisResults/DateMCA.pdf", width=7, height=7)
+pdf("OverlappedPairedEnd_wSTD_12_RAnalysisResults/DateMCA.pdf", width=7, height=7)
 for(i in 1:4) {
   tipos <- BrayCurtisDateMCA[[i]]$pval.Bonferroni < 0.05
   tipos <- sapply(tipos, function(x) x=ifelse(x==TRUE,15,22))

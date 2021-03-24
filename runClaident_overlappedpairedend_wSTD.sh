@@ -210,7 +210,7 @@ clmakecachedb \
 --blastdb=animals_mt_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species
 
 clidentseq \
@@ -218,7 +218,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species.txt
 
 classigntax \
@@ -232,7 +232,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_1nn_species.txt
 
 classigntax \
@@ -246,7 +246,7 @@ clmakecachedb \
 --blastdb=animals_mt_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp
 
 clidentseq \
@@ -254,7 +254,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wsp.txt
 
 classigntax \
@@ -268,7 +268,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_1nn_species_wsp.txt
 
 classigntax \
@@ -282,7 +282,7 @@ clmakecachedb \
 --blastdb=animals_mt_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp
 
 clidentseq \
@@ -290,7 +290,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wosp.txt
 
 classigntax \
@@ -304,7 +304,7 @@ clidentseq \
 --blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_1nn_species_wosp.txt
 
 classigntax \
@@ -335,15 +335,18 @@ OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv
 # Extract standard OTUs
 clfiltersum \
 --otuseq=standard.fasta \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.tsv \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_standard.tsv
 
 # Filter out non-Actinopterygii/Sarcopterygii OTUs
 clfiltersum \
 --taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
 --includetaxa=superclass,Actinopterygii,superclass,Sarcopterygii \
-OverlappedPairedEnd_wSTD_09_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.tsv \
 OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv
+
+# Convert number of reads based on internal standard
+Rscript runR_overlappedpairedend_wSTD_convert.R
 
 # Make top-50 species community data matrix for barplot
 clsumtaxa \
@@ -352,8 +355,8 @@ clsumtaxa \
 --targetrank=species \
 --topN=50 \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50species_nreads_fishes.tsv
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50species_nreads_fishes_converted.tsv
 
 # Make top-50 families community data matrix for barplot
 clsumtaxa \
@@ -362,8 +365,8 @@ clsumtaxa \
 --targetrank=family \
 --topN=50 \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50family_nreads_fishes.tsv
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50family_nreads_fishes_converted.tsv
 
 # Make species-based community data matrix for heatmap
 clsumtaxa \
@@ -371,8 +374,8 @@ clsumtaxa \
 --taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=species \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_species_nreads_fishes.tsv
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_species_nreads_fishes_converted.tsv
 
 # Make family-based community data matrix for heatmap
 clsumtaxa \
@@ -380,8 +383,11 @@ clsumtaxa \
 --taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=family \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_family_nreads_fishes.tsv
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
+OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_family_nreads_fishes_converted.tsv
+
+# Run R
+Rscript runR_overlappedpairedend_wSTD.R
 
 # Remove cachedb
 rm -r OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species*

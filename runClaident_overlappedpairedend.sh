@@ -352,5 +352,8 @@ clsumtaxa \
 OverlappedPairedEnd_10_ClaidentResults/sample_otu_matrix_fishes.tsv \
 OverlappedPairedEnd_10_ClaidentResults/sample_family_nreads_fishes.tsv
 
+# Run R
+Rscript runR_overlappedpairedend.R
+
 # Remove cachedb
 rm -r OverlappedPairedEnd_10_ClaidentResults/cachedb_species*
