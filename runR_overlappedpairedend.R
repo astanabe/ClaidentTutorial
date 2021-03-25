@@ -98,10 +98,10 @@ cvr <- 0.05
 cvrfun <- function(x) {min(which(x <= cvr)) + 1}
 ## get number of seqs of target coverage
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
-write.table(cvrrare, "OverlappedPairedEnd_11_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 # make rarefied community data
 temp <- as.data.frame(row.names(Community), row.names=row.names(Community))
 colnames(temp) <- "samplename"
+write.table(cbind(temp, as.data.frame(cvrrare)), "OverlappedPairedEnd_11_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 RarefiedCommunity <- list()
 for(i in 1:4) {
   RarefiedCommunity[[i]] <- rrarefy(Community, cvrrare)

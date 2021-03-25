@@ -101,10 +101,10 @@ cvr <- 0.05
 cvrfun <- function(x) {min(which(x <= cvr)) + 1}
 ## get number of seqs of target coverage
 cvrrare <- unlist(lapply(rareslopelist, cvrfun))
-write.table(cvrrare, "OverlappedPairedEnd_wSTD_12_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 # make rarefied community data
 temp <- as.data.frame(row.names(Community), row.names=row.names(Community))
 colnames(temp) <- "samplename"
+write.table(cbind(temp, as.data.frame(cvrrare)), "OverlappedPairedEnd_wSTD_12_RAnalysisResults/cvrrare.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 RarefiedCommunity <- list()
 for(i in 1:4) {
   RarefiedCommunity[[i]] <- rrarefy(cbind(Standard, Community), cvrrare)
@@ -115,11 +115,12 @@ for(i in 1:4) {
 ConvertedRarefiedCommunity <- list()
 ## Copy number per 1uL of internal standard
 StandardCopy <- c(10, 20, 40, 80)
+slope <- data.frame()
 for(i in 1:4) {
   ## Function definition
   ConvertReads <- function(x){
-    slope <- lm(as.numeric(RarefiedCommunity[[i]][x,1:4]) ~ StandardCopy + 0)$coefficients
-    conv <- RarefiedCommunity[[i]][x,-1:-4] / slope
+    slope[x,i] <<- lm(as.numeric(RarefiedCommunity[[i]][x,1:4]) ~ StandardCopy + 0)$coefficients
+    conv <- RarefiedCommunity[[i]][x,-1:-4] / slope[x,i]
     return(conv)
   }
   ConvertedRarefiedCommunity[[i]] <- data.frame()
@@ -133,6 +134,7 @@ for(i in 1:4) {
   ConvertedRarefiedCommunity[[i]] <- ConvertedRarefiedCommunity[[i]] * 200 * (1 / 1)
   write.table(cbind(temp, ConvertedRarefiedCommunity[[i]]), paste0("OverlappedPairedEnd_wSTD_12_RAnalysisResults/ConvertedRarefiedCommunity", i, ".tsv"), sep="\t", append=F, quote=F, row.names=F, col.names=T, na="NA")
 }
+write.table(cbind(temp, slope), "OverlappedPairedEnd_wSTD_12_RAnalysisResults/slope.tsv", sep="\t", append=F, quote=F, row.names=F, col.names=F, na="NA")
 
 # Make Beta-diversity (dissimilarity) matrix
 BrayCurtis <- list()
