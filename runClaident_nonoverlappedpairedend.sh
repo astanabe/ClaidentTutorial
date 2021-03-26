@@ -1,3 +1,5 @@
+script runClaident_nonoverlappedpairedend.log
+
 # Set number of processor cores used for computation
 export THREADS=32
 
@@ -513,3 +515,5 @@ NonoverlappedPairedEnd_11_ClaidentResults/sample_family_nreads_fishes.tsv
 
 # Remove cachedb
 rm -r NonoverlappedPairedEnd_11_ClaidentResults/*cachedb_species*
+
+exit
