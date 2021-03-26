@@ -1,3 +1,5 @@
+script runClaident_overlappedpairedend_wSTD.log
+
 # Set number of processor cores used for computation
 export THREADS=32
 
@@ -391,3 +393,5 @@ Rscript runR_overlappedpairedend_wSTD.R
 
 # Remove cachedb
 rm -r OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species*
+
+exit

@@ -1,3 +1,5 @@
+script runClaident_singleend.log
+
 # Set number of processor cores used for computation
 export THREADS=32
 
@@ -346,3 +348,5 @@ SingleEnd_09_ClaidentResults/sample_family_nreads_fishes.tsv
 
 # Remove cachedb
 rm -r SingleEnd_09_ClaidentResults/cachedb_species*
+
+exit
