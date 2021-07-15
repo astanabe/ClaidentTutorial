@@ -1,5 +1,3 @@
-script runClaident_overlappedpairedend_wSTD.log
-
 # Set number of processor cores used for computation
 export THREADS=32
 
