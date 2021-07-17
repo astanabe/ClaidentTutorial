@@ -391,5 +391,3 @@ Rscript runR_overlappedpairedend_wSTD.R
 
 # Remove cachedb
 rm -r OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species*
-
-exit
