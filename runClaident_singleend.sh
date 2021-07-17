@@ -346,5 +346,3 @@ SingleEnd_09_ClaidentResults/sample_family_nreads_fishes.tsv
 
 # Remove cachedb
 rm -r SingleEnd_09_ClaidentResults/cachedb_species*
-
-exit

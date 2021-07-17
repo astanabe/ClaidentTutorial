@@ -357,5 +357,3 @@ Rscript runR_overlappedpairedend.R
 
 # Remove cachedb
 rm -r OverlappedPairedEnd_10_ClaidentResults/cachedb_species*
-
-exit

@@ -513,5 +513,3 @@ NonoverlappedPairedEnd_11_ClaidentResults/sample_family_nreads_fishes.tsv
 
 # Remove cachedb
 rm -r NonoverlappedPairedEnd_11_ClaidentResults/*cachedb_species*
-
-exit
