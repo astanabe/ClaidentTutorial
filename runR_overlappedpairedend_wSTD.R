@@ -79,7 +79,7 @@ Standard <- read.table("OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_m
 # Coverage-based rarefaction
 ## make rareslopelist using all cpu cores
 rareslopelist <- list()
-cl <- makeCluster(detectCores())
+cl <- makeCluster(detectCores(), type="FORK")
 registerDoParallel(cl)
 rareslopelist <- foreach(i = 1:nrow(Community), .packages="vegan") %dopar% {
 	rareslope(cbind(Standard[i,], Community[i,]), seq(1, (sum(cbind(Standard[i,], Community[i,])) - 1), by=1))

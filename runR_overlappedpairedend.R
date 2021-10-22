@@ -76,7 +76,7 @@ dev.off()
 # Coverage-based rarefaction
 ## make rareslopelist using all cpu cores
 rareslopelist <- list()
-cl <- makeCluster(detectCores())
+cl <- makeCluster(detectCores(), type="FORK")
 registerDoParallel(cl)
 rareslopelist <- foreach(i = 1:nrow(Community), .packages="vegan") %dopar% {
 	rareslope(Community[i,], seq(1, (sum(Community[i,]) - 1), by=1))
