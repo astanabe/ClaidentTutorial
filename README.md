@@ -1,6 +1,6 @@
 # ClaidentTutorial
 
-Tutorial scripts and data for Claident.
+Tutorial scripts and data for [Claident](https://github.com/astanabe/Claident).
 
 ## Prerequisites to run Claident
 

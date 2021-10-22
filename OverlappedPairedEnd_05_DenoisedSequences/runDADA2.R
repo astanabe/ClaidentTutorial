@@ -1,14 +1,22 @@
-ranseed <- 1624285940
-numthreads <- 128
+ranseed <- 1633332055
+numthreads <- 32
 outputfolder <- "OverlappedPairedEnd_05_DenoisedSequences"
 pooling <- T
 library(dada2)
+library(foreach)
+library(doParallel)
 set.seed(ranseed)
 setDadaOpt(OMEGA_C=0)
 fn1 <- sort(list.files(outputfolder, pattern="\\.fastq$", full.names=T))
 extract.sample.names <- function (x) { sub("\\.fastq$", "", sub("^.*\\/", "", x)) }
 names(fn1) <- sapply(fn1, extract.sample.names)
-derep1 <- derepFastq(fn1, verbose=T, qualityType="FastqQuality")
+derep1 <- list()
+cl <- makeCluster(numthreads, type="FORK")
+registerDoParallel(cl)
+derep1 <- foreach(i = 1:length(fn1), .packages="dada2") %dopar% {
+    derepFastq(fn1[[i]], verbose=T, qualityType="FastqQuality")
+}
+stopCluster(cl)
 err1 <- learnErrors(derep1, verbose=T, multithread=numthreads, qualityType="FastqQuality")
 pdf(file=paste0(outputfolder, "/plotErrors.pdf"))
 plotErrors(err1, obs=T, err_out=T, err_in=T, nominalQ=T)
