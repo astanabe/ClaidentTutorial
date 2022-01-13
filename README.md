@@ -19,7 +19,7 @@ install.packages(c("vegan", "colorspace", "RColorBrewer", "tidyverse", "ggsci", 
 ```
 
 You might need to install several programs and/or libraries such as libssl or libgdal before executing the above package installation in R.
-If you are trying to run this tutorial on Ubuntu or Debian, the following commands may helps you.
+If you are trying to run this tutorial on Ubuntu or Debian, the following commands may help you.
 
 ```
 sudo apt install libssl-dev libgdal-dev
