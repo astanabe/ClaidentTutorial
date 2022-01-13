@@ -1,5 +1,5 @@
-ranseed <- 1631952735
-numthreads <- 32
+ranseed <- 1640907737
+numthreads <- 128
 outputfolder <- "SingleEnd_04_DenoisedSequences"
 pooling <- T
 library(dada2)
