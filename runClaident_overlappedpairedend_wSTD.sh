@@ -87,21 +87,19 @@ fi
 # Demultiplex Type B (If FASTQ files have been already demultiplexed)
 # --seqnamestyle=illumina should be used for real Illumina outputs.
 if ! test -e PairedEnd_wSTD_02b_DemultiplexedSequences; then
-for s in `ls 01_RawSequences/Blank??_wSTD_R1_001.fastq.xz 01_RawSequences/Sample??_wSTD_R1_001.fastq.xz | grep -o -P '[A-Z][a-z]+\d\d'`
-do clsplitseq \
+cltruncprimer \
 --runname=ClaidentTutorial \
---indexname=$s \
 --forwardprimerfile=forwardprimer.fasta \
 --reverseprimerfile=reverseprimer.fasta \
 --truncateN=enable \
+--index1file=index1.fasta \
+--index2file=index2.fasta \
 --compress=xz \
 --numthreads=$THREADS \
 --seqnamestyle=other \
---append \
-01_RawSequences/$s\_wSTD_R1_001.fastq.xz \
-01_RawSequences/$s\_wSTD_R2_001.fastq.xz \
+01_RawSequences/Sample??_wSTD_R?_001.fastq.xz \
+01_RawSequences/Blank??_wSTD_R?_001.fastq.xz \
 PairedEnd_wSTD_02b_DemultiplexedSequences
-done
 fi
 
 # Compare Type A and B
@@ -175,10 +173,10 @@ OverlappedPairedEnd_wSTD_07_STDClusteredSequences
 # Eliminate index-hopping
 # This step cannot apply to TypeB demultiplexed sequences
 clremovecontam \
+--test=binomial \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
---mode=eliminate \
---ignoreotuseq=standard.fasta \
+--numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_07_STDClusteredSequences \
 OverlappedPairedEnd_wSTD_08_NonhoppedSequences
 
@@ -186,8 +184,9 @@ OverlappedPairedEnd_wSTD_08_NonhoppedSequences
 # Note that this process is incompatible with normalization of concentration/sequencing depth.
 # Do not apply this process in such cases.
 clremovecontam \
+--test=thompson \
 --blanklist=blanklist.txt \
---mode=eliminate \
+--numthreads=$THREADS \
 --ignoreotuseq=standard.fasta \
 OverlappedPairedEnd_wSTD_08_NonhoppedSequences \
 OverlappedPairedEnd_wSTD_09_DecontaminatedSequences

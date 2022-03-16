@@ -15,7 +15,7 @@ Install R, and then, execute the following command in R
 
 ```
 library(parallel)
-install.packages(c("vegan", "colorspace", "RColorBrewer", "tidyverse", "ggsci", "khroma", "picante", "bipartite", "geosphere", "foreach", "doParallel", "mpmcorrelogram", "pvclust"), repos="http://cloud.r-project.org/", dependencies=T, clean=T, Ncpus=detectCores())
+install.packages(c("vegan", "colorspace", "RColorBrewer", "tidyverse", "ggsci", "khroma", "picante", "bipartite", "geosphere", "foreach", "doParallel", "mpmcorrelogram", "pvclust"), repos="http://cloud.r-project.org/", dependencies=T, clean=T, upgrade="never", Ncpus=detectCores())
 ```
 
 You might need to install several programs and/or libraries such as libssl or libgdal before executing the above package installation in R.
