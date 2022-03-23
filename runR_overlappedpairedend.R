@@ -256,10 +256,10 @@ JaccardGeoMCA <- list()
 BinaryJaccardGeoMCA <- list()
 BinaryRaupCrickGeoMCA <- list()
 for(i in 1:4) {
-  BrayCurtisGeoMCA[[i]] <- mpmcorrelogram(BrayCurtis[[i]], Geodist, method="spearman", permutations=999)
-  JaccardGeoMCA[[i]] <- mpmcorrelogram(Jaccard[[i]], Geodist, method="spearman", permutations=999)
-  BinaryJaccardGeoMCA[[i]] <- mpmcorrelogram(BinaryJaccard[[i]], Geodist, method="spearman", permutations=999)
-  BinaryRaupCrickGeoMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Geodist, method="spearman", permutations=999)
+  BrayCurtisGeoMCA[[i]] <- mpmcorrelogram(BrayCurtis[[i]], Geodist, method="spearman", permutations=999, plot=F)
+  JaccardGeoMCA[[i]] <- mpmcorrelogram(Jaccard[[i]], Geodist, method="spearman", permutations=999, plot=F)
+  BinaryJaccardGeoMCA[[i]] <- mpmcorrelogram(BinaryJaccard[[i]], Geodist, method="spearman", permutations=999, plot=F)
+  BinaryRaupCrickGeoMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Geodist, method="spearman", permutations=999, plot=F)
 }
 ## draw analysis results
 pdf("OverlappedPairedEnd_11_RAnalysisResults/GeoMCA.pdf", width=7, height=7)
@@ -334,10 +334,10 @@ JaccardDateMCA <- list()
 BinaryJaccardDateMCA <- list()
 BinaryRaupCrickDateMCA <- list()
 for(i in 1:4) {
-  BrayCurtisDateMCA[[i]] <- mpmcorrelogram(BrayCurtis[[i]], Datedist, method="spearman", permutations=999)
-  JaccardDateMCA[[i]] <- mpmcorrelogram(Jaccard[[i]], Datedist, method="spearman", permutations=999)
-  BinaryJaccardDateMCA[[i]] <- mpmcorrelogram(BinaryJaccard[[i]], Datedist, method="spearman", permutations=999)
-  BinaryRaupCrickDateMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Datedist, method="spearman", permutations=999)
+  BrayCurtisDateMCA[[i]] <- mpmcorrelogram(BrayCurtis[[i]], Datedist, method="spearman", permutations=999, plot=F)
+  JaccardDateMCA[[i]] <- mpmcorrelogram(Jaccard[[i]], Datedist, method="spearman", permutations=999, plot=F)
+  BinaryJaccardDateMCA[[i]] <- mpmcorrelogram(BinaryJaccard[[i]], Datedist, method="spearman", permutations=999, plot=F)
+  BinaryRaupCrickDateMCA[[i]] <- mpmcorrelogram(BinaryRaupCrick[[i]], Datedist, method="spearman", permutations=999, plot=F)
 }
 ## draw analysis results
 pdf("OverlappedPairedEnd_11_RAnalysisResults/DateMCA.pdf", width=7, height=7)
