@@ -159,6 +159,7 @@ clremovechimev \
 --mode=both \
 --uchimedenovo=3 \
 --referencedb=cdu12s \
+--addtoref=standard.fasta \
 --numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_05_DenoisedSequences \
 OverlappedPairedEnd_wSTD_06_NonchimericSequences
