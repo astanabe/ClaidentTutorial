@@ -205,19 +205,19 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species.tsv
 
-# Assign taxonomy based on (95%-)1-NN method using animals_mt_species
+# Assign taxonomy based on (95%-)3-NN method using animals_mt_species
 clidentseq \
---method=1,95% \
+--method=3,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species \
 --numthreads=$THREADS \
 SingleEnd_08_ClusteredSequences/clustered.fasta \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species.txt
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
 --minnsupporter=1 \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species.txt \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species.tsv
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species.txt \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species.tsv
 
 # Assign taxonomy based on QCauto method using animals_mt_species_wsp
 clmakecachedb \
@@ -238,19 +238,19 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species_wsp.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wsp.tsv
 
-# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wsp
+# Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wsp
 clidentseq \
---method=1,95% \
+--method=3,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species_wsp \
 --numthreads=$THREADS \
 SingleEnd_08_ClusteredSequences/clustered.fasta \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species_wsp.txt
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species_wsp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
 --minnsupporter=1 \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species_wsp.txt \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species_wsp.tsv
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species_wsp.txt \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species_wsp.tsv
 
 # Assign taxonomy based on QCauto method using animals_mt_species_wosp
 clmakecachedb \
@@ -271,22 +271,22 @@ classigntax \
 SingleEnd_09_ClaidentResults/neighborhoods_qc_species_wosp.txt \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wosp.tsv
 
-# Assign taxonomy based on (95%-)1-NN method using animals_mt_species_wosp
+# Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wosp
 clidentseq \
---method=1,95% \
+--method=3,95% \
 --blastdb=SingleEnd_09_ClaidentResults/cachedb_species_wosp \
 --numthreads=$THREADS \
 SingleEnd_08_ClusteredSequences/clustered.fasta \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species_wosp.txt
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species_wosp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
 --minnsupporter=1 \
-SingleEnd_09_ClaidentResults/neighborhoods_1nn_species_wosp.txt \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species_wosp.tsv
+SingleEnd_09_ClaidentResults/neighborhoods_3nn_species_wosp.txt \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
-# Note that merge of QCauto results and (95%-)1-NN results has no effects in many cases because (95%-)1-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences to the query.
+# Note that merge of QCauto results and (95%-)3-NN results has no effects in many cases because (95%-)3-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences to the query.
 # However, merge of results using different reference database is often useful.
 clmergeassign \
 --preferlower \
@@ -294,9 +294,9 @@ clmergeassign \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wosp.tsv \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species.tsv \
 SingleEnd_09_ClaidentResults/taxonomy_qc_species_wsp.tsv \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species_wosp.tsv \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species.tsv \
-SingleEnd_09_ClaidentResults/taxonomy_1nn_species_wsp.tsv \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species_wosp.tsv \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species.tsv \
+SingleEnd_09_ClaidentResults/taxonomy_3nn_species_wsp.tsv \
 SingleEnd_09_ClaidentResults/taxonomy_merged.tsv
 
 # Fill blank cells of taxonomic assignment
@@ -310,6 +310,14 @@ clfiltersum \
 --includetaxa=superclass,Actinopterygii,superclass,Sarcopterygii \
 SingleEnd_08_ClusteredSequences/clustered.tsv \
 SingleEnd_09_ClaidentResults/sample_otu_matrix_fishes.tsv
+
+# Plot word cloud
+clplotwordcloud \
+--taxfile=SingleEnd_09_ClaidentResults/taxonomy_merged_filled.tsv \
+--targetrank=family,species \
+--numthreads=$THREADS \
+SingleEnd_09_ClaidentResults/sample_otu_matrix_fishes.tsv \
+SingleEnd_09_ClaidentResults/wordcloud
 
 # Make top-50 species community data matrix for barplot
 clsumtaxa \
