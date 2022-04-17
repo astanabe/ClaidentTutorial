@@ -1,5 +1,5 @@
-ranseed <- 1647969599
-numthreads <- 128
+ranseed <- 1651944269
+numthreads <- 32
 outputfolder <- "NonoverlappedPairedEnd_06_DenoisedSequences"
 pooling <- T
 library(dada2)

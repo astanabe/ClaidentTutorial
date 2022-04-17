@@ -1,3 +1,4 @@
+>denoised_209;base62=-1
 >otu_001;base62=BsSTZhu3LEczr2Z00jnarskggjBFKrTA1LUCtwxnDnC3gmG0XyKrPjc4Rmo
 KX060617
 LC458095
