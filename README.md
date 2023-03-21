@@ -4,9 +4,9 @@ Tutorial scripts and data for [Claident](https://github.com/astanabe/Claident).
 
 ## Lecture video is available
 
-- [メタバーコーディング法概説：夢の技術の夢のない現実の話(Introduction to metabarcoding: The reality of dream technology)](https://youtu.be/AMaM2stGdqw) Speech in Japanese with English slides
-- [ClaidentとRによる環境DNAメタバーコーディング分析講座：塩基配列データ処理から生態学的分析まで(Lecture course on environmental DNA metabarcoding using Claident and R: From nucleotide sequence data processing to ecological analysis)](https://youtu.be/NiAXIghUh7Q) Speech in Japanese with English slides and auto-translated English subtitles
-- [ClaidentとRによる環境DNA「定量」メタバーコーディング分析講座：塩基配列データ処理から生態学的分析まで(Lecture course on "quantitative" environmental DNA metabarcoding using Claident and R: From nucleotide sequence data processing to ecological analysis)](https://youtu.be/SFRzSS4V308) Speech in Japanese with English slides
+- [メタバーコーディング法概説：夢の技術の夢のない現実の話 (Introduction to metabarcoding: The reality of dream technology)](https://youtu.be/AMaM2stGdqw) Speech in Japanese with English slides
+- [ClaidentとRによる環境DNAメタバーコーディング分析講座：塩基配列データ処理から生態学的分析まで (Lecture course on environmental DNA metabarcoding using Claident and R: From nucleotide sequence data processing to ecological analyses)](https://youtu.be/NiAXIghUh7Q) Speech in Japanese with English slides and auto-translated English subtitles
+- [ClaidentとRによる環境DNA「定量」メタバーコーディング分析講座：塩基配列データ処理から生態学的分析まで (Lecture course on "quantitative" environmental DNA metabarcoding using Claident and R: From nucleotide sequence data processing to ecological analyses)](https://youtu.be/SFRzSS4V308) Speech in Japanese with English slides
 
 ## Prerequisites to run Claident
 
