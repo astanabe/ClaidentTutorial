@@ -1,4 +1,4 @@
-ranseed <- 1651591421
+ranseed <- 1699622345
 numthreads <- 32
 outputfolder <- "OverlappedPairedEnd_wSTD_05_DenoisedSequences"
 pooling <- T

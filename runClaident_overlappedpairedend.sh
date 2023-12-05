@@ -160,7 +160,7 @@ OverlappedPairedEnd_06_NonchimericSequences
 # Eliminate index-hopping
 # This step cannot apply to TypeB demultiplexed sequences
 clremovecontam \
---test=binomial \
+--test=thompson \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
 --numthreads=$THREADS \

@@ -1,5 +1,4 @@
 query	superkingdom	kingdom	phylum	subphylum	superclass	class	subclass	infraclass	cohort	subcohort	superorder	order	suborder	infraorder	superfamily	family	subfamily	tribe	genus	subgenus	species
-denoised_213																					
 otu_001	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi	Cypriniphysae	Cypriniformes	Cobitoidei	Gastromyzontidae	Gastromyzontidae	Gastromyzontidae	unidentified Gastromyzontidae	unidentified Gastromyzontidae	unidentified Gastromyzontidae	unidentified Gastromyzontidae	unidentified Gastromyzontidae
 otu_002	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi	Cypriniphysae	Cypriniformes	Cobitoidei	Cobitidae	Cobitidae	Cobitidae	Cobitinae	Canthophrys	Canthophrys	Canthophrys gongota	Canthophrys gongota
 otu_003	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Clupei	Clupeiformes	Clupeiformes	Clupeoidei	Clupeidae	Clupeidae	Clupeidae	Clupeinae	Sardina	Sardina	Sardina pilchardus	Sardina pilchardus
