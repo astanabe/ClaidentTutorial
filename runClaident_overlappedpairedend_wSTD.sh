@@ -22,9 +22,9 @@ OverlappedPairedEnd_wSTD_05_DenoisedSequences \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_06_NonchimericSequences; then
+if test -e OverlappedPairedEnd_wSTD_06_NonchimericSequences1; then
 mv \
-OverlappedPairedEnd_wSTD_06_NonchimericSequences \
+OverlappedPairedEnd_wSTD_06_NonchimericSequences1 \
 previous/
 fi
 
@@ -34,32 +34,38 @@ OverlappedPairedEnd_wSTD_07_STDClusteredSequences \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_08_NonhoppedSequences; then
+if test -e OverlappedPairedEnd_wSTD_08_NonchimericSequences2; then
 mv \
-OverlappedPairedEnd_wSTD_08_NonhoppedSequences \
+OverlappedPairedEnd_wSTD_08_NonchimericSequences2 \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_09_DecontaminatedSequences; then
+if test -e OverlappedPairedEnd_wSTD_09_NonhoppedSequences; then
 mv \
-OverlappedPairedEnd_wSTD_09_DecontaminatedSequences \
+OverlappedPairedEnd_wSTD_09_NonhoppedSequences \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_10_ClusteredSequences; then
+if test -e OverlappedPairedEnd_wSTD_10_DecontaminatedSequences; then
 mv \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences \
+OverlappedPairedEnd_wSTD_10_DecontaminatedSequences \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_11_ClaidentResults; then
+if test -e OverlappedPairedEnd_wSTD_11_ClusteredSequences; then
 mv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults \
+OverlappedPairedEnd_wSTD_11_ClusteredSequences \
 previous/
 fi
 
-if test -e OverlappedPairedEnd_wSTD_12_RAnalysisResults; then
-mv OverlappedPairedEnd_wSTD_12_RAnalysisResults \
+if test -e OverlappedPairedEnd_wSTD_12_ClaidentResults; then
+mv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults \
+previous/
+fi
+
+if test -e OverlappedPairedEnd_wSTD_13_RAnalysisResults; then
+mv OverlappedPairedEnd_wSTD_13_RAnalysisResults \
 previous/
 fi
 
@@ -76,11 +82,11 @@ clsplitseq \
 --minqualtag=30 \
 --compress=xz \
 --numthreads=$THREADS \
---seqnamestyle=other \
-01_RawSequences/Undemultiplexed_wSTD_R1_001.fastq.xz \
-01_RawSequences/Undemultiplexed_wSTD_I1_001.fastq.xz \
-01_RawSequences/Undemultiplexed_wSTD_I2_001.fastq.xz \
-01_RawSequences/Undemultiplexed_wSTD_R2_001.fastq.xz \
+--seqnamestyle=illumina \
+01b_RawSequences_wSTD/Undetermined_S0_L001_R1_001.fastq.gz \
+01b_RawSequences_wSTD/Undetermined_S0_L001_I1_001.fastq.gz \
+01b_RawSequences_wSTD/Undetermined_S0_L001_I2_001.fastq.gz \
+01b_RawSequences_wSTD/Undetermined_S0_L001_R2_001.fastq.gz \
 PairedEnd_wSTD_02a_DemultiplexedSequences
 fi
 
@@ -96,9 +102,9 @@ cltruncprimer \
 --index2file=index2.fasta \
 --compress=xz \
 --numthreads=$THREADS \
---seqnamestyle=other \
-01_RawSequences/Sample??_wSTD_R?_001.fastq.xz \
-01_RawSequences/Blank??_wSTD_R?_001.fastq.xz \
+--seqnamestyle=illumina \
+01b_RawSequences_wSTD/Sample??_R?_001.fastq.gz \
+01b_RawSequences_wSTD/Blank??_R?_001.fastq.gz \
 PairedEnd_wSTD_02b_DemultiplexedSequences
 fi
 
@@ -149,169 +155,179 @@ OverlappedPairedEnd_wSTD_04_FilteredSequences
 
 # Denoise using DADA2
 cldenoiseseqd \
---pool=enable \
+--pool=pseudo \
 --numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_04_FilteredSequences \
 OverlappedPairedEnd_wSTD_05_DenoisedSequences
 
 # Remove chimeras using UCHIME3
 clremovechimev \
---mode=both \
+--mode=denovo \
 --uchimedenovo=3 \
---referencedb=cdu12s \
---addtoref=standard.fasta \
---numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_05_DenoisedSequences \
-OverlappedPairedEnd_wSTD_06_NonchimericSequences
+OverlappedPairedEnd_wSTD_06_NonchimericSequences1
 
 # Cluster internal standard sequences to otus
 clclusterstdv \
 --standardseq=standard.fasta \
+--minident=0.9 \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_06_NonchimericSequences \
+OverlappedPairedEnd_wSTD_06_NonchimericSequences1 \
 OverlappedPairedEnd_wSTD_07_STDClusteredSequences
+
+# Remove chimeras using UCHIME3
+clremovechimev \
+--mode=ref \
+--referencedb=cdu12s \
+--addtoref=OverlappedPairedEnd_wSTD_07_STDClusteredSequences/stdvariations.fasta \
+--numthreads=$THREADS \
+OverlappedPairedEnd_wSTD_07_STDClusteredSequences \
+OverlappedPairedEnd_wSTD_08_NonchimericSequences2
 
 # Eliminate index-hopping
 # This step cannot apply to TypeB demultiplexed sequences
 clremovecontam \
 --test=thompson \
+--ignoresamplelist=blanklist.txt \
 --index1file=index1.fasta \
 --index2file=index2.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_07_STDClusteredSequences \
-OverlappedPairedEnd_wSTD_08_NonhoppedSequences
+OverlappedPairedEnd_wSTD_08_NonchimericSequences2 \
+OverlappedPairedEnd_wSTD_09_NonhoppedSequences
 
 # Eliminate contamination
-# Note that this process is incompatible with normalization of concentration/sequencing depth.
-# Do not apply this process in such cases.
+# Note that this process can be applied to read-depth-normalized library data because of internal standard.
 clremovecontam \
 --test=thompson \
 --blanklist=blanklist.txt \
---numthreads=$THREADS \
 --ignoreotuseq=standard.fasta \
-OverlappedPairedEnd_wSTD_08_NonhoppedSequences \
-OverlappedPairedEnd_wSTD_09_DecontaminatedSequences
+--stdconctable=stdconctable.tsv \
+--solutionvoltable=solutionvoltable.tsv \
+--watervoltable=watervoltable.tsv \
+--numthreads=$THREADS \
+OverlappedPairedEnd_wSTD_09_NonhoppedSequences \
+OverlappedPairedEnd_wSTD_10_DecontaminatedSequences
 
 # Cluster remaining sequences
 # Note that this step is meaningless on this data because additional clustering has no effect.
 clclassseqv \
---minident=0.99 \
+--minident=1.0 \
 --strand=plus \
 --numthreads=$THREADS \
 --ignoreotuseq=standard.fasta \
-OverlappedPairedEnd_wSTD_09_DecontaminatedSequences \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences
+OverlappedPairedEnd_wSTD_10_DecontaminatedSequences \
+OverlappedPairedEnd_wSTD_11_ClusteredSequences
 
 # Make final output folder
-mkdir -p OverlappedPairedEnd_wSTD_11_ClaidentResults
+mkdir -p OverlappedPairedEnd_wSTD_12_ClaidentResults
 
 # Assign taxonomy based on QCauto method using animals_mt_species
 clmakecachedb \
 --blastdb=animals_mt_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species
 
 clidentseq \
 --method=QC \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species.tsv
 
 # Assign taxonomy based on (95%-)3-NN method using animals_mt_species
 clidentseq \
 --method=3,95% \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species.txt
 
 classigntax \
 --taxdb=animals_mt_species \
---minnsupporter=1 \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species.tsv
+--minnsupporter=3 \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species.tsv
 
 # Assign taxonomy based on QCauto method using animals_mt_species_wsp
 clmakecachedb \
 --blastdb=animals_mt_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wsp
 
 clidentseq \
 --method=QC \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wsp.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wsp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wsp.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species_wsp.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wsp.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wsp.tsv
 
 # Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wsp
 clidentseq \
 --method=3,95% \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wsp \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species_wsp.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wsp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wsp \
---minnsupporter=1 \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species_wsp.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species_wsp.tsv
+--minnsupporter=3 \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wsp.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wsp.tsv
 
 # Assign taxonomy based on QCauto method using animals_mt_species_wosp
 clmakecachedb \
 --blastdb=animals_mt_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wosp
 
 clidentseq \
 --method=QC \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wosp.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wosp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_qc_species_wosp.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species_wosp.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wosp.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wosp.tsv
 
 # Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wosp
 clidentseq \
 --method=3,95% \
---blastdb=OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species_wosp \
+--blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.fasta \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species_wosp.txt
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wosp.txt
 
 classigntax \
 --taxdb=animals_mt_species_wosp \
---minnsupporter=1 \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/neighborhoods_3nn_species_wosp.txt \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species_wosp.tsv
+--minnsupporter=3 \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wosp.txt \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wosp.tsv
 
 # Merge 6 taxonomic assignment results
 # Note that merge of QCauto results and (95%-)3-NN results has no effects in many cases because (95%-)3-NN results are always consistent to QCauto results excluding the case when there is no 95% or more similar reference sequences to the query.
@@ -319,83 +335,145 @@ OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species_wosp.tsv
 clmergeassign \
 --preferlower \
 --priority=descend \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species_wosp.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_qc_species_wsp.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species_wosp.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_3nn_species_wsp.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wosp.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wsp.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wosp.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wsp.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged.tsv
 
 # Fill blank cells of taxonomic assignment
 clfillassign \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv
+--fullfill=enable \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv
 
 # Extract standard OTUs
 clfiltersum \
 --otuseq=standard.fasta \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_standard.tsv
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_standard.tsv
 
-# Filter out non-Actinopterygii/Sarcopterygii OTUs
+# Filter out non-fish OTUs
 clfiltersum \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
---includetaxa=superclass,Actinopterygii,superclass,Sarcopterygii \
-OverlappedPairedEnd_wSTD_10_ClusteredSequences/clustered.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes.tsv
+--negativeotuseq=standard.fasta \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
+--includetaxa=class,Hyperoartia,class,Myxini,class,Chondrichthyes \
+--includetaxa=superclass,Actinopterygii,order,Coelacanthiformes \
+--includetaxa=subclass,Dipnomorpha \
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes.tsv
 
-# Convert number of reads based on internal standard
-Rscript runR_overlappedpairedend_wSTD_convert.R
+# Extract non-fish OTUs
+clfiltersum \
+--negativeotuseq=standard.fasta \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
+--excludetaxa=class,Hyperoartia,class,Myxini,class,Chondrichthyes \
+--excludetaxa=superclass,Actinopterygii,order,Coelacanthiformes \
+--excludetaxa=subclass,Dipnomorpha \
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_nonfishes.tsv
 
 # Plot word cloud
 clplotwordcloud \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=family,species \
 --numthreads=$THREADS \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/wordcloud
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/wordcloud
+
+# Estimating DNA concentrations
+clestimateconc \
+--stdtable=OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_standard.tsv \
+--stdconctable=stdconctable.tsv \
+--solutionvoltable=solutionvoltable.tsv \
+--watervoltable=watervoltable.tsv \
+--numthreads=$THREADS \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_concentration.tsv
 
 # Make top-50 species community data matrix for barplot
 clsumtaxa \
 --tableformat=column \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=species \
 --topN=50 \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50species_nreads_fishes_converted.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_concentration.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_top50species_nreads_fishes_concentration.tsv
 
 # Make top-50 families community data matrix for barplot
 clsumtaxa \
 --tableformat=column \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=family \
 --topN=50 \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_top50family_nreads_fishes_converted.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_concentration.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_top50family_nreads_fishes_concentration.tsv
 
 # Make species-based community data matrix for heatmap
 clsumtaxa \
 --tableformat=column \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=species \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_species_nreads_fishes_converted.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_concentration.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_species_nreads_fishes_concentration.tsv
 
 # Make family-based community data matrix for heatmap
 clsumtaxa \
 --tableformat=column \
---taxfile=OverlappedPairedEnd_wSTD_11_ClaidentResults/taxonomy_merged_filled.tsv \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=family \
 --numbering=enable \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_otu_matrix_fishes_converted.tsv \
-OverlappedPairedEnd_wSTD_11_ClaidentResults/sample_family_nreads_fishes_converted.tsv
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_concentration.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_family_nreads_fishes_concentration.tsv
+
+# Coverage-based rarefaction
+clrarefysum \
+--minpcov=0.99 \
+--minntotalseqsample=500 \
+--nreplicate=4 \
+--numthreads=$THREADS \
+OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_all_rarefied
+
+# Extract standard OTUs from rarefied tables
+for n in `seq -w 1 4`
+do clfiltersum \
+--otuseq=standard.fasta \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_all_rarefied-r$n.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_standard_rarefied-r$n.tsv
+done
+
+# Extract fish OTUs
+for n in `seq -w 1 4`
+do clfiltersum \
+--negativeotuseq=standard.fasta \
+--taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
+--includetaxa=class,Hyperoartia,class,Myxini,class,Chondrichthyes \
+--includetaxa=superclass,Actinopterygii,order,Coelacanthiformes \
+--includetaxa=subclass,Dipnomorpha \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_all_rarefied-r$n.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_rarefied-r$n.tsv
+done
+
+# Estimating DNA concentrations of rarefied tables
+for n in `seq -w 1 4`
+do clestimateconc \
+--stdtable=OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_standard_rarefied-r$n.tsv \
+--stdconctable=stdconctable.tsv \
+--solutionvoltable=solutionvoltable.tsv \
+--watervoltable=watervoltable.tsv \
+--numthreads=$THREADS \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_rarefied-r$n.tsv \
+OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_fishes_rarefied-r$n\_concentration.tsv
+done
 
 # Run R
 Rscript runR_overlappedpairedend_wSTD.R
 
 # Remove cachedb
-rm -r OverlappedPairedEnd_wSTD_11_ClaidentResults/cachedb_species*
+rm -r OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species*
