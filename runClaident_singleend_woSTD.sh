@@ -101,23 +101,23 @@ SingleEnd_woSTD_02b_DemultiplexedSequences
 fi
 
 # Compare Type A and B
-rm -f SingleEnd_TypeA.txt SingleEnd_TypeB.txt
+rm -f SingleEnd_woSTD_TypeA.txt SingleEnd_woSTD_TypeB.txt
 
 cd SingleEnd_woSTD_02a_DemultiplexedSequences
 
 for f in *.fastq.xz
-do echo $f >> ../SingleEnd_TypeA.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../SingleEnd_TypeA.txt
+do echo $f >> ../SingleEnd_woSTD_TypeA.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../SingleEnd_woSTD_TypeA.txt
 done
 
 cd ../SingleEnd_woSTD_02b_DemultiplexedSequences
 
 for f in *.fastq.xz
-do echo $f >> ../SingleEnd_TypeB.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../SingleEnd_TypeB.txt
+do echo $f >> ../SingleEnd_woSTD_TypeB.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../SingleEnd_woSTD_TypeB.txt
 done
 
 cd ..
 
-diff -u SingleEnd_TypeA.txt SingleEnd_TypeB.txt
+diff -u SingleEnd_woSTD_TypeA.txt SingleEnd_woSTD_TypeB.txt
 
 # Calculate FASTQ statistics
 clcalcfastqstatv \
