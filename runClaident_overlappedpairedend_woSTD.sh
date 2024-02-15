@@ -97,23 +97,23 @@ PairedEnd_woSTD_02b_DemultiplexedSequences
 fi
 
 # Compare Type A and B
-rm -f PairedEnd_TypeA.txt PairedEnd_TypeB.txt
+rm -f PairedEnd_woSTD_TypeA.txt PairedEnd_woSTD_TypeB.txt
 
 cd PairedEnd_woSTD_02a_DemultiplexedSequences
 
 for f in *.fastq.xz
-do echo $f >> ../PairedEnd_TypeA.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../PairedEnd_TypeA.txt
+do echo $f >> ../PairedEnd_woSTD_TypeA.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../PairedEnd_woSTD_TypeA.txt
 done
 
 cd ../PairedEnd_woSTD_02b_DemultiplexedSequences
 
 for f in *.fastq.xz
-do echo $f >> ../PairedEnd_TypeB.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../PairedEnd_TypeB.txt
+do echo $f >> ../PairedEnd_woSTD_TypeB.txt; xz -dc $f | grep -c -P '^\+\r?\n?$' >> ../PairedEnd_woSTD_TypeB.txt
 done
 
 cd ..
 
-diff -u PairedEnd_TypeA.txt PairedEnd_TypeB.txt
+diff -u PairedEnd_woSTD_TypeA.txt PairedEnd_woSTD_TypeB.txt
 
 # Concatenate pairs
 clconcatpairv \
