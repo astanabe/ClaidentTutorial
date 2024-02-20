@@ -1,5 +1,12 @@
 # Set number of processor cores used for computation
-export THREADS=32
+if test "$(uname)" = 'Darwin'; then
+export THREADS=`sysctl -n hw.logicalcpu_max`
+elif test "$(expr substr $(uname -s) 1 5)" = 'Linux'; then
+export THREADS=`grep -c processor /proc/cpuinfo`
+else
+echo "Your platform ($(uname -a)) is not supported."
+exit 1
+fi
 
 # Backup previous analysis results
 mkdir -p previous
