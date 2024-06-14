@@ -228,9 +228,9 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences
 # Make final output folder
 mkdir -p OverlappedPairedEnd_wSTD_12_ClaidentResults
 
-# Assign taxonomy based on QCauto method using animals_mt_species
+# Assign taxonomy based on QCauto method using animals_12S_species
 clmakecachedb \
---blastdb=animals_mt_species \
+--blastdb=animals_12S_species \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
@@ -245,11 +245,13 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species.txt
 
 classigntax \
---taxdb=animals_mt_species \
+--taxdb=animals_12S_species \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species.tsv
 
-# Assign taxonomy based on (95%-)3-NN method using animals_mt_species
+# Assign taxonomy based on (95%-)3-NN method using animals_12S_species
 clidentseq \
 --method=3,95% \
 --blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species \
@@ -259,14 +261,16 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species.txt
 
 classigntax \
---taxdb=animals_mt_species \
+--taxdb=animals_12S_species \
 --minnsupporter=3 \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species.tsv
 
-# Assign taxonomy based on QCauto method using animals_mt_species_wsp
+# Assign taxonomy based on QCauto method using animals_12S_species_wsp
 clmakecachedb \
---blastdb=animals_mt_species_wsp \
+--blastdb=animals_12S_species_wsp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
@@ -281,11 +285,13 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wsp.txt
 
 classigntax \
---taxdb=animals_mt_species_wsp \
+--taxdb=animals_12S_species_wsp \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wsp.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wsp.tsv
 
-# Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wsp
+# Assign taxonomy based on (95%-)3-NN method using animals_12S_species_wsp
 clidentseq \
 --method=3,95% \
 --blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wsp \
@@ -295,14 +301,16 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wsp.txt
 
 classigntax \
---taxdb=animals_mt_species_wsp \
+--taxdb=animals_12S_species_wsp \
 --minnsupporter=3 \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wsp.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wsp.tsv
 
-# Assign taxonomy based on QCauto method using animals_mt_species_wosp
+# Assign taxonomy based on QCauto method using animals_12S_species_wosp
 clmakecachedb \
---blastdb=animals_mt_species_wosp \
+--blastdb=animals_12S_species_wosp \
 --ignoreotuseq=standard.fasta \
 --numthreads=$THREADS \
 OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
@@ -317,11 +325,13 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wosp.txt
 
 classigntax \
---taxdb=animals_mt_species_wosp \
+--taxdb=animals_12S_species_wosp \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_qc_species_wosp.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_qc_species_wosp.tsv
 
-# Assign taxonomy based on (95%-)3-NN method using animals_mt_species_wosp
+# Assign taxonomy based on (95%-)3-NN method using animals_12S_species_wosp
 clidentseq \
 --method=3,95% \
 --blastdb=OverlappedPairedEnd_wSTD_12_ClaidentResults/cachedb_species_wosp \
@@ -331,8 +341,10 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.fasta \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wosp.txt
 
 classigntax \
---taxdb=animals_mt_species_wosp \
+--taxdb=animals_12S_species_wosp \
 --minnsupporter=3 \
+--maxpopposer=0.05 \
+--minsoratio=19 \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/neighborhoods_3nn_species_wosp.txt \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_3nn_species_wosp.tsv
 
@@ -383,6 +395,7 @@ OverlappedPairedEnd_wSTD_11_ClusteredSequences/clustered.tsv \
 OverlappedPairedEnd_wSTD_12_ClaidentResults/sample_otu_matrix_nonfishes.tsv
 
 # Plot word cloud
+# Note that this command requires Google Chrome or Chromium browser
 clplotwordcloud \
 --taxfile=OverlappedPairedEnd_wSTD_12_ClaidentResults/taxonomy_merged_filled.tsv \
 --targetrank=family,species \
