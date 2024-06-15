@@ -1,4 +1,4 @@
-ranseed <- 1707772649
+ranseed <- 1718639342
 numthreads <- 128
 outputfolder <- "SingleEnd_woSTD_04_DenoisedSequences"
 pooling <- "pseudo"
