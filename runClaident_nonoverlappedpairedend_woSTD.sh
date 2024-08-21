@@ -188,7 +188,7 @@ cldenoiseseqd \
 NonoverlappedPairedEnd_woSTD_05_FilteredSequences \
 NonoverlappedPairedEnd_woSTD_06_DenoisedSequences
 
-# Remove chimeras using UCHIME3
+# Remove chimeras using UCHIME
 # Do not apply reference-based chimera removal (Do not use "both" or "ref" for --mode).
 clremovechimev \
 --mode=denovo \

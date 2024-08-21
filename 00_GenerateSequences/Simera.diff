@@ -1,0 +1,13 @@
+--- Simera-master/Simera.h.orig	2024-08-21 16:08:31.159632600 +0900
++++ Simera-master/Simera.h	2024-08-21 16:08:53.938424600 +0900
+@@ -7,10 +7,6 @@
+ #define max( a, b ) ( ((a) > (b)) ? (a) : (b) )
+ #endif
+ 
+-#ifndef min
+-#define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
+-#endif
+-
+ #define TRUE  1
+ #define FALSE 0
+ 

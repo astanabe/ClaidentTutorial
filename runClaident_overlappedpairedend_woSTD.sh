@@ -155,7 +155,7 @@ cldenoiseseqd \
 OverlappedPairedEnd_woSTD_04_FilteredSequences \
 OverlappedPairedEnd_woSTD_05_DenoisedSequences
 
-# Remove chimeras using UCHIME3
+# Remove chimeras using UCHIME
 clremovechimev \
 --mode=both \
 --uchimedenovo=3 \
