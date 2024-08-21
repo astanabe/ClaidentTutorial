@@ -152,7 +152,7 @@ cldenoiseseqd \
 SingleEnd_woSTD_03_FilteredSequences \
 SingleEnd_woSTD_04_DenoisedSequences
 
-# Remove chimeras using UCHIME3
+# Remove chimeras using UCHIME
 clremovechimev \
 --mode=both \
 --uchimedenovo=3 \

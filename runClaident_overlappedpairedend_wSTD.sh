@@ -167,10 +167,12 @@ cldenoiseseqd \
 OverlappedPairedEnd_wSTD_04_FilteredSequences \
 OverlappedPairedEnd_wSTD_05_DenoisedSequences
 
-# Remove chimeras using UCHIME3
+# Remove chimeras using UCHIME
 clremovechimev \
---mode=denovo \
+--mode=both \
 --uchimedenovo=3 \
+--referencedb=cdu12s \
+--addtoref=standard.fasta \
 OverlappedPairedEnd_wSTD_05_DenoisedSequences \
 OverlappedPairedEnd_wSTD_06_NonchimericSequences1
 
@@ -182,7 +184,7 @@ clclusterstdv \
 OverlappedPairedEnd_wSTD_06_NonchimericSequences1 \
 OverlappedPairedEnd_wSTD_07_STDClusteredSequences
 
-# Remove chimeras using UCHIME3
+# Remove chimeras using UCHIME
 clremovechimev \
 --mode=ref \
 --referencedb=cdu12s \

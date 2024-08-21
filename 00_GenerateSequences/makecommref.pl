@@ -96,14 +96,14 @@ else {
 		if ($i < $nsample) {
 			open($outputfilehandle, "> Sample" . sprintf("%02d", $i + 1) . ".fasta");
 			for (my $j = 0; $j < scalar(@{$community[$i]}); $j ++) {
-				print($outputfilehandle ">" . $community[$i][$j] . "\n" . $seq{$community[$i][$j]} . "\n");
+				print($outputfilehandle ">" . $community[$i][$j] . "_10\n" . $seq{$community[$i][$j]} . "\n");
 			}
 			close($outputfilehandle);
 		}
 		else {
 			open($outputfilehandle, "> Blank" . sprintf("%02d", $i - $nsample + 1) . ".fasta");
 			for (my $j = 0; $j < scalar(@{$community[$i]}); $j ++) {
-				print($outputfilehandle ">" . $community[$i][$j] . "\n" . $seq{$community[$i][$j]} . "\n");
+				print($outputfilehandle ">" . $community[$i][$j] . "_10\n" . $seq{$community[$i][$j]} . "\n");
 			}
 			close($outputfilehandle);
 		}
