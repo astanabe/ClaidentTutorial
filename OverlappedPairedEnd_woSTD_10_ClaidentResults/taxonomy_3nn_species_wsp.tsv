@@ -1,0 +1,112 @@
+query	superkingdom	kingdom	phylum	subphylum	superclass	class	subclass	infraclass	cohort	subcohort	superorder	order	suborder	infraorder	superfamily	family	subfamily	tribe	genus	species
+otu_001																				
+otu_002	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha		Atherinomorphae	Cyprinodontiformes	Cyprinodontoidei			Poeciliidae	Poeciliinae		Xiphophorus	
+otu_003	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi	Cypriniphysae	Cypriniformes	Cyprinoidei			Acheilognathidae			Rhodeus	
+otu_004																				
+otu_005	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Myctophiformes				Myctophidae			Electrona	
+otu_006	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Pleuronectiformes	Pleuronectoidei			Samaridae			Samariscus	Samariscus latus
+otu_007	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Elopiformes				Elopidae			Elops	
+otu_008																				
+otu_009	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Scombriformes				Arripidae			Arripis	Arripis trutta
+otu_010																				
+otu_011	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Cladistia						Polypteriformes				Polypteridae			Polypterus	Polypterus retropinnis
+otu_012	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes				Synaphobranchidae	Synaphobranchinae		Synaphobranchus	
+otu_013	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Gobiiformes	Gobioidei			Gobiidae	Gobiinae		Gobiopterus	
+otu_014																				
+otu_015	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Spariformes				Nemipteridae			Scolopsis	Scolopsis ciliata
+otu_016	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha							Moronidae			Morone	Morone americana
+otu_017	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Lophiiformes	Ceratioidei			Linophrynidae				
+otu_018	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Blenniiformes	Gobiesocoidei			Gobiesocidae	Gobiesocinae		Aspasma	
+otu_019	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Blenniiformes	Blennioidei			Blenniidae	Salariinae		Salarias	Salarias fasciatus
+otu_020	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Osteoglossiformes								
+otu_021																				
+otu_022																				
+otu_023	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Pleuronectiformes	Pleuronectoidei			Cynoglossidae	Symphurinae		Symphurus	Symphurus orientalis
+otu_024	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Holostei				Amiiformes				Amiidae			Amia	Amia calva
+otu_025	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Scombriformes				Centrolophidae			Psenopsis	Psenopsis anomala
+otu_026																				
+otu_027	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Pleuronectiformes	Pleuronectoidei			Bothidae			Arnoglossus	Arnoglossus tenuis
+otu_028	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Percopsiformes	Aphredoderoidei			Aphredoderidae			Aphredoderus	Aphredoderus sayanus
+otu_029																				
+otu_030																				
+otu_031																				
+otu_032	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha							Sciaenidae			Johnius	
+otu_033																				
+otu_034	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Clupei		Clupeiformes	Clupeoidei			Clupeidae	Spratelloidinae		Spratelloides	Spratelloides delicatulus
+otu_035	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Perciformes	Cottioidei	Cottales		Liparidae			Liparis	
+otu_036	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Lophiiformes	Lophioidei			Lophiidae				
+otu_037																				
+otu_038	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Acropomatiformes				Champsodontidae			Champsodon	
+otu_039																				
+otu_040	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Aulopiformes	Aulopoidei			Synodontidae	Synodontinae		Synodus	
+otu_041	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes				Congridae	Congrinae		Conger	
+otu_042	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Labriformes				Labridae			Chlorurus	
+otu_043	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Perciformes	Scorpaenoidei			Scorpaenidae	Pteroinae		Pterois	
+otu_044	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Zeiformes				Parazenidae	Parazeninae		Parazen	Parazen pacificus
+otu_045	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Perciformes	Scorpaenoidei			Synanceiidae	Synanceiinae		Synanceia	Synanceia verrucosa
+otu_046	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Priacanthiformes				Priacanthidae			Priacanthus	
+otu_047																				
+otu_048	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi	Characiphysae	Characiformes	Characoidei			Characidae	Pristellinae		Hemigrammus	Hemigrammus bleheri
+otu_049	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Tetraodontiformes			Triacanthoidea	Triacanthidae			Triacanthus	Triacanthus biaculeatus
+otu_050	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Syngnathiformes	Callionymoidei			Callionymidae				
+otu_051	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Mugiliformes				Mugilidae			Agonostomus	Agonostomus monticola
+otu_052	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Chondrostei					Acipenseriformes	Acipenseroidei			Acipenseridae	Acipenserinae	Acipenserini	Acipenser	
+otu_053																				
+otu_054																				
+otu_055	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Gobiiformes	Trichonotoidei			Trichonotidae			Trichonotus	Trichonotus elegans
+otu_056	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Aulopiformes	Alepisauroidei			Chlorophthalmidae			Chlorophthalmus	
+otu_057	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha		Atherinomorphae	Beloniformes	Adrianichthyoidei			Adrianichthyidae	Oryziinae		Oryzias	Oryzias latipes
+otu_058	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Synbranchiformes	Synbranchoidei			Synbranchidae			Monopterus	Monopterus albus
+otu_059	Eukaryota	Metazoa	Chordata	Craniata	Sarcopterygii							Coelacanthiformes				Coelacanthidae			Latimeria	Latimeria chalumnae
+otu_060																				
+otu_061	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Ophidiiformes	Ophidioidei			Carapidae	Carapinae		Carapus	
+otu_062																				
+otu_063	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Syngnathiformes				Aulostomidae			Aulostomus	Aulostomus chinensis
+otu_064																				
+otu_065																				
+otu_066	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Stomiiformes				Gonostomatidae			Sigmops	Sigmops gracilis
+otu_067																				
+otu_068	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes				Muraenidae	Uropterygiinae			
+otu_069	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Lobotiformes				Lobotidae			Lobotes	Lobotes surinamensis
+otu_070																				
+otu_071																				
+otu_072	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Scombriformes				Scombridae	Scombrinae	Scombrini	Scomber	
+otu_073																				
+otu_074	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Zeiformes				Zeidae			Zeus	Zeus faber
+otu_075	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Pleuronectiformes	Pleuronectoidei			Cynoglossidae	Cynoglossinae		Cynoglossus	Cynoglossus abbreviatus
+otu_076	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Tetraodontiformes			Balistoidea	Monacanthidae			Rudarius	Rudarius ercodes
+otu_077	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi	Cypriniphysae	Cypriniformes	Cyprinoidei			Xenocyprididae	Xenocypridinae			
+otu_078																				
+otu_079																				
+otu_080	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes				Cyematidae			Cyema	
+otu_081																				
+otu_082	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Beryciformes				Melamphaidae			Poromitra	Poromitra oscitans
+otu_083	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Albuliformes				Albulidae	Albulinae		Albula	
+otu_084																				
+otu_085	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Gadiformes	Macrouroidei			Macrouridae	Macrouroidinae		Squalogadus	Squalogadus modificatus
+otu_086	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes				Muraenidae	Muraeninae		Gymnothorax	Gymnothorax kidako
+otu_087	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Clupei		Clupeiformes	Clupeoidei			Clupeidae	Clupeinae		Escualosa	Escualosa thoracata
+otu_088																				
+otu_089																				
+otu_090																				
+otu_091																				
+otu_092																				
+otu_093	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Centrarchiformes			Cirrhitioidei	Cirrhitidae			Paracirrhites	Paracirrhites arcatus
+otu_094	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Syngnathiformes	Dactylopteroidei			Dactylopteridae			Dactyloptena	
+otu_095																				
+otu_096	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Pleuronectiformes	Pleuronectoidei			Achiridae			Trinectes	Trinectes maculatus
+otu_097																				
+otu_098																				
+otu_099	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Gobiiformes	Gobioidei			Kraemeriidae			Kraemeria	Kraemeria cunicularia
+otu_100																				
+otu_101	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Syngnathiformes	Syngnathoidei			Solenostomidae			Solenostomus	Solenostomus cyanopterus
+otu_102																				
+otu_103	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Lophiiformes	Ceratioidei			Melanocetidae			Melanocetus	
+otu_104	Eukaryota	Metazoa	Chordata	Craniata	Sarcopterygii		Dipnomorpha				Ceratodontae	Ceratodontiformes	Ceratodontoidei			Ceratodontidae			Neoceratodus	Neoceratodus forsteri
+otu_105	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Otomorpha	Ostariophysi		Gonorynchiformes	Gonorynchoidei			Gonorynchidae			Gonorynchus	Gonorynchus abbreviatus
+otu_106																				
+otu_107	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Perciformes	Serranoidei			Serranidae	Anthiinae		Pseudanthias	
+otu_108	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei				Anguilliformes								
+otu_109																				
+otu_110	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha			Syngnathiformes	Callionymoidei			Draconettidae				
+otu_111	Eukaryota	Metazoa	Chordata	Craniata	Actinopterygii	Actinopteri	Neopterygii	Teleostei	Euteleosteomorpha							Moronidae			Morone	Morone americana

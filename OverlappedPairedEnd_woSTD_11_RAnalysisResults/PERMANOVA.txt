@@ -1,0 +1,224 @@
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.7994 0.34651 3.5475 0.0003 ***
+as.numeric(Metadata$Temperature)  1   0.1410 0.02716 0.8341 0.5295    
+as.factor(Metadata$Month)         8   2.0689 0.39841 1.5296 0.0585 .  
+Residual                          7   1.1835 0.22792                  
+Total                            19   5.1929 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.8092 0.34580 3.4131 0.0004 ***
+as.numeric(Metadata$Temperature)  1   0.1320 0.02523 0.7469 0.6341    
+as.factor(Metadata$Month)         8   2.0539 0.39257 1.4530 0.0869 .  
+Residual                          7   1.2368 0.23640                  
+Total                            19   5.2319 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.7908 0.34531 3.5404 0.0007 ***
+as.numeric(Metadata$Temperature)  1   0.1407 0.02713 0.8344 0.5462    
+as.factor(Metadata$Month)         8   2.0743 0.39999 1.5379 0.0605 .  
+Residual                          7   1.1802 0.22758                  
+Total                            19   5.1860 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.8114 0.35094 3.5858 0.0008 ***
+as.numeric(Metadata$Temperature)  1   0.1562 0.03026 0.9277 0.4539    
+as.factor(Metadata$Month)         8   2.0153 0.39043 1.4960 0.0767 .  
+Residual                          7   1.1787 0.22836                  
+Total                            19   5.1616 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = Jaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.9541 0.29546 2.6140 0.0002 ***
+as.numeric(Metadata$Temperature)  1   0.2393 0.03618 0.9603 0.4564    
+as.factor(Metadata$Month)         8   2.6761 0.40462 1.3424 0.0440 *  
+Residual                          7   1.7443 0.26374                  
+Total                            19   6.6139 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = Jaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.9501 0.29292 2.5102 0.0002 ***
+as.numeric(Metadata$Temperature)  1   0.2342 0.03518 0.9044 0.5382    
+as.factor(Metadata$Month)         8   2.6606 0.39963 1.2843 0.0720 .  
+Residual                          7   1.8127 0.27227                  
+Total                            19   6.6575 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = Jaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.9422 0.29379 2.6077 0.0004 ***
+as.numeric(Metadata$Temperature)  1   0.2416 0.03655 0.9733 0.4505    
+as.factor(Metadata$Month)         8   2.6892 0.40678 1.3540 0.0396 *  
+Residual                          7   1.7379 0.26288                  
+Total                            19   6.6109 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = Jaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2      F Pr(>F)    
+as.factor(Metadata$Type)          3   1.9714 0.29965 2.6559 0.0001 ***
+as.numeric(Metadata$Temperature)  1   0.2494 0.03791 1.0081 0.4036    
+as.factor(Metadata$Month)         8   2.6263 0.39918 1.3268 0.0546 .  
+Residual                          7   1.7320 0.26325                  
+Total                            19   6.5792 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryJaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   2.0473 0.52283 11.2300 0.0001 ***
+as.numeric(Metadata$Temperature)  1   0.1410 0.03602  2.3209 0.0230 *  
+as.factor(Metadata$Month)         8   1.3021 0.33252  2.6784 0.0002 ***
+Residual                          7   0.4254 0.10863                   
+Total                            19   3.9158 1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryJaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   2.0499 0.52251 11.2796 0.0001 ***
+as.numeric(Metadata$Temperature)  1   0.1388 0.03538  2.2915 0.0280 *  
+as.factor(Metadata$Month)         8   1.3104 0.33401  2.7039 0.0003 ***
+Residual                          7   0.4240 0.10809                   
+Total                            19   3.9231 1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryJaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   2.0445 0.52032 10.8931 0.0001 ***
+as.numeric(Metadata$Temperature)  1   0.1402 0.03568  2.2407 0.0318 *  
+as.factor(Metadata$Month)         8   1.3067 0.33256  2.6108 0.0002 ***
+Residual                          7   0.4379 0.11145                   
+Total                            19   3.9294 1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryJaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs      R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   2.0469 0.52179 11.0267 0.0001 ***
+as.numeric(Metadata$Temperature)  1   0.1445 0.03683  2.3349 0.0253 *  
+as.factor(Metadata$Month)         8   1.2983 0.33096  2.6227 0.0001 ***
+Residual                          7   0.4331 0.11042                   
+Total                            19   3.9228 1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryRaupCrick[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs       R2        F Pr(>F)    
+as.factor(Metadata$Type)          3   3.9343  0.87978 108.1224 0.0002 ***
+as.numeric(Metadata$Temperature)  1  -0.0756 -0.01690  -6.2302 0.9999    
+as.factor(Metadata$Month)         8   0.5283  0.11813   5.4441 0.0094 ** 
+Residual                          7   0.0849  0.01899                    
+Total                            19   4.4719  1.00000                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryRaupCrick[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs       R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   3.9869  0.88244 91.3427 0.0002 ***
+as.numeric(Metadata$Temperature)  1  -0.0630 -0.01394 -4.3283 0.9992    
+as.factor(Metadata$Month)         8   0.4923  0.10896  4.2294 0.0156 *  
+Residual                          7   0.1018  0.02254                   
+Total                            19   4.5181  1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryRaupCrick[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs       R2       F Pr(>F)    
+as.factor(Metadata$Type)          3   3.9532  0.88296 79.0754 0.0001 ***
+as.numeric(Metadata$Temperature)  1  -0.0816 -0.01822 -4.8949 0.9998    
+as.factor(Metadata$Month)         8   0.4889  0.10921  3.6676 0.0258 *  
+Residual                          7   0.1167  0.02605                   
+Total                            19   4.4772  1.00000                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = BinaryRaupCrick[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations = 9999, parallel = detectCores())
+                                 Df SumOfSqs       R2        F Pr(>F)    
+as.factor(Metadata$Type)          3   3.9452  0.88474 110.7390 0.0001 ***
+as.numeric(Metadata$Temperature)  1  -0.0528 -0.01184  -4.4473 0.9998    
+as.factor(Metadata$Month)         8   0.4836  0.10846   5.0908 0.0102 *  
+Residual                          7   0.0831  0.01864                    
+Total                            19   4.4591  1.00000                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
