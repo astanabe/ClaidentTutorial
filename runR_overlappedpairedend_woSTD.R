@@ -181,34 +181,34 @@ pdf("OverlappedPairedEnd_woSTD_11_RAnalysisResults/NMDS.pdf", width=7, height=7)
 for(i in 1:4) {
   ordiplot(BrayCurtisNMDS[[i]], type="n")
   orditorp(BrayCurtisNMDS[[i]], display="sites", air=0.1, cex=1)
-  plot(BrayCurtisNMDSenv[[i]], p.max=0.05)
+  plot(BrayCurtisNMDSenv[[i]], p.max=0.05, main="BrayCurtisNMDS")
   ordiplot(BrayCurtisNMDS[[i]], type="n")
   orditorp(BrayCurtisNMDS[[i]], display="species", air=0.1, cex=1)
-  plot(BrayCurtisNMDSenv[[i]], p.max=0.05)
+  plot(BrayCurtisNMDSenv[[i]], p.max=0.05, main="BrayCurtisNMDS")
 }
 for(i in 1:4) {
   ordiplot(JaccardNMDS[[i]], type="n")
   orditorp(JaccardNMDS[[i]], display="sites", air=0.1, cex=1)
-  plot(JaccardNMDSenv[[i]], p.max=0.05)
+  plot(JaccardNMDSenv[[i]], p.max=0.05, main="JaccardNMDS")
   ordiplot(JaccardNMDS[[i]], type="n")
   orditorp(JaccardNMDS[[i]], display="species", air=0.1, cex=1)
-  plot(JaccardNMDSenv[[i]], p.max=0.05)
+  plot(JaccardNMDSenv[[i]], p.max=0.05, main="JaccardNMDS")
 }
 for(i in 1:4) {
   ordiplot(BinaryJaccardNMDS[[i]], type="n")
   orditorp(BinaryJaccardNMDS[[i]], display="sites", air=0.1, cex=1)
-  plot(BinaryJaccardNMDSenv[[i]], p.max=0.05)
+  plot(BinaryJaccardNMDSenv[[i]], p.max=0.05, main="BinaryJaccardNMDS")
   ordiplot(BinaryJaccardNMDS[[i]], type="n")
   orditorp(BinaryJaccardNMDS[[i]], display="species", air=0.1, cex=1)
-  plot(BinaryJaccardNMDSenv[[i]], p.max=0.05)
+  plot(BinaryJaccardNMDSenv[[i]], p.max=0.05, main="BinaryJaccardNMDS")
 }
 for(i in 1:4) {
   ordiplot(BinaryRaupCrickNMDS[[i]], type="n")
   orditorp(BinaryRaupCrickNMDS[[i]], display="sites", air=0.1, cex=1)
-  plot(BinaryRaupCrickNMDSenv[[i]], p.max=0.05)
+  plot(BinaryRaupCrickNMDSenv[[i]], p.max=0.05, main="BinaryRaupCrickNMDS")
   ordiplot(BinaryRaupCrickNMDS[[i]], type="n")
   orditorp(BinaryRaupCrickNMDS[[i]], display="species", air=0.1, cex=1)
-  plot(BinaryRaupCrickNMDSenv[[i]], p.max=0.05)
+  plot(BinaryRaupCrickNMDSenv[[i]], p.max=0.05, main="BinaryRaupCrickNMDS")
 }
 dev.off()
 

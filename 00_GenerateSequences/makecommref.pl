@@ -71,7 +71,7 @@ else {
 			}
 		}
 		push(@{$community[$i]}, @tempcommunity);
-		push(@temp, @previous);
+		#push(@temp, @previous);
 		@previous = @tempcommunity;
 	}
 }
