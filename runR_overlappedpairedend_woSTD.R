@@ -100,17 +100,56 @@ Metadata <- read.delim("Metadata.tsv", header=T, row.names=1, check.names=F)
 
 # PERMANOVA
 sink("OverlappedPairedEnd_woSTD_11_RAnalysisResults/PERMANOVA.txt", split=T)
+cat("PERMANOVA with by=\"terms\"\n\n\n")
 for(i in 1:4) {
-  print(adonis2(BrayCurtis[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores()))
+  print(adonis2(BrayCurtis[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="terms", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
 }
 for(i in 1:4) {
-  print(adonis2(Jaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores()))
+  print(adonis2(Jaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="terms", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
 }
 for(i in 1:4) {
-  print(adonis2(BinaryJaccard[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores()))
+  print(adonis2(BinaryJaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="terms", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
 }
 for(i in 1:4) {
-  print(adonis2(BinaryRaupCrick[[i]] ~ as.factor(Metadata$Type) + as.numeric(Metadata$Temperature) + as.numeric(Metadata$Latitude) + as.factor(Metadata$Month) + 1, permutations=9999, parallel=detectCores()))
+  print(adonis2(BinaryRaupCrick[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="terms", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+cat("\nPERMANOVA with by=\"margin\"\n\n\n")
+for(i in 1:4) {
+  print(adonis2(BrayCurtis[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="margin", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(Jaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="margin", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(BinaryJaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="margin", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(BinaryRaupCrick[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="margin", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+cat("\nPERMANOVA with by=\"onedf\"\n\n\n")
+for(i in 1:4) {
+  print(adonis2(BrayCurtis[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="onedf", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(Jaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="onedf", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(BinaryJaccard[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="onedf", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
+}
+for(i in 1:4) {
+  print(adonis2(BinaryRaupCrick[[i]] ~ as.numeric(Metadata$Temperature) + as.factor(Metadata$Type) + as.factor(Metadata$Month) + 1, by="onedf", permutations=9999, parallel=detectCores()))
+  cat("\n\n")
 }
 sink()
 
