@@ -13,6 +13,7 @@ Tutorial scripts and data for [Claident](https://github.com/astanabe/Claident).
 Claident, associated databases and programs need to be installed.
 Use [ClaidentInstaller](https://github.com/astanabe/ClaidentInstaller) to install them.
 In addition, [this package](https://github.com/astanabe/ClaidentTutorial/archive/main.zip) need to be downloaded and extracted to working directory.
+For wordcloud image generation ("clplotwordcloud" command), Google Chrome or Chromium is also required.
 
 ## Prerequisites to run analyses in R
 
