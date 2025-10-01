@@ -1,0 +1,277 @@
+0.0000	denoised_004	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_007	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_009	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_010	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_020	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_008	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_015	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_016	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_026	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_025	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_028	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_031	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_033	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_037	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_034	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_039	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_024	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_041	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_040	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_005	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_011	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_013	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_023	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_047	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_045	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_049	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_050	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_027	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_014	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_003	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_051	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_012	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_006	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_021	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_002	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_018	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_053	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_001	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_030	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_057	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_059	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_060	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_019	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_038	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_065	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_017	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_054	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_063	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_066	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_067	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_069	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_058	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_062	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_035	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_075	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_073	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_022	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_068	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_046	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_032	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_074	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_072	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_088	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_089	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_029	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_102	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_094	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_103	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_105	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_106	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_104	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_048	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_107	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_114	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_119	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_113	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_044	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_120	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_043	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_036	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_042	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_055	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_061	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_133	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_127	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_121	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_137	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_056	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_144	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_143	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_052	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_070	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_111	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_145	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_148	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_139	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_129	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_140	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_154	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_076	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_079	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_156	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_085	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_083	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_124	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_167	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_162	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_086	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_157	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_078	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_155	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_087	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_151	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_180	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_064	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_171	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_097	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_096	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_169	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_095	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_084	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_184	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_182	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_077	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_181	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_185	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_183	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_110	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_081	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_186	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_091	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_176	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_191	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_135	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_134	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_071	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_130	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_189	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_082	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_125	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.1471	denoised_116	OL450422_71_1026 [rRNA] Synodontis clarias mitochondrion, complete genome.	KU870465_71_1022 [rRNA] Mystus cavasius mitochondrion, complete genome.	OL450422_71_1026 [rRNA] Synodontis clarias mitochondrion, complete genome.	93.4	91.0	89.8	91.0	91.0	6	0	5	5	1	5	2.4	N
+0.0000	denoised_161	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_123	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_131	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_093	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_188	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_190	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_100	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_090	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_132	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_196	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_092	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_199	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_098	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_136	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_108	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_112	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_109	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_117	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_206	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_080	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_203	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_099	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_142	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_101	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_212	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_214	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_152	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_147	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_128	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_209	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_187	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_115	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_160	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_146	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_216	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_126	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_210	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_211	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_213	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_215	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_175	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_163	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_218	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_179	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_122	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_229	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_223	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_200	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_150	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_141	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_172	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_138	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_236	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_237	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_234	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_239	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_193	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_153	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_164	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_168	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+4.7755	denoised_249	MiFish_STD_04-2	KP300644_15420_16366 [rRNA] Parachaenichthys charcoti mitochondrion, complete genome.	KP300644_15420_16366 [rRNA] Parachaenichthys charcoti mitochondrion, complete genome.	100.0	76.1	96.3	72.4	96.3	6	0	0	39	0	0	3.7	Y
+0.0000	denoised_166	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_149	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_243	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+5.0000	denoised_251	AB238967_70_1021 [rRNA] Labeo batesii mitochondrial DNA, complete genome.	AP009171_69_1018 [rRNA] Macrorhamphosodes uradoi mitochondrial DNA, complete genome.	AP009171_69_1018 [rRNA] Macrorhamphosodes uradoi mitochondrial DNA, complete genome.	99.4	77.5	94.4	73.1	94.4	8	0	1	35	0	0	5.0	Y
+5.2041	denoised_261	AP011399_70_1023 [rRNA] Luciosoma bleekeri mitochondrial DNA, complete genome.	AP012104_70_1028 [rRNA] Rhinichthys atratulus mitochondrial DNA, complete genome.	AP011399_70_1023 [rRNA] Luciosoma bleekeri mitochondrial DNA, complete genome.	100.0	91.0	89.8	80.7	91.0	17	0	0	15	0	0	9.0	Y
+1.4694	denoised_260	PV170545_69_1019 [rRNA] Lutjanus kasmira voucher USNM:FISH:466522 mitochondrion, complete genome.	AP005990_69_1011 [rRNA] Coreoperca kawamebari mitochondrial DNA, complete genome.	AP005990_69_1011 [rRNA] Coreoperca kawamebari mitochondrial DNA, complete genome.	100.0	89.0	97.6	86.6	97.6	4	0	0	18	0	0	2.4	Y
+4.0816	denoised_263	AP006798_70_1016 [rRNA] Plesiops nakaharae mitochondrial DNA, complete genome.	AP006833_69_1019 [rRNA] Helostoma temminkii mitochondrial DNA, complete genome.	AP006798_70_1016 [rRNA] Plesiops nakaharae mitochondrial DNA, complete genome.	100.0	95.2	85.0	80.2	95.2	25	0	0	8	0	0	4.8	Y
+4.0816	denoised_267	AP006833_69_1019 [rRNA] Helostoma temminkii mitochondrial DNA, complete genome.	AP006798_70_1016 [rRNA] Plesiops nakaharae mitochondrial DNA, complete genome.	AP006833_69_1019 [rRNA] Helostoma temminkii mitochondrial DNA, complete genome.	100.0	95.2	85.0	80.2	95.2	25	0	0	8	0	0	4.8	Y
+0.0000	denoised_174	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_158	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_159	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+6.2041	denoised_264	MiFish_STD_01	AP004455_69_1025 [rRNA] Eleotris acanthopoma mitochondrial DNA, complete genome.	AP004455_69_1025 [rRNA] Eleotris acanthopoma mitochondrial DNA, complete genome.	100.0	76.4	95.0	71.4	95.0	8	0	0	38	0	0	5.0	Y
+0.0000	denoised_240	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_238	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_173	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.3265	denoised_246	KR782298_69_1017 [rRNA] Acentrogobius sp. QHY-2015, complete genome.	KT894736_69_1017 [rRNA] Yongeichthys criniger mitochondrion, complete genome.	KR782298_69_1017 [rRNA] Acentrogobius sp. QHY-2015, complete genome.	100.0	98.8	95.2	94.0	98.8	8	0	0	2	0	0	1.2	?
+0.0000	denoised_198	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_208	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_165	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_118	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+3.5918	denoised_255	MiFish_STD_04-2	AP011991_69_1024 [rRNA] Hepsetus odoe mitochondrial DNA, complete genome.	AP011991_69_1024 [rRNA] Hepsetus odoe mitochondrial DNA, complete genome.	100.0	73.0	97.5	70.6	97.5	4	0	0	44	0	0	2.5	Y
+0.0000	denoised_202	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+6.0612	denoised_274	AP018063_69_1019 [rRNA] Schismatogobius ampluvinculus mitochondrial DNA, complete sequence, specimen_voucher: NSMT:P:127399.	KT175513_70_1018 [rRNA] Poecilia formosa isolate 1765 mitochondrion, complete genome.	KT175513_70_1018 [rRNA] Poecilia formosa isolate 1765 mitochondrion, complete genome.	100.0	79.4	94.4	73.8	94.4	9	0	0	33	0	0	5.6	Y
+7.2857	denoised_275	AP011288_70_1027 [rRNA] Psilorhynchus sucatio mitochondrial DNA, complete genome.	AP011400_70_1021 [rRNA] Horadandia atukorali mitochondrial DNA, complete genome.	AP011400_70_1021 [rRNA] Horadandia atukorali mitochondrial DNA, complete genome.	100.0	87.5	89.9	77.4	89.9	17	0	0	21	0	0	10.1	Y
+0.0000	denoised_230	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_170	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_205	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_192	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_177	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_232	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_220	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_178	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_197	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+1.6531	denoised_256	AB445125_69_1011 [rRNA] Culaea inconstans mitochondrial DNA, complete genome.	MH237607_69_1011 [rRNA] Microphis boaja mitochondrion, complete genome.	MH237607_69_1011 [rRNA] Microphis boaja mitochondrion, complete genome.	98.1	82.0	94.4	77.6	94.4	6	0	0	27	1	2	3.7	Y
+2.7551	denoised_252	OR482450_69_1021 [rRNA] Chilomycterus reticulatus voucher SIO:a5323735-fdd1-4972-bdc0-09c87a73c1a4 mitochondrion, complete genome.	AP009173_71_1029 [rRNA] Trixiphichthys weberi mitochondrial DNA, complete genome.	AP009173_71_1029 [rRNA] Trixiphichthys weberi mitochondrial DNA, complete genome.	100.0	83.7	97.0	80.7	97.0	5	0	0	27	0	0	3.0	Y
+0.0000	denoised_195	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_204	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_201	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+6.8980	denoised_265	JX029961_70_1016 [rRNA] Acentrogobius pflaumii mitochondrion, complete genome.	AP006800_72_1027 [rRNA] Priacanthus macracanthus mitochondrial DNA, complete genome except for D-loop.	AP006800_72_1027 [rRNA] Priacanthus macracanthus mitochondrial DNA, complete genome except for D-loop.	100.0	83.3	91.7	75.0	91.7	13	0	0	26	0	0	8.3	Y
+0.2063	denoised_233	OR582677_69_1016 [rRNA] Sphagemacrurus grenadae mitochondrion, partial genome.	OR582678_70_1015 [rRNA] Malacocephalus occidentalis mitochondrion, partial genome.	OR582678_70_1015 [rRNA] Malacocephalus occidentalis mitochondrion, partial genome.	94.4	89.5	92.0	85.2	92.0	4	0	0	13	5	4	2.5	N
+0.0000	denoised_228	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_221	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_224	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_207	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_226	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_248	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_217	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_231	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+1.0612	denoised_258	AP011402_70_1014 [rRNA] Microdevario nanus mitochondrial DNA, complete genome.	KT991436_70_1027 [rRNA] Acrossocheilus paradoxus mitochondrion, complete genome.	KT991436_70_1027 [rRNA] Acrossocheilus paradoxus mitochondrion, complete genome.	100.0	84.2	98.8	83.0	98.8	2	0	0	26	0	0	1.2	?
+5.6327	denoised_245	MiFish_STD_04-2	KJ433561_72_1032 [rRNA] Chascanopsetta lugubris mitochondrion, complete genome.	KJ433561_72_1032 [rRNA] Chascanopsetta lugubris mitochondrion, complete genome.	100.0	71.2	96.2	67.5	96.2	6	0	0	46	0	0	3.8	Y
+5.1429	denoised_268	MiFish_STD_04-2	MH823734_69_1016 [rRNA] Uranoscopus cognatus isolate UMTGen1318 mitochondrion, complete genome.	MiFish_STD_04-2	100.0	94.2	81.8	76.0	94.2	28	0	0	9	0	0	5.8	Y
+0.0000	denoised_194	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+7.1837	denoised_262	MH237607_69_1011 [rRNA] Microphis boaja mitochondrion, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	80.4	93.3	73.6	93.3	11	0	0	32	0	0	6.7	Y
+0.0000	denoised_219	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_225	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+0.0000	denoised_241	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+6.7143	denoised_254	AP010861_71_1032 [rRNA] Ariosoma shiroanago mitochondrial DNA, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	70.8	95.7	66.5	95.7	7	0	0	47	0	0	4.3	Y
+0.6607	denoised_250	AP011980_69_1018 [rRNA] Gymnorhamphichthys sp. NM-2010 mitochondrial DNA, complete genome.	AP011560_69_1013 [rRNA] Cromeria nilotica mitochondrial DNA, almost complete genome.	AP011980_69_1018 [rRNA] Gymnorhamphichthys sp. NM-2010 mitochondrial DNA, complete genome.	99.4	98.7	75.6	75.6	98.7	37	0	0	1	0	1	0.6	?
+0.0000	denoised_227	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+5.5102	denoised_269	MiFish_STD_04-2	KP872692_72_1021 [rRNA] Pareuchiloglanis anteanalis mitochondrion, complete genome.	KP872692_72_1021 [rRNA] Pareuchiloglanis anteanalis mitochondrion, complete genome.	100.0	72.4	96.3	68.7	96.3	6	0	0	45	0	0	3.7	Y
+0.0000	denoised_235	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+2.8571	denoised_266	MW309824_69_1018 [rRNA] Seriola lalandi isolate Seriola_lalandi_NSW mitochondrion, complete genome.	MH521260_68_1088 [rRNA] Cociella crocodilus voucher HABs-2016-007 mitochondrion, complete genome.	MH521260_68_1088 [rRNA] Cociella crocodilus voucher HABs-2016-007 mitochondrion, complete genome.	100.0	82.6	96.9	79.5	96.9	5	0	0	28	0	0	3.1	Y
+0.0000	denoised_222	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+3.7959	denoised_271	OR482494_69_1018 [rRNA] Lagocephalus laevigatus voucher USNM:FISH:454769 mitochondrion, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	80.6	96.2	76.9	96.2	6	0	0	31	0	0	3.8	Y
+7.8367	denoised_259	MiFish_STD_04-2	JQ349001_69_1021 [rRNA] Paraplagusia bilineata mitochondrion, complete genome.	JQ349001_69_1021 [rRNA] Paraplagusia bilineata mitochondrion, complete genome.	100.0	70.7	95.1	65.9	95.1	8	0	0	48	0	0	4.9	Y
+4.2857	denoised_253	MH823734_69_1016 [rRNA] Uranoscopus cognatus isolate UMTGen1318 mitochondrion, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	80.5	95.5	76.0	95.5	7	0	0	30	0	0	4.5	Y
+0.0000	denoised_242	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+2.2653	denoised_247	EF025506_69_1016 [rRNA] Verasper moseri mitochondrion, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	77.2	98.1	75.3	98.1	3	0	0	37	0	0	1.9	Y
+5.3061	denoised_277	AP005990_69_1011 [rRNA] Coreoperca kawamebari mitochondrial DNA, complete genome.	AP006020_70_1024 [rRNA] Bovichtus argentinus mitochondrial DNA, complete genome.	AP006020_70_1024 [rRNA] Bovichtus argentinus mitochondrial DNA, complete genome.	100.0	87.7	92.0	79.6	92.0	13	0	0	20	0	0	8.0	Y
+4.4082	denoised_257	KP259870_71_1224 [rRNA] Polydactylus sextarius mitochondrion, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	84.5	94.2	78.7	94.2	9	0	0	24	0	0	5.8	Y
+7.5510	denoised_272	AP011937_69_1021 [rRNA] Marilyna darwinii mitochondrial DNA, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	77.2	93.8	71.0	93.8	10	0	0	37	0	0	6.2	Y
+8.8163	denoised_270	KX177966_70_1045 [rRNA] Macrognathus pancalus mitochondrion, complete genome.	MiFish_STD_04-2	KX177966_70_1045 [rRNA] Macrognathus pancalus mitochondrion, complete genome.	100.0	89.0	85.3	74.2	89.0	24	0	0	18	0	0	11.0	Y
+0.0000	denoised_244	*	*	*	*	*	*	*	*	0	0	0	0	0	0	*	N
+8.5714	denoised_276	AP009171_69_1018 [rRNA] Macrorhamphosodes uradoi mitochondrial DNA, complete genome.	AP006817_11349_12304 [rRNA] Trichonotus elegans mitochondrial DNA, complete genome except for D-loop.	AP009171_69_1018 [rRNA] Macrorhamphosodes uradoi mitochondrial DNA, complete genome.	100.0	87.7	87.0	74.7	87.7	21	0	0	20	0	0	12.3	Y
+6.3673	denoised_273	AP006804_69_1017 [rRNA] Branchiostegus japonicus mitochondrial DNA, complete genome.	MiFish_STD_04-2	MiFish_STD_04-2	100.0	75.9	95.1	71.0	95.1	8	0	0	39	0	0	4.9	Y

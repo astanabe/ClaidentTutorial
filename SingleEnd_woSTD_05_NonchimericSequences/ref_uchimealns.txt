@@ -1,0 +1,934 @@
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_250
+ParentA (  951 nt) AP011060_70_1020
+ParentB (  949 nt) LK022697_65_1013
+
+A     1 caaaagcttggtcctgactttactatcagctttagctatacttacacatgcaagtatccgcacccctgtgagaatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 aaaggcttggtcctgactttactaacaactttagccatacttacacatgcaagtatcagcacccctgtgagaatgcccca 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 aatagttccccgcccgggaacaaggagccgatatcaggcacagctaaataagcccacaacatcttgctcagccacacccc 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 cagctccattccctggagcaaggagctggtatcaggcacacatcccatgtagcccacgacaccttgctcagccacaccct 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 caagggaacccagcagtgataaacattaagctatgagtgaaaactcgacttagttaaagctataaagggccggtaaaact 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 caagggaactcagcagtgataaacattaagccataagtgaaagcttgacttagttaaggctaagagggccggtaaaactc 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 cgtgccagcCACCGCGGTTATACGAGAGGCCCAAGTTGATAAGGTACGGCGTAAAGAGTGGTTAAGATtAGcTAAAtAcT 320
+Q     1 ---------CACCGCGGTTATACGAGAGGCCCAAGTTGATAAGGTACGGCGTAAAGAGTGGTTAAGATAAGTTAAA-ATT 70
+B   241 gtgccagc-CACCGCGGcTATACGAGAGGCCCAAGTTGtTAtatTcCGGCGTAAAGAGTGGTTAtGgaAAGTTAAA-ATT 318
+Diffs                    A                    A  AAA A                  A AAB  B      B 
+Votes                    +                    +  +++ +                  + +++  +      + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBB
+
+A   321 AAAGCCGaAtgCCcTCAAAGCTGTTATACGCcCCCGAAGgtaAGAAGaCCaaccacgaaagtgactttacattactgaac 400
+Q    71 AAAGCCGCACACCTTCAAAGCTGTTATACGCACCCGAAGTCTAGAAGCCC------------------------------ 120
+B   319 AAAGCCGCACACCTTCAAAGCTGTTATACGCACCCGAAGTCTAGAAGCCCaattacaaaagtagctttatctccccagac 398
+Diffs          B BB  B                 B       BBB     B                                
+Votes          + ++  +                 +       +++     +                                
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   401 ccacgaaagctaggttacaaactgggattagataccccactatgcccagccttaaacattgatggtaaaatacaaccacc 480
+Q   121 -------------------------------------------------------------------------------- 120
+B   399 cccacgaaagctctggcacaaactgggattagataccccactatgcctagccctaaacattggtataactctacacattt 478
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   481 atccgcctggatactacgagcaccagcttgaaacccaaaggacttggcggtgctttagatccacctagaggagcctgttc 560
+Q   121 -------------------------------------------------------------------------------- 120
+B   479 tacccgcccgggtactacgagcaccagcttaaaacccaaaggacttggcggtgctttagacccccctagaggagcctgtt 558
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   561 tagaaccgataacccccgtttaacctcacccctccttgctcttcccgtctatataccgccgccgtcagcttaccctgtga 640
+Q   121 -------------------------------------------------------------------------------- 120
+B   559 ctagaaccgataacccccgttcaacctcaccctttcttgtttattccgcctatataccgccgtcgtcagcttaccctgtg 638
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   641 agggttaatagtaagcaaaattggcatagcccaaaacgtcaggtcgaggtgtagctaatggagggggaagaaatgggcta 720
+Q   121 -------------------------------------------------------------------------------- 120
+B   639 aaggtttaatagtaagcacaactggtttaacccaaaacgtcaggtcgaggtgtagcgaatgaaaggggaagaaatgggct 718
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   721 cattcactagtcctagtgaacacgaacgatgtactgaaatatacatccaaaggaggatttagcagtaagtgagaaacaga 800
+Q   121 -------------------------------------------------------------------------------- 120
+B   719 acattccctaaagatagggaaaacgaatgacatactgaaatgcatgtctgaaggaggatttagtagtaagtggaaaatag 798
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   801 gtgtcccactgaaattggctctaaagcacgcacacaccgcccgtcattctccccgaacttatttaatactataactaatt 880
+Q   121 -------------------------------------------------------------------------------- 120
+B   799 agcgtctcactgaaactggccctgaagcgcgcacacaccgcccgtcactctccccaagctcaccaacttaattaacttaa 878
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   881 acgttacaaatcataaaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgtacttggaaaaacc 951
+Q   121 ----------------------------------------------------------------------- 120
+B   879 aaagcccattaatgcaaaggggaggcaagtcgtaacatggtaagggtaccggaaggtgcacttggaaaaac 949
+Diffs                                                                          
+Votes                                                                          
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 89.7%, QB 92.2%, AB 81.9%, QModel 100.0%, Div. +8.4%
+Diffs Left 9: N 0, A 0, Y 9 (100.0%); Right 12: N 0, A 0, Y 12 (100.0%), Score 2.2041
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_252
+ParentA (  947 nt) MK784207_493_1439
+ParentB (  952 nt) MH061100_69_1020
+
+A     1 caaaggtttggtcctggcttttctgtcagctctcgttaaatttacacatgcaagtatccgccctcctgtgagaatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaggtttggtcctgactttactatcaattgtaccctgatttacacatgcaagtctccgcctccccgtgagaatgccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 acagttttttacccaaaaacaaggagctggtatcaggcacaaccaccttagcctacaacaccttgctttgccacacccct 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 taatgtcccgcccggaattaaggagcaggtatcaggcacatcaatagtttactagcccacaacgccttgcttagccacac 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 aagggaaatcagcagtgataaacattaagccataagtgaaaacttgacttagttataacaaataagagtcggtaaaactc 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 ccctacgggtattcagcagtgataaaatttaagccataagtgaaaacttgacttagttaagggaaagagggccggtaaaa 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 gtgccagc---CACCGCGGTTATACGAGAGACTCAAGTTGACAGCCCTCGGCGTAAAGCGTGATAAAGAAAAaAccctgA 317
+Q     1 -----------CACCGCGGTTATACGAGAGACTCAAGTTGACAGCCCTCGGCGTAAAGCGTGATAAAGAAAATAAGAGAA 69
+B   241 ctcgtgccagcCACCGCGGTTATACGAGAGgCcCAAaTTGAtgaaaaaCGGCGTAAAGCGTGgTtAAGAAAATAAGAGAA 320
+Diffs                                 A A   A    AAAAAAA              A A       B BBBBB 
+Votes                                 + +   +    +++++++              + +       + +++++ 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBBBBB
+
+A   318 ctAaAgtGaaacAC-tCTctAAAGCtGTTATACGCtTataAgagtAtGAAattcgcctactaaagtgactttaattattc 396
+Q    70 AAATATGGCCGAACAGCTTCAAAGCAGTTATACGCATTCGAAGCCACGAAG----------------------------- 120
+B   321 AAATATGGCCGAACAGCTTCAAAGCAGTTATACGCATTCGAAGCCACGAAGaacaaccacgaaagttgccctaaaacctc 400
+Diffs   BB B BB BBBB   B  BB     B         B BBB BBBB B   B                             
+Votes   ++ + ++ ++++      ++     +         + +++ ++++ +                                 
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   397 tgacttcacgaaagctatgaaacaaactgggattagataccccactatgcatagctgtaaacttcaataaaatcttacat 476
+Q   121 -------------------------------------------------------------------------------- 120
+B   401 tgattccacgaaagccataaaacaaactgggattagataccccactatgtatggtcgttaacatcgatggttttataccc 480
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   477 tttattcgcccgggtactacgagcataagcttaaaacccaaaggacttggcggtgctttagacccacctagaggagcctg 556
+Q   121 -------------------------------------------------------------------------------- 120
+B   481 aaaccatccgcctgggaactacgagcaatagcttaaaacccaaaggacttggcggtgctttagacccccctagaggagcc 560
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   557 ttctagaaccgataacccccgttaaacctcaccctttcttgtcattcccgcctatataccgccgtcgtcagcttaccccg 636
+Q   121 -------------------------------------------------------------------------------- 120
+B   561 tgttctagaactgataacccccgtttaacctcaccatcctttgtttcccccgcctatataccaccgtcgtcagcttaccc 640
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   637 tgagggtttaacagtagacaaaattggcacagcctaaaacgccaggtcgaggtgtagcgtatgaaaggggaagaaatggg 716
+Q   121 -------------------------------------------------------------------------------- 120
+B   641 tgtgaaggaaaaatagtaagcataaatggcaaagccaaaaacgtcaggtcgaggtgtagcgaatgggatgggaagaaatg 720
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   717 ctacatttcctgcatcaggaaattacgaacagtacaatgaaacttgtatattaaggaggatttagcagtaagaggaaatt 796
+Q   121 -------------------------------------------------------------------------------- 120
+B   721 ggctacattctctatcacagagaatacgaattgtaatttgaaaaaattacctgaaggaggatttagcagtaagtagggac 800
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   797 agagcgttcctctgaaactggccctgaagcgcgcacacaccgcccgtcactctccccaaacgccaaacaactgttcttaa 876
+Q   121 -------------------------------------------------------------------------------- 120
+B   801 tagagtgccccactgaaaacggccctgaagcgcgcacacaccgcccgtcactctctccaaataaaccctagatattacct 880
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   877 cccaccattataatcaaaggggaggcaagtcgtaacatggtaagcgtaccggaaggtgcgcttggaaaaat- 947
+Q   121 ------------------------------------------------------------------------ 120
+B   881 aaaatgctttttataataaggggaggcaagtcgtaacatggtaagcgtaccggaaggtgcgcttggatgaac 952
+Diffs                                                                           
+Votes                                                                           
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 76.5%, QB 89.6%, AB 66.1%, QModel 100.0%, Div. +11.7%
+Diffs Left 12: N 0, A 0, Y 12 (100.0%); Right 27: N 0, A 0, Y 27 (100.0%), Score 6.6122
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_251
+ParentA (  952 nt) KT944284_70_1021
+ParentB (  948 nt) MH823734_69_1016
+
+A     1 caaaagcttggtcctgactttactatcagctgcagctatatttacacatgcaagtatccgcacccccgtgaaaatgcccc 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaggtttggtcctaactttactatcgtctatagctaaatttacacatgcaagtatctgcaccccagtgagaatgccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 ccaccgctttcccgcccgaaagtaaggagctggtatcaggcacacaccccgtagcccacgacacctagctttgccacacc 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 aacagtcccctgcccggggacaaggagctggtatcaggcccgacttctccgcccataacaccttgctcagccacacccct 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 cccaagggaactcagcagtgataaacattaggccatgagcgaaagctcgacctagttaaagctaagagggccggtaaaac 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 acggaacccagcagtgataaaacttaagcaataagtgaaaacttgactcagttaaagctaacagagccggtaaaactcgt 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 tcgtgccagcAACCGCGGTTACACGAGAGGCCCAAGTTGATAGGAGCCGGCGTAAAGAGTGGTTAAGGgtcAACTacAaA 320
+Q     1 ----------AACCGCGGTTACACGAGAGGCCCAAGTTGATAGGAGCCGGCGTAAAGAGTGGTTAAGGTAAAACT-TATA 69
+B   241 gccagc----cACCGCGGTTAtACGAGAGaCtCAAGaTGATAGaccaCGGCGTAAAGAGTGGTTAgGGTAAAACT-TATA 315
+Diffs             A          A       A A    A      AAAA                  A  BBB     B B 
+Votes                        +       + +    +      ++++                  +  +++       + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxBBBBBBBBBBBB
+
+A   321 aTAAAGCCaAacaTtctCaatGCtGTTATACGC-cCCGAGAaCttgAagCCccaccacgaaagtggctttaccccgccct 399
+Q    70 GTAAAGCCGAGAGTCGACTGAGCAGTTATACGCATCCGAGAGCGAAAGTCC----------------------------- 120
+B   316 GTAAAGCCGAGAGTCGACTGAGCAGTTATACGCATCCGAGAGCGAAAGTCCaattacgaaagtagctttaccacccctga 395
+Diffs   B       B BBB BBB BBB  B          B      B BBB BB                               
+Votes   +       + +++ +++ +++  +                 + +++ ++                               
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   400 gaacccacgaaagccagggtacaaactgggattagataccccactatgcctggccgtaaacattgatatggtattacacg 479
+Q   121 -------------------------------------------------------------------------------- 120
+B   396 ctccacgaaagctagggcacaaactgggattagataccccactatgcctagccctaaacataggcagcctatacaccaac 475
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   480 cactatccgcccgggaactacgagcactagcttaaaaccccaaggacttggcggtgctttagaccccctagaggagcctg 559
+Q   121 -------------------------------------------------------------------------------- 120
+B   476 cccccgcccgggaagtacgagcacgagcttgaaacccaaaggacttggcggtgctttagatccacctagaggagcctgtt 555
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   560 tttctagaaccgatgatccccgttcaacctcacccttccttaaaagtcctgcctatataccgccgtcgccagcctaccct 639
+Q   121 -------------------------------------------------------------------------------- 120
+B   556 ctagaaccgataacccccgttaaacctcaccctctcttgttaattttccgcctatataccgccgccgtcagcttaccctg 635
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   640 gtgaagggactaaagtaggctaaactggtacaacccccaatgtcaggtcgaggtgtagcatatggaaggggaagcaatgg 719
+Q   121 -------------------------------------------------------------------------------- 120
+B   636 tgaggggccaatagtgagcacaaccgacacagcccagaacgtcaggtcgaggtgtagtgcatgagaggggaagacaatgg 715
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   720 gctacattcgctgaatcagcgaatcacgaaggacatactgaaagacatgtctgaaggtggatttagcagtaaggggagag 799
+Q   121 -------------------------------------------------------------------------------- 120
+B   716 gctacattccctaatgaagggaacacgcaaggtaaactgaaacgtttgcaactgaaggaggatttagaagtaagcaagga 795
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   800 tagagcgcccccctgaaatcggctctgaagcgtgcacacaccgcccgtcactctccccgaaacagtctcacacctgtaat 879
+Q   121 -------------------------------------------------------------------------------- 120
+B   796 gcagagtgccctgctgaacttggctctgaagcgcgcacataccgcccgtcaccctccccgagactgactgtgacttttac 875
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   880 taacaacatgacgccaacgaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgcacttggataaat 952
+Q   121 ------------------------------------------------------------------------- 120
+B   876 taaaccatttttatagtaaaggggaggcaagtcgtaacatggtaagtgcaccggaaggtgtacttggaatagc 948
+Diffs                                                                            
+Votes                                                                            
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 80.5%, QB 92.0%, AB 72.6%, QModel 100.0%, Div. +8.7%
+Diffs Left 9: N 0, A 0, Y 9 (100.0%); Right 22: N 0, A 0, Y 22 (100.0%), Score 4.0408
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_245
+ParentA (  941 nt) AB445128_69_1009
+ParentB (  957 nt) AP012065_70_1026
+
+A     1 caagagcttggtcctgactctgctatcaactttagctaaacttacacatgcaagtatccgcgcccctgtgagaatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 taaaggtatggtcccagccttcgtgtcagccctagctcaatttacacatgcaagtatccgcaccccagtgagtatgccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 atagtcctcctcccgagaacaaggagctggcatcaggcacattattcagcccaagacgccttgcttagccacacccccaa 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 caaacccccgcccggggacgaggagcgggcatcaggaacaaactttagcccaagacgcctggccaagccacacccccaag 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 gggaactcagcagtgataaacattaagccataagtgcaaacttgacttagttaaagctaagagggccggtaaaactcgtg 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 ggaattcagcagtgataaacattaagccataagtgaaaacttgacttagttaaagctaagagagccggtaaaactcgtgc 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 ccagcCACCGCGGTTATACGAGAGGCCCGAGTTGATA-GgTAcCGGCGTAAAaGGTGGTTA-aGtcAaAAtAaaAcTAAA 318
+Q     1 -----CACCGCGGTTATACGAGAGGCCCGAGTTGATA-GATAACGGCGTAAAGGGTGGTTAGGGGTATAAAACCAATAAA 74
+B   241 cagc-CACCGCGGTTAgACGAGAGGCCCcAGTTGAcAttATAACGGCGTAAAGGGTGGTTAGGGGTATAAAACCAATAAA 319
+Diffs                   A           A      A  AB  B         B         B BB B  B BB B    
+Votes                   +           +      +   +  +         +           ++ +  + ++ +    
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   319 GCCAAAcGtctCCaaGGCtGTtATACGCatacgGagATaaGAAGaacaaccacgaaagtggctttatttatcctgaaccc 398
+Q    75 GCCAAATGGTCCCTTGGCCGTCATACGCTACTAGGCATCCGAAGCC---------------------------------- 120
+B   320 GCCAAATGGTCCCTTGGCCGTCATACGCTACTAGGCATCCGAAGCCccaccacacgaaagtagctttaacacactccccc 399
+Diffs         B BBB  BB   B  B      BBBBB BB  BB    BB                                  
+Votes         + +++  ++   +  +      +++++ ++  ++    +                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   399 acgaaagctaagatacaaactgggattagataccccactatgcctagccttaaacacaggtagagtcttacaatttctac 478
+Q   121 -------------------------------------------------------------------------------- 120
+B   400 cgactccacgaaagctaggaaacaaactgggattagataccccactatgcctagccataaacttagacatcaaactacag 479
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   479 ccgcccgggtactacgagcatcagcttaaaacccaaaggacttggcggtgctttagatccacctagaggagcctgttcta 558
+Q   121 -------------------------------------------------------------------------------- 120
+B   480 caagatgttcgccagggtactacgagctctagcttaaaacccaaaggacctgacggtgcctcagacccacctagaggagc 559
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   559 gaaccgataacccccgttaaacctaaccttcttttgttaattccgcctatataccaccgtcgtcagcttacccctgaggg 638
+Q   121 -------------------------------------------------------------------------------- 120
+B   560 ctgttctagaaccgatgacccccgttcaacctcaccccttctagccatttacagcctatataccgccgtcgtcagcctac 639
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   639 aatgatagtaagcaaaattggtaaagcctcaaacgtcaggtcgaggtgtagcgtataagtagggaagaaatgggctacat 718
+Q   121 -------------------------------------------------------------------------------- 120
+B   640 cctgtgaaggaaataaaagtaagcaaaatgagtataacccaaaacgtcaggtcgaggtgtagcgcatgaagtgggaagaa 719
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   719 tcgctattatagcgaacacgaatgatgttctgaaacgcacatctgaaggaggatttagcagtaagtgaaaagtagagagt 798
+Q   121 -------------------------------------------------------------------------------- 120
+B   720 atgggctacattttctgccccagaacataacgaacacgcaccatgaaacagtgcctaaaggaggatttagaagtaaggga 799
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   799 tttactgaaattggccctgaagcgcgtacacatcgcccgtcactctccccaagcctaaagataaaattacataaaaaata 878
+Q   121 -------------------------------------------------------------------------------- 120
+B   800 gaaatagagtgtccccctgaacctggctctgaggcgcgtacacaccgcccgtcactctccccgtaaattcaccaaaacat 879
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   879 ataattgcaaaggggaggcaagtcgtaacatagtaagtgtaccggaaggtgtacttggcaaac--------------- 941
+Q   121 ------------------------------------------------------------------------------ 120
+B   880 aattaataagaaaacatcaataaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgcacttggacaaaacc 957
+Diffs                                                                                 
+Votes                                                                                 
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 75.2%, QB 97.3%, AB 72.6%, QModel 100.0%, Div. +2.7%
+Diffs Left 3: N 0, A 0, Y 3 (100.0%); Right 28: N 0, A 0, Y 28 (100.0%), Score 1.7143
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_248
+ParentA (  959 nt) AP014589_69_1027
+ParentB (  947 nt) AP002935_69_1015
+
+A     1 caaaggtttggtcctggcctngctgtcagctatagttagaattacacatgcaagtatccgcacccctgtgaggattgccc 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaggcttggtcctgactttcctatcaactttaactagatttatacatgcaagtatccgcacccctgtgagaatgtcct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 gtactcccccctcaggtgagacggagtaggtatcaggcacaacttataagttcaccgaagcccaagacgccttgctaagc 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 caccgccccgtccggggctgaggagccggtatcaggcacgccctgcagcccaagacgccttgttcagccacacccccaag 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 cacgcccccaagggtattcagcagtgatagaccttaagcaataagcgaaagctttacttagtcataactaatagagctgg 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 ggacctcagcagtaataaacattgagctataagtgaaaacttgactcagtcaaagttatagagggccggtaaaactcgtg 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 taaagtccgtgccagcCACCGCGGTTACACGGACAGCTCAAGTTGACAAAGGACGGCGTAAAGGGTGGTTAGGGAATAAT 320
+Q     1 ----------------CACCGCGGTTACACGGACAGCTCAAGTTGACAAAGGACGGCGTAAAGGGTGGTTAGGGAATAAT 64
+B   241 ccagc-----------CACCGCGGTTAtACGagCgGCcCAAGcTGAtAgtcctCGGCagAAAGcGTGGTTAaGGAATAAT 309
+Diffs                              A   AA A  A    A   A AAAAA    AA    A       A        
+Votes                              +   ++ +  +    +   + +++++    ++    +       +        
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   321 ATAAACTAAAGACGAAaGaCtTCAagaCcGTTgcAcGCtgCC------TCGgAGCCctgaaaatcatccacgaaagtgac 394
+Q    65 ATAAACTAAAGACGAATGCCCTCAGAGCTGTTATAAGCATCCGAGAGTTCGAAGCC------------------------ 120
+B   310 ATAAACTAAAGcCGAATGCCCTCAGAGCTGTTATAAGCATCCGAGAGTTCGAAGCCccatcacgaaaatggctttacccc 389
+Diffs              A    B B B   BBB B   BB B  BB           B                            
+Votes              +    + + +   +++ +   ++ +  ++           +                            
+Model   AAAAAAAAAAAAxxxxBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   395 tttatactacccgaccccacgaaagctgaggtacaaactgggattagataccccactatgctcagtcttaaacattgaat 474
+Q   121 -------------------------------------------------------------------------------- 120
+B   390 ctcccccctgaccccacgaaagctacgcaacaaactgggattagataccccactatgcctagccctaaacattgatgata 469
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   475 aaatttaaccattttattccgcctggaaactacggacattagtctaaaaaccaaaggacttggcggtgctttaaaccccc 554
+Q   121 -------------------------------------------------------------------------------- 120
+B   470 cccccatccgcccgaaaactacaagcattagcttaaaacccaaaggacttggcggtgctttagacccacctagaggagcc 549
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   555 ctagaggagcctgtcctgtaaccgatgacccccgtttaacctcaccctctctcgcctagcccacttatataccgccgccg 634
+Q   121 -------------------------------------------------------------------------------- 120
+B   550 tgtcctagaaccgataccccccgttcaacctcacctccccttgtttcccccgtctatataccaccgtcgtcagctgaccc 629
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   635 tcagcctaccctgagaagggataatagtatgcataattggcacagccctaaacgtcaggtcgaggtgtagtgcatgagag 714
+Q   121 -------------------------------------------------------------------------------- 120
+B   630 tgtgaaggacttatagtaagcaaaattgacaaaccccaagacgtcaggtcgaggtgtagcgcatgaggagggaagagatg 709
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   715 gggaagagatgggctacacttgctcgccttgagcaaatacggacgttttgttgaaacacgaaactgaaggaggatttagt 794
+Q   121 -------------------------------------------------------------------------------- 120
+B   710 ggctacattctctacccccagagaaacacgaatgtaatagtactgaaacgtacaactgaaggaggatttagaagtaagtg 789
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   795 agtaaatgaggaacagagtgcctcactgaaaccggccctgaagcgcgcacacaccgcccgtcaccctcgccgagcattaa 874
+Q   121 -------------------------------------------------------------------------------- 120
+B   790 gaaaacagagcgtcccactgaaattggccctgaagcgcgcacacaccgcccgtcactctctcccggcctacccttctaat 869
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   875 cgaacattaaataaaaagtcttgaaagcactaggagaggaaagtcgtaacatggtaagtgtaccggaaggtgtgcttgga 954
+Q   121 -------------------------------------------------------------------------------- 120
+B   870 taactaataccccgccaattgcaaaggggaggcaagtcgtaacatggtaagcgtaccggaaggtgtgcttggataaac-- 947
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   955 caata 959
+Q   121 ----- 120
+B   948 ----- 947
+Diffs        
+Votes        
+Model   BBBBB
+
+Ids.  QA 88.2%, QB 84.5%, AB 72.7%, QModel 100.0%, Div. +13.4%
+Diffs Left 17: N 0, A 0, Y 17 (100.0%); Right 13: N 0, A 0, Y 13 (100.0%), Score 4.5102
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_246
+ParentA (  946 nt) OL806587_70_1015
+ParentB (  953 nt) MG321596_69_1021
+
+A     1 caaaggtttggtcctgactttactgtcaactttagctagatttacacatgcaagtatccgcacccccgtgagaatgcccc 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaagcctggtcctgactttaccctccgccccaaccaaatttatacatgcaagtatccgcacccccgtgagaatgcccc 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 aacagtctcctgcccggagacaaggagctggtatcaggcacggctctgccaagcccacgacaccttgctaagccacaccc 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 taaatcctgcccggaaacaaggagcagatatcaggcacgccccccgcagcccaagacatcttgcttagccacacccccaa 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 tcaagggaattcagcagtgatatacattaagccataagtgaaaacttgacttagttaaagctaagagggccggtaaaact 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 gggaatccagcagtaactaaccttaggccataagtgtaaacttgacctagctacggttgtaagagggccggtaaaactcg 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 cgtgccagcCACCGCGGTTATACGAGCG---ACCCAAGTTGAGAGACAACGGCGTAAAGAGTGGTTAaGatAttaatAAA 317
+Q     1 ---------CACCGCGGTTATACGAGCG---ACCCAAGTTGAGAGACAACGGCGTAAAGAGTGGTTAGGGAACCCTAAAA 68
+B   241 tgccagc--CACCGCGGccATACGAGtGttagCCCAAGTgGAcgGtCAACGGCGTAAAGgGTGGTTAGGGAACCCTAAAA 318
+Diffs                    AA       A    A       A  AA A             A       B BB BBBBB   
+Votes                    ++       +            +  ++ +             +       + ++ +++++   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBBBBBBBBBB
+
+A   318 CTAAAGCcGAACgCCCtCAGgaCTGTTATACGttTttGaagGtAaGAAgttCtaccacgaaagtggctttactaaccctg 397
+Q    69 CTAAAGCTGAACACCCACAGAGCTGTTATACGCATCCGGCAGCATGAAACCC---------------------------- 120
+B   319 CTAAAGCTGAACACCCACAGAGCTGTTATACGCATCCGGCAGCATGAAACCCcgccacgaaagtgactttaacccaaccc 398
+Diffs          B    B   B   BB          BB BB BBB B B   BBB                             
+Votes          +    +   +   ++          ++ ++ +++ + +   +++                             
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   398 accccacgaaagctgtgaaacaaactgggattagataccccactatgctcagccataaactttgatggccctttacatag 477
+Q   121 -------------------------------------------------------------------------------- 120
+B   399 gaacccacgacagctaggacacaaactgggattagataccccactatgcttagccgtaaactttaatagaagtcccacac 478
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   478 ccatccgcctgggaactacgagcacgagcttaaaacccaaaggacttggcggtgcttaagatccacctagaggagcctgt 557
+Q   121 -------------------------------------------------------------------------------- 120
+B   479 cttctattcgccggggtactacaagcaccagcttaaaacccaaaggacttggcggtgctttagacccacctagaggagcc 558
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   558 tctagaaccgataacccccgttaaacctcaccctcccttgtttttaccgcctatataccgccgtcgtcagcttaccctgt 637
+Q   121 -------------------------------------------------------------------------------- 120
+B   559 tgtcctagaaccgataccccccgttcaacctcaccacttctcgcccaacccgcctatataccgccgtcgtcagcttaccc 638
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   638 gaagggctaatagtaagcagaattagtaaaacccaaaacgccaggtcgaggtgtagcatatgagaggggaagaaatgggc 717
+Q   121 -------------------------------------------------------------------------------- 120
+B   639 cgtgagggcctagtagcaagctaaattggcacagcccaaaacgccaggtcgaggtgtagcgcatgaagtgcggaagagat 718
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   718 tacattccctaatgcagggaatacgaacaatacattgaaatatgtattagaaggaggatttagcagtaagcaggaaatag 797
+Q   121 -------------------------------------------------------------------------------- 120
+B   719 aggctacattttctgacccagaatacttacggatggaagaaatgaaaaaattcttgaaggaggatttagcagtaagtgag 798
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   798 agagttccgctgaaactggccctgaagcgcgcacacaccgcccgtcactctccccaagccaccagacttaaataactaat 877
+Q   121 -------------------------------------------------------------------------------- 120
+B   799 gattagagcgccccactgaaactggcccttaagcgcgcacacaccgcccgtcactctccccaagccccacccttccgtat 878
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   878 cacctaaacaggcgaaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgcacttggaaaaat------ 946
+Q   121 --------------------------------------------------------------------------- 120
+B   879 tctaacgagccgaataggcaaaggggaggcaagtcgtaacacggtaagtgtaccggaaggtgcacttggtcaaca 953
+Diffs                                                                              
+Votes                                                                              
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 78.4%, QB 93.1%, AB 71.6%, QModel 100.0%, Div. +7.4%
+Diffs Left 8: N 0, A 0, Y 8 (100.0%); Right 25: N 0, A 0, Y 25 (100.0%), Score 4.0816
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_243
+ParentA (  954 nt) OP948913_70_1023
+ParentB (  952 nt) AB239594_70_1021
+
+A     1 caaaggcttggtcctgactttaccatcagctttaacccaacttacacatgcaagtctccgcaacccagtgagaatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaggtatggtcccagcctttccatcagccacagcccaacctatacatgcaagtctccgcgccccagtgagtacaccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 caatcccccgcccgaggacgaggagcaggcatcaggcacaacctttagcccaagacgccttgccacgccacacccccaag 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 ttatcccttgcacgggaacaaggagttggcatcaggcacaagagttagcccaagacgcctagtaaaaccacgcccccaag 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 ggaattcagcagtgatagatattaagccataagtgaaaacttgacttagttaaagttaattttaagggccggtaaaactc 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 gggatccagcagtaataaacattaagctatgagtgaaagctcgactcagttatggctattagagccggtaaaactcgtgc 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 gtgccagcCACCGCGGTTATACGAGAGGCCCTAGTTGATG-GACACGGCGTAAAGGGTGGTTAAGGTAAAaTAC-TAATA 318
+Q     1 --------CACCGCGGTTATACGAGAGGCCCTAGTTGATG-GACACGGCGTAAAGGGTGGTTAAGGTAAACTACGTAATA 71
+B   241 cagc----aACCGCGGTTAgACGAGAGGCtCaAGTTGATGatAaACGGCGTAAAGGGTGGTTAAGGaAAACTACGTAATA 316
+Diffs           A          A         A A         A A                      A   B         
+Votes                      +         + +           +                      +   +         
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxBBBBBBBBBB
+
+A   319 AAGccAAAggacCtcTtGGCcGTCATACGCCgCTgagcACccGAAgCCCtcacacgaaagtagctttagcaccaacccac 398
+Q    72 AAGATAAACAGTCCTTCGGCTGTCATACGCCTCTAGAGACTTGAAACCC------------------------------- 120
+B   317 AAGATAAACAGTCCTTCGGCTGTCATACGCCTCTAGAGACTTGAAACCCataacacaaagatactttaaaatagacaacc 396
+Diffs      BB   BBBB BB B   B          B  BBBB  BB   B                                  
+Votes      ++   ++++ ++ +   +          +  ++++  ++   +                                  
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   399 ctgaccccacgaaaactgagaaacaaactgggattagataccccactatgctcagctgtaaacttagacgttgtctcaca 478
+Q   121 -------------------------------------------------------------------------------- 120
+B   397 tgaccccacgagagctaagaaacaaactgggattagataccccactatgcttagccgtaaatcctgacattaaaatacaa 476
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   479 acaaacgtccgccagggtactacgagcatcagcttaaaacccaaaggacttggcggtgccttagacccccctagaggagc 558
+Q   121 -------------------------------------------------------------------------------- 120
+B   477 caatgtccgccagggtactacgagttaaacttaaaacccaaaggacttgacggtgccttagacccacctagaggagcctg 556
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   559 ctgttctagaaccgataacccccgttaaacctcaccacttctagtcatccccgcctatataccgccgtcgtcagcctacc 638
+Q   121 -------------------------------------------------------------------------------- 120
+B   557 ttctagaaccgataatccccgttaaacctcaccatttctagccacaccagcctatataccaccgtcgtcagcttaccctg 636
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   639 ctgtgaaggactaatagtaagcaaaatggatacaatccaaaacgtcaggccgaggtgtagcgaacgaagtgggaagaaat 718
+Q   121 -------------------------------------------------------------------------------- 120
+B   637 tgaaggatgaaaagtaagcgagaggggcacagcccaaaacgccaggtcgaggtgtagcccacgaaatggaaagaaatggg 716
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   719 gggctacattttcttgcacagaacaactacggacaacattatgaaaacaatgctcgaaggaggatttagtagtaaaaagg 798
+Q   121 -------------------------------------------------------------------------------- 120
+B   717 ctacattttctaaaccagaatattacggacacgcaacatgaaacagtttcaagaaggaggatttagtagtaaaaaggaaa 796
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   799 aaatagagtgtccttttgaacccggctctgaggcgcgtacacaccgcccgtcactctccccgccaaatagcaataaatgt 878
+Q   121 -------------------------------------------------------------------------------- 120
+B   797 cagagagtccttttgaacccggctctgaggcgcgtacacaccgcccgtcactttcccctgttacactgcgatatcataac 876
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   879 ttttaacaccaaagcacaaataaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgcacttggattaaa 954
+Q   121 ---------------------------------------------------------------------------- 120
+B   877 taatataaaagcaccaacaagaggagacaagtcgtaacaaggtaagtataccggaaggtgtacttggacaaactta 952
+Diffs                                                                               
+Votes                                                                               
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 83.2%, QB 95.6%, AB 78.8%, QModel 100.0%, Div. +4.6%
+Diffs Left 5: N 0, A 0, Y 5 (100.0%); Right 19: N 0, A 0, Y 19 (100.0%), Score 1.9388
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_249
+ParentA (  952 nt) AB239594_70_1021
+ParentB (  957 nt) AP009181_69_1025
+
+A     1 caaaggtatggtcccagcctttccatcagccacagcccaacctatacatgcaagtctccgcgccccagtgagtacaccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 caaaagcttggtcctgacttttctatcaactgtagctgaacttatacatgcaagtatccgcgcccctgtgaggatgccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 ttatcccttgcacgggaacaaggagttggcatcaggcacaagagttagcccaagacgcctagtaaaaccacgcccccaag 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 acagttccctgcttgggaacaaggagctggtatcaggcacgaattccattcggcccataacaccttgcttagccacaccc 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 gggatccagcagtaataaacattaagctatgagtgaaagctcgactcagttatggctattagagccggtaaaactcgtgc 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 ccaagggacttcagcagtaataaacattaagccatgagtgaaaactcgacttagtcaaggctaagagggccggtaaattt 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 cagc-----AACCGCGGTTAGACGAGAGGCTCAAGTTGATGATAAACGGCGTAAAGGGTGGTTAAGGAAAACT--acgtA 313
+Q     1 ---------AACCGCGGTTAGACGAGAGGCTCAAGTTGATGATAAACGGCGTAAAGGGTGGTTAAGGAAAACTTATACAA 71
+B   241 cgtgccagccACCGCGGTTAtACGAaAGaCcCgAGTTGATagacgACGGCGTAAAGaGTGGTTAAGacAAACTTATACAA 320
+Diffs            A          A    A  A A A       AAAAA           A         AA       BBBB 
+Votes                       +    +  + + +       +++++           +         ++        +++ 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBB
+
+A   314 aTAAAGataAACagtCcttcGgCTGTcATACGccTCtagAgacttGAAacccataacacaaagatactttaaaatagaca 393
+Q    72 GTAAAGCCGAACCCCCTCAGGACTGTTATACGTGTCCGAAAGGGAGAAG------------------------------- 120
+B   321 GTAAAGCCGAACCCCCTCAGGACTGTTATACGTGTCCGAAAGGGAGAAGttcaaccacgaaggtagctttataatacctg 400
+Diffs   B     BBB   BBB BBBB B    B     BB  BBB BBBBB   B                               
+Votes   +     +++   +++ ++++ +    +     ++  +++ +++++                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   394 acctgaccccacgagagctaagaaacaaactgggattagataccccactatgcttagccgtaaatcctgacattaaaata 473
+Q   121 -------------------------------------------------------------------------------- 120
+B   401 aacccacgaaagctacgaaacaaactgggattagataccccactatgcgtagccctaaacattgatattaggacacatat 480
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   474 caacaatgtccgccagggtactacgagttaaacttaaaacccaaaggacttgacggtgccttagacccacctagaggagc 553
+Q   121 -------------------------------------------------------------------------------- 120
+B   481 attatccgcctggttattatgagcattagcttcaaacccaaaggacctggcggtgctttagttccacctagaggagcctg 560
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   554 ctgttctagaaccgataatccccgttaaacctcaccatttctagccacaccagcctatataccaccgtcgtcagcttacc 633
+Q   121 -------------------------------------------------------------------------------- 120
+B   561 ttctgtaaccgataccccccgttttaccttacccttccttgtcctttcagtttatataccgccgtcgtcagcttaccctg 640
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   634 ctgtgaaggatgaaaagtaagcgagaggggcacagcccaaaacgccaggtcgaggtgtagcccacgaaatggaaagaaat 713
+Q   121 -------------------------------------------------------------------------------- 120
+B   641 tgaaggactagtagtgagcgaaataggcagagcccagaacgtcaggtcaaggtgtagcatatggaagggacggatatggg 720
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   714 gggctacattttctaaaccagaatattacggacacgcaacatgaaacagtttcaagaaggaggatttagtagtaaaaagg 793
+Q   121 -------------------------------------------------------------------------------- 120
+B   721 ctacattccctgagaacagagaatacgaatgatacactgaaatgtgtacctgaaggaggatttagcagtaagcagaaaat 800
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   794 aaacagagagtccttttgaacccggctctgaggcgcgtacacaccgcccgtcactttcccctgttacactgcgatatcat 873
+Q   121 -------------------------------------------------------------------------------- 120
+B   801 agagtgttccgctgaaatcggctctgaagtgcgcacacaccgcccgtcactctcctctataacacttttaggccttactt 880
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   874 aactaatataaaagcaccaacaagaggagacaagtcgtaacaaggtaagtataccggaaggtgtacttggacaaactta 952
+Q   121 ------------------------------------------------------------------------------- 120
+B   881 aactaaaaccacactaccgttaaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgtgcttggagaaaaa-- 957
+Diffs                                                                                  
+Votes                                                                                  
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 77.2%, QB 88.6%, AB 65.8%, QModel 100.0%, Div. +12.9%
+Diffs Left 13: N 0, A 0, Y 13 (100.0%); Right 26: N 0, A 0, Y 26 (100.0%), Score 6.8980
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_247
+ParentA (  953 nt) KF752477_70_1022
+ParentB (  948 nt) AP012006_71_1018
+
+A     1 caaaggcatggtcccgaccttattattaactccaacccaacttacacatgcaagtctccgcaacccagtgaatatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 taaaggcttggtcctagctttaccatcagcttcaatctaatttatacatgcaagtatccgcactcccgtgagaatgccct 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 caatcccccgcccggggaagaggagcaggcatcaggcacaaaaaattagcccaaaacgcctagcctagccacacccccaa 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 aaatcctccacccgaggacagggagcgggcatcaggcacacatcattagcccaagacgccttgctaagccacacccccaa 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 gggaattcagcagtgataaacattaagccataagtgaaaacttgactcagttagtgttaagagggccggtaaaattcgtg 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 gggatttcagcagtaacaaatattaagccataagtgcaaacttgacttagttaagactaattagggtcggtaaaattcgt 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 ccagc-CACCGCGGTTAAACGAGAGGCCCTAGTTAATAATATAACGGCGTAAAGGGTGGTTAAGAATaaAtaTaAATAaA 319
+Q     1 ------CACCGCGGTTAAACGAGAGGCCCTAGTTAATAATATAACGGCGTAAAGGGTGGTTAAGAATTCAATTTAATAGA 74
+B   241 gccagcCACCGCGGTTAtACGAaAGaCCCcAGTTgATgA-ATAcCGGCGTAAAGGGTGGTTAAGAATTCAATTTAATAGA 319
+Diffs                    A    A  A   A    A  A     A                       BB BB B    B 
+Votes                    +    +  +   +    +  +     +                       ++ ++ +    + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxxxxxxxxxxxxxxxxxBBBBBBBBBBBBB
+
+A   320 GCcAAAtggcCctttgGCCGTCATAaGCttCtaggcgtccgagaCcccAAcACGAAAgtagctttaacaacttcacctga 399
+Q    75 GCTAAAGTTTCTCCAAGCCGTCATACGCACC------------GCGAGAAAACGAAAT---------------------- 120
+B   320 GCTAAAGTTTCTCCAAGCCGTCATACGCACC------------GCGAGAAAACGAAATctgaacacgaaagtagctctaa 387
+Diffs     B   BBBB BBBBB         B  BB             B BBB  B      B                      
+Votes     +   ++++ +++++         +  ++               +++  +                             
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   400 ccccacgaaagctgagaaacaaactgggattagataccccactatgctcagccgtaaacttagacatccaactacaatta 479
+Q   121 -------------------------------------------------------------------------------- 120
+B   388 atagactgaccccacgaaagctaagaaacaaactgggattagataccccactatgcttagccataaacctagatgtaaca 467
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   480 gatgttcgccagggtactacaagcattagcttaaaacccaaaggacttgacggtgtctcagaccccctagaggagcctgt 559
+Q   121 -------------------------------------------------------------------------------- 120
+B   468 ctacacacacatccgccagggaactacgagcacagcttaaaacccaaaggacttggcggtgtctcagacccacctagagg 547
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   560 tctagaaccgataacccccgttaaacctcaccactcttagccatcccagcctatataccgccgtcgtcagcttaccctgt 639
+Q   121 -------------------------------------------------------------------------------- 120
+B   548 agcctgttctagaaccgataacccccgttaaacctcaccacttcttgtttatcccgcctatataccgccgtcgtcagctt 627
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   640 gaaggtaataaaagtaagcaaaatgggcacaacccagaacgtcaggtcaaggtgtagcctatggagtggaaagaaatggg 719
+Q   121 -------------------------------------------------------------------------------- 120
+B   628 accttgtgaaagacaaatagtaagcaaaatgggcatacccaaaaacgtcaggtcgaggtgtagcgcacggagtggaaaga 707
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   720 ctacattttctattacagaacactacgaacgtgcaccatgaaacagtgcttgaaggaggatttagtagtaaaaaggaaat 799
+Q   121 -------------------------------------------------------------------------------- 120
+B   708 aatgggctacattttctacaacatagaatagaaacgaatggtgcactgaaataatcatctgaaggtggatttagtagtaa 787
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   800 agagtgtccctttgaacccggctctgagacgcgcacacaccgcccgtcactctcccctatcaaaacgcaccaaaatatct 879
+Q   121 -------------------------------------------------------------------------------- 120
+B   788 ataattaatagagagcatttttgaattaggctctgagacgcgcacacaccgcccgtcactctccccacaataaacaaatt 867
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   880 aataaactagcactgataaggggaggcaagtcgtaacacggtaagtgtaccggaaggtgcacttggaataaacc------ 953
+Q   121 -------------------------------------------------------------------------------- 120
+B   868 cctcatatataataacataaaaaaattacggggaggcaagtcgtaacatggtaagtgtaccggaaggtgcacttgggata 947
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   954 - 953
+Q   121 - 120
+B   948 t 948
+Diffs    
+Votes    
+Model   B
+
+Ids.  QA 79.6%, QB 93.8%, AB 73.5%, QModel 100.0%, Div. +6.6%
+Diffs Left 7: N 0, A 0, Y 7 (100.0%); Right 23: N 0, A 0, Y 23 (100.0%), Score 3.2857
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_241
+ParentA (  939 nt) AP005983_69_1007
+ParentB (  958 nt) AB282856_69_1026
+
+A     1 caaaggcttggtcctgacttttctgtcagctttagctaaacttacacatgcaagtatccgcacccccgtgagaatgccct 80
+Q     1 -------------------------------------------------------------------------------- 0
+B     1 taaaggtttggtcccggccttactatcagttttaacctattttatacatgcaagtatccgcgcccctgtgaagaatgccc 80
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A    81 ttaatctcttcagagaacaaggagcaggtatcaggcacactaaagatgcccataacaccttgctcagccacacccccaag 160
+Q     1 -------------------------------------------------------------------------------- 0
+B    81 tatgtctccctccggggaaacaaggagtaggtatcaggcacgaaccttcagcccacgacacctggctcagagccacgccc 160
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   161 ggaaacagcagtgataaacattaagcaataagtgaaaacttgacttagttaaagctaagagggtcggtaaaactcgtgcc 240
+Q     1 -------------------------------------------------------------------------------- 0
+B   161 ccaagggtcttcagcagtaataaatattaagcaataagtgcaaacttgacttagctagggttaagagggctggtaaaact 240
+Diffs                                                                                   
+Votes                                                                                   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+A   241 agc------CACCGCGGTTATACGAGAGACCCAAGTTGACAgatatCGGCaTAAAGaGTGGTTAGGAgagtAtTAAAcTA 314
+Q     1 ---------CACCGCGGTTATACGAGAGACCCAAGTTGACAACCTCCGGCGTAAAGCGTGGTTAGGATGCAACTAAAATA 71
+B   241 cgtgccagcaACCGCGGTTAaACGAGtGgCCCAAGcTGAtAggCaCCGGCGTAAAGgGTGGTTAGGATGCAACTAAAATA 320
+Diffs            A          A     A A      A   A N?BNB    B     ?          BBBB B    B  
+Votes                       +     + +      +   + 00+0+    +     0          ++++ +    +  
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   315 AAGcCGAAcaCCcgCaAaaCTGTTATAcGCcctCGAgaGtagGAAGCcCacttacgaaagtggctttattcacccgaacc 394
+Q    72 AAGTCGAATTCCTTCTATGCTGTTATAAGCTTCCGAAGGCTAGAAGCTC------------------------------- 120
+B   321 AAGTCGAATTCCTTCTATGCTGTTATAAGCTTCCGAAGGCTAGAAGCTCaactacgaaagtagctttaaaagatctgaac 400
+Diffs      B    BB  BB B BB        B  BBB   BB BBB     B                                
+Votes      +    ++  ++ + ++        +  +++   ++ +++     +                                
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   395 cacgaaagccatgagaacaaactgggattagataccccactatgcttggctgtaaactaagataaaaccaaaacttattc 474
+Q   121 -------------------------------------------------------------------------------- 120
+B   401 ccacgaaagctggggtacaaactgggattagataccccactatgcccagtcttaaactacgatagcgaaattacacactt 480
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   475 gccagggtactacgagcactagcttaaaacccaaaggacttggcggtgctttagacccacctagaggagcctgttctaga 554
+Q   121 -------------------------------------------------------------------------------- 120
+B   481 gctatccgcctgggaactacgagcgaaagcttaaaacccaaaggacttggcggtgctttagacccccctagaggagcctg 560
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   555 accgataacccccgttcaacctcaccctttcttgttatctccgcctatataccgccgtcgtcagcttaccctgtaaagga 634
+Q   121 -------------------------------------------------------------------------------- 120
+B   561 ttctagaaccgataatccccgttaaacctcacctttccttgttccttccagcctatatacctccgtcgtcagcttacccc 640
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   635 cccaaagtaagcaatattggtaaaacccaaaacgtcaggtcgaggtgtagcgtatgcaaggggaagaaatgggctacatt 714
+Q   121 -------------------------------------------------------------------------------- 120
+B   641 tctgagggtaccatagtaagctaaatcggttttaccccaatacgtcaggtcgaggtgtagcccatggaaagggatgaaat 720
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   715 tgctaacatagcatattaaacgaattattccactgaaacacggatatgaaggaggatttagaagtaagtagaaaatagag 794
+Q   121 -------------------------------------------------------------------------------- 120
+B   721 gggctacattctctaagattagagcatacggatggtcacgctgaaatatgtacctgaaggtggatttagcagtaagtaca 800
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   795 cgtcctactgaaacaggccctgaagcgcgcacacaccgcccgtcactctccctagtgtaacaccataagtctataaaaac 874
+Q   121 -------------------------------------------------------------------------------- 120
+B   801 aaatagagtgttatactgaagccggctctaaagcgcgcacacaccgcccgtcaccctccccgaatcattctatttcacta 880
+Diffs                                                                                   
+Votes                                                                                   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A   875 aatccaacaaaaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgtacttggacaaac------------- 939
+Q   121 ------------------------------------------------------------------------------ 120
+B   881 attaagaaaccactttaaaaagaggggaggcaagtcgtaacatggtaagtgtaccggaaggtgtacttggaaaacccc 958
+Diffs                                                                                 
+Votes                                                                                 
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 73.7%, QB 92.4%, AB 71.2%, QModel 96.6%, Div. +4.6%
+Diffs Left 5: N 0, A 0, Y 5 (100.0%); Right 31: N 0, A 4, Y 27 (87.1%), Score 1.7532

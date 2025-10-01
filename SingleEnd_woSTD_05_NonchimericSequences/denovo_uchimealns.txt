@@ -1,0 +1,220 @@
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_242
+ParentA (  120 nt) denoised_004
+ParentB (  120 nt) denoised_003
+
+A     1 CACCGCGGTTATACGAGAGGCCCAAGTTGAcagAAttCGGCGTAAAGaGTGgTTAAtgAAtaTtAT---AcTAaAGcCGA 77
+Q     1 CACCGCGGTTATACGAGAGGCCCAAGTTGATGAAAAACGGCGTAAAGCGTGTTTAAGAAAATTAATATAAATAGAGTCGA 80
+B     1 CACCGCGGTTATACGAGcGaCCCAAGTTGATGAAAAACGGCGTAAAGCGTGTTTAAGAAAATTAATATAAATAGAGTCGA 80
+Diffs                    A A          BBB  BB          B   B    BB  BB B      B  B  B   
+Votes                    + +          +++  ++          +   +    ++  ++ +      +  +  +   
+Model   AAAAAAAAAAAAAAAAAAAAxxxxxxxxxxBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+A    78 AcacCCTCAAGaCtGTTATACGtgtTCGAGggCagGAAGCcct 120
+Q    81 AGGACCTCAAGTCAGTTATACGCCCTCGAGACCCCGAAGC--- 120
+B    81 AGGACCTCAAGTCAGTTATACGCCCTCGAGACCCCGAAGC--- 120
+Diffs    BBB       B B        BBB     BB BB        
+Votes    +++       + +        +++     ++ ++        
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 76.3%, QB 98.2%, AB 74.6%, QModel 100.0%, Div. +1.8%
+Diffs Left 2: N 0, A 0, Y 2 (100.0%); Right 27: N 0, A 0, Y 27 (100.0%), Score 1.1020
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_244
+ParentA (  120 nt) denoised_097
+ParentB (  120 nt) denoised_031
+
+A     1 CACCGCGGTTATACGAGAGACCCAAGTTGATAATTCACGGCGTAAAGAGTGGTTAGGCAAAgaTaaAtACTAAAGCcGAA 80
+Q     1 CACCGCGGTTATACGAGAGACCCAAGTTGATAATTCACGGCGTAAAGAGTGGTTAGGCAAA-CTTTACACTAAAGCTGAA 79
+B     1 CACCGCGGTTATACGAGAGgCCCtAGTTGAT-tTaCACGGCGTAAAGAGTGGTTAtGgAAA-CTTTACACTAAAGCTGAA 78
+Diffs                      A   A        A A                    A A    B BB B        B   
+Votes                      +   +          +                    + +      ++ +        +   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxBBBBBBBBBBBBBBBBBB
+
+A    81 tGttttcaaAgCTGTtATACGCcCaCAAaacCgAGAAgcc-- 120
+Q    80 AGCCCCTCTAACTGTCATACGCACTCAAGGGCCAGAAAAAC- 120
+B    79 AGCCCCTCTAACTGTCATACGCACTCAAGGGCCAGAAAAACa 120
+Diffs   B BBBBBBB B    B      B B   BBB B    BBB  
+Votes   + +++++++ +    +      + +   +++ +    ++   
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 80.5%, QB 95.6%, AB 76.1%, QModel 100.0%, Div. +4.6%
+Diffs Left 5: N 0, A 0, Y 5 (100.0%); Right 22: N 0, A 0, Y 22 (100.0%), Score 2.2449
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_245
+ParentA (  120 nt) denoised_021
+ParentB (  120 nt) denoised_045
+
+A     1 CACCGCGGTTATACGAGAGGCCCGAGTTGATA-GATAACGGCGTAAAGGGTGGTTAGGGGTtaAcAttaAtTAAAGCCAA 79
+Q     1 CACCGCGGTTATACGAGAGGCCCGAGTTGATA-GATAACGGCGTAAAGGGTGGTTAGGGGTATAAAACCAATAAAGCCAA 79
+B     1 CACCGCGGTTAgACGAGAGGCCCcAGTTGAcAttATAACGGCGTAAAGGGTGGTTAGGGGTATAAAACCAATAAAGCCAA 80
+Diffs              A           A      A  A                           BB B BBB B         
+Votes              +           +      +                              ++ + +++ +         
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxBBBBBBBBBBBBBBBBBBB
+
+A    80 AgacctaCcgaGCtGTCATACGCacCcgaaggcaCGAAGCC 120
+Q    80 ATGGTCCCTTGGCCGTCATACGCTACTAGGCATCCGAAGCC 120
+B    81 ATGGTCCCTTGGCCGTCATACGCTACTAGGCATCCGAAGC- 120
+Diffs    BBBBBB BBB  B         BB BBBBBBBB       
+Votes    ++++++ +++  +         ++ ++++++++       
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 76.7%, QB 97.4%, AB 74.1%, QModel 100.0%, Div. +2.7%
+Diffs Left 3: N 0, A 0, Y 3 (100.0%); Right 27: N 0, A 0, Y 27 (100.0%), Score 1.6531
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_246
+ParentA (  120 nt) denoised_105
+ParentB (  120 nt) denoised_019
+
+A     1 CACCGCGGTTATACGAGCG---ACCCAAGTTGAGAGACAACGGCGTAAAGAGTGGTTAaGatACtaacAAACTAAAGCcG 77
+Q     1 CACCGCGGTTATACGAGCG---ACCCAAGTTGAGAGACAACGGCGTAAAGAGTGGTTAGGGAACCCTAAAACTAAAGCTG 77
+B     1 CACCGCGGccATACGAGtGttagCCCAAGTgGAcgGtCAACGGCGTAAAGgGTGGTTAGGGAACCCTAAAACTAAAGCTG 80
+Diffs           AA       A    A       A  AA A             A       B BB  BBBB          B 
+Votes           ++       +            +  ++ +             +       + ++  ++++          + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBBBBBBBBBBBBBBBBBBB
+
+A    78 AACgCCCtCAagaCTGTTATACGttTttGaagGtAaGAAgttC 120
+Q    78 AACACCCACAGAGCTGTTATACGCATCCGGCAGCATGAAACCC 120
+B    81 AACACCCACAGAGCTGTTATACGCATCCGGCAGCATGAAA--- 120
+Diffs      B   B  BBB          BB BB BBB B B   B   
+Votes      +   +  +++          ++ ++ +++ + +       
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 80.7%, QB 93.0%, AB 73.7%, QModel 100.0%, Div. +7.5%
+Diffs Left 8: N 0, A 0, Y 8 (100.0%); Right 22: N 0, A 0, Y 22 (100.0%), Score 3.5918
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_247
+ParentA (  120 nt) denoised_035
+ParentB (  120 nt) denoised_220
+
+A     1 CACCGCGGTTAAACGAGAGGCCCTAGTTAATAATATAACGGCGTAAAGGGTGGTTAAGAATaaAtaTaAATAaAGCcAAA 80
+Q     1 CACCGCGGTTAAACGAGAGGCCCTAGTTAATAATATAACGGCGTAAAGGGTGGTTAAGAATTCAATTTAATAGAGCTAAA 80
+B     1 CACCGCGGTTAtACGAaAGaCCCcAGTTgATgA-ATAcCGGCGTAAAGGGTGGTTAAGAATTCAATTTAATAGAGCTAAA 79
+Diffs              A    A  A   A    A  A     A                       BB BB B    B   B   
+Votes              +    +  +   +    +  +     +                       ++ ++ +    +   +   
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxxxxxxxxxxxxxxxxxBBBBBBBBBBBBBBBBBBB
+
+A    81 tggcCctttgGCCGTCATAaGCttCtaggcgtcCGAGAcc-------- 120
+Q    81 GTTTCTCCAAGCCGTCATACGCACC-------GCGAGAAAACGAAAT- 120
+B    80 GTTTCTCCAAGCCGTCATACGCACC-------GCGAGAAAACGAAATc 120
+Diffs   BBBB BBBBB         B  BB        B     BB        
+Votes   ++++ +++++         +  ++              +         
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 81.3%, QB 93.5%, AB 74.8%, QModel 100.0%, Div. +7.0%
+Diffs Left 7: N 0, A 0, Y 7 (100.0%); Right 20: N 0, A 0, Y 20 (100.0%), Score 2.8571
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_248
+ParentA (  120 nt) denoised_176
+ParentB (  120 nt) denoised_047
+
+A     1 CACCGCGGTTACACGGACAGCTCAAGTTGACAAAGGACGGCGTAAAGGGTGGTTAGGGAATAATATAAACTAAAGACGAA 80
+Q     1 CACCGCGGTTACACGGACAGCTCAAGTTGACAAAGGACGGCGTAAAGGGTGGTTAGGGAATAATATAAACTAAAGACGAA 80
+B     1 CACCGCGGTTAtACGagCgGCcCAAGcTGAtAgtcctCGGCagAAAGcGTGGTTAaGGAATAATATAAACTAAAGcCGAA 80
+Diffs              A   AA A  A    A   A AAAAA    AA    A       A                   A    
+Votes              +   ++ +  +    +   + +++++    ++    +       +                   +    
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxx
+
+A    81 aGaCtTCAagaCcGTTgcAcGCtgCC------TCGgAGCCctgaaa 120
+Q    81 TGCCCTCAGAGCTGTTATAAGCATCCGAGAGTTCGAAGCC------ 120
+B    81 TGCCCTCAGAGCTGTTATAAGCATCCGAGAGTTCGAAGCC------ 120
+Diffs   B B B   BBB B   BB B  BB           B          
+Votes   + + +   +++ +   ++ +  ++           +          
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 88.3%, QB 84.7%, AB 73.0%, QModel 100.0%, Div. +13.3%
+Diffs Left 17: N 0, A 0, Y 17 (100.0%); Right 13: N 0, A 0, Y 13 (100.0%), Score 4.5102
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_249
+ParentA (  120 nt) denoised_125
+ParentB (  120 nt) denoised_106
+
+A     1 AACCGCGGTTAGACGAGAGGCTCAAGTTGATGATAAACGGCGTAAAGGGTGGTTAAGGAAAACT--acgtAaTAAAGata 78
+Q     1 AACCGCGGTTAGACGAGAGGCTCAAGTTGATGATAAACGGCGTAAAGGGTGGTTAAGGAAAACTTATACAAGTAAAGCCG 80
+B     1 cACCGCGGTTAtACGAaAGaCcCgAGTTGATagacgACGGCGTAAAGaGTGGTTAAGacAAACTTATACAAGTAAAGCCG 80
+Diffs   A          A    A  A A A       AAAAA           A         AA       BBBB B     BBB
+Votes   +          +    +  + + +       +++++           +         ++        +++ +     +++
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBBBBBBBBBBB
+
+A    79 AACagtCcttcGgCTGTcATACGccTCtagAgacttGAAacc 120
+Q    81 AACCCCCTCAGGACTGTTATACGTGTCCGAAAGGGAGAAG-- 120
+B    81 AACCCCCTCAGGACTGTTATACGTGTCCGAAAGGGAGAAG-- 120
+Diffs      BBB BBBB B    B     BB  BBB BBBBB   B  
+Votes      +++ ++++ +    +     ++  +++ +++++      
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 77.4%, QB 87.8%, AB 65.2%, QModel 100.0%, Div. +13.9%
+Diffs Left 14: N 0, A 0, Y 14 (100.0%); Right 26: N 0, A 0, Y 26 (100.0%), Score 7.4286
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_250
+ParentA (  120 nt) denoised_158
+ParentB (  120 nt) denoised_009
+
+A     1 CACCGCGGTTATACGAGAGGCCCAAGTTGATAAGGTACGGCGTAAAGAGTGGTTAAGATtAGcTAAAtAcTAAAGCCGaA 80
+Q     1 CACCGCGGTTATACGAGAGGCCCAAGTTGATAAGGTACGGCGTAAAGAGTGGTTAAGATAAGTTAAA-ATTAAAGCCGCA 79
+B     1 CACCGCGGcTATACGAGAGGCCCAAGTTGtTAtatTcCGGCGTAAAGAGTGGTTAtGgaAAGTTAAA-ATTAAAGCCGCA 79
+Diffs           A                    A  AAA A                  A AAB  B      B        B 
+Votes           +                    +  +++ +                  + +++  +      +        + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBB
+
+A    81 tgCCcTCAAAGCTGTTATACGCcCCCGAAGgtaAGAAGaC- 120
+Q    80 CACCTTCAAAGCTGTTATACGCACCCGAAGTCTAGAAGCCC 120
+B    80 CACCTTCAAAGCTGTTATACGCACCCGAAGTCTAGAAGCCC 120
+Diffs   BB  B                 B       BBB     B  
+Votes   ++  +                 +       +++     +  
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 89.7%, QB 92.2%, AB 81.9%, QModel 100.0%, Div. +8.4%
+Diffs Left 9: N 0, A 0, Y 9 (100.0%); Right 12: N 0, A 0, Y 12 (100.0%), Score 2.2041
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_251
+ParentA (  120 nt) denoised_051
+ParentB (  120 nt) denoised_002
+
+A     1 AACCGCGGTTACACGAGAGGCCCAAGTTGATAGGAGCCGGCGTAAAGAGTGGTTAAGGgtcAACTacAaAaTAAAGCCaA 80
+Q     1 AACCGCGGTTACACGAGAGGCCCAAGTTGATAGGAGCCGGCGTAAAGAGTGGTTAAGGTAAAACT-TATAGTAAAGCCGA 79
+B     1 cACCGCGGTTAtACGAGAGaCtCAAGaTGATAGaccaCGGCGTAAAGAGTGGTTAgGGTAAAACT-TATAGTAAAGCCGA 79
+Diffs   A          A       A A    A      AAAA                  A  BBB     B B B       B 
+Votes   +          +       + +    +      ++++                  +  +++       + +       + 
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxBBBBBBBBBBBBBBBBBBBBBB
+
+A    81 acaTtctCaatGCtGTTATACGC-cCCGAGAaCttgAagCC 120
+Q    80 GAGTCGACTGAGCAGTTATACGCATCCGAGAGCGAAAGTCC 120
+B    80 GAGTCGACTGAGCAGTTATACGCATCCGAGAGCGAAAGTCC 120
+Diffs   BBB BBB BBB  B          B      B BBB BB  
+Votes   +++ +++ +++  +                 + +++ ++  
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 80.9%, QB 91.3%, AB 72.2%, QModel 100.0%, Div. +9.5%
+Diffs Left 10: N 0, A 0, Y 10 (100.0%); Right 22: N 0, A 0, Y 22 (100.0%), Score 4.4898
+
+------------------------------------------------------------------------
+Query   (  120 nt) denoised_252
+ParentA (  120 nt) denoised_159
+ParentB (  120 nt) denoised_167
+
+A     1 CACCGCGGTTATACGAGAGACTCAAGTTGACAGCCCTCGGCGTAAAGCGTGATAAAGAAAAaAccctgActAaAgtGaaa 80
+Q     1 CACCGCGGTTATACGAGAGACTCAAGTTGACAGCCCTCGGCGTAAAGCGTGATAAAGAAAATAAGAGAAAAATATGGCCG 80
+B     1 CACCGCGGTTATACGAGAGgCcCAAaTTGAtgaaaaaCGGCGTAAAGCGTGgTtAAGAAAATAAGAGAAAAATATGGCCG 80
+Diffs                      A A   A    AAAAAAA              A A       B BBBBB BB B BB BBB
+Votes                      + +   +    +++++++              + +       + +++++ ++ + ++ +++
+Model   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxxxxxxxBBBBBBBBBBBBBBBBBBB
+
+A    81 cAC-tCTctAAAGCtGTTATACGCtTataAgagtAtGAAat 120
+Q    81 AACAGCTTCAAAGCAGTTATACGCATTCGAAGCCACGAAG- 120
+B    81 AACAGCTTCAAAGCAGTTATACGCATTCGAAGCCACGAAG- 120
+Diffs   B   B  BB     B         B BBB BBBB B   B 
+Votes   +      ++     +         + +++ ++++ +     
+Model   BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+Ids.  QA 76.7%, QB 89.7%, AB 66.4%, QModel 100.0%, Div. +11.5%
+Diffs Left 12: N 0, A 0, Y 12 (100.0%); Right 27: N 0, A 0, Y 27 (100.0%), Score 6.6122
